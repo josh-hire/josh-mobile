@@ -6,19 +6,25 @@ import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 interface FormData {
+  name: string;
+  address: string;
   email: string;
-  password: string;
+  phone: string;
 }
 
 interface FormErrors {
+  name?: string;
+  address?: string;
   email?: string;
-  password?: string;
+  phone?: string;
 }
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const [formData, setFormData] = useState<FormData>({
+    name: "",
+    address: "",
     email: "",
-    password: "",
+    phone: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const router = useRouter();
@@ -43,16 +49,20 @@ export default function LoginForm() {
       newErrors.email = "*Please used a valid email address";
       isValid = false;
     }
+    if (formData.name.trim() === "") {
+      newErrors.name = "*Please enter your name";
+      isValid = false;
+    }
+    if (formData.address.trim() === "") {
+      newErrors.address = "*Please enter your address";
+      isValid = false;
+    }
     if (formData.email.trim() === "") {
-      newErrors.email = "*Please enter your email to continue";
+      newErrors.email = "*Please enter your email";
       isValid = false;
     }
-    if (formData.password.length < 8) {
-      newErrors.password = "*Password must be at least 8 characters";
-      isValid = false;
-    }
-    if (formData.password.trim() === "") {
-      newErrors.password = "*Please enter your password";
+    if (formData.phone.trim() === "") {
+      newErrors.phone = "*Please enter your password";
       isValid = false;
     }
 
@@ -70,20 +80,36 @@ export default function LoginForm() {
   return (
     <View style={styles.loginForm}>
       <TextInputForm
-        label="Your email address"
+        label="Name"
+        onChangeText={(value: string) => handleInputChange("name", value)}
+        placeholder="Enter your name"
+        type="text"
+        text={formData.name}
+        error={errors.name}
+      />
+      <TextInputForm
+        label="Address"
+        onChangeText={(value: string) => handleInputChange("address", value)}
+        placeholder="Enter your address"
+        type="text"
+        text={formData.address}
+        error={errors.address}
+      />
+      <TextInputForm
+        label="Email"
         onChangeText={(value: string) => handleInputChange("email", value)}
-        placeholder="Afgan@gmail.com"
+        placeholder="Enter your email"
         type="email"
         text={formData.email}
         error={errors.email}
       />
       <TextInputForm
-        label="Your password"
-        onChangeText={(value: string) => handleInputChange("password", value)}
-        placeholder="************"
-        type="password"
-        text={formData.password}
-        error={errors.password}
+        label="Phone Number"
+        onChangeText={(value: string) => handleInputChange("phone", value)}
+        placeholder="Enter your phone number"
+        type="number"
+        text={formData.phone}
+        error={errors.phone}
       />
       <View style={styles.forgotPasswordContainer}>
         <Link href="/(auth)/forgot-password">
@@ -93,7 +119,7 @@ export default function LoginForm() {
         </Link>
       </View>
       <PrimaryButton
-        title="Sign In"
+        title="Sign Up"
         link="/(tabs)/home"
         handler={handleSubmit}
       />
