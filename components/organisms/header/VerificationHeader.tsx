@@ -1,15 +1,15 @@
 import { HeadingText } from "@/components/atoms/text/HeadingText";
 import { StyleSheet, View } from "react-native";
 
-export default function ForgotPasswordHeader() {
+export default function VerificationHeader() {
   return (
     <View style={styles.container}>
       <HeadingText type="h1" fontWeight="bold" textAlign="center">
-        Forgot Password?
+        Enter your Verification Code
       </HeadingText>
       <View style={styles.smallContainer}>
         <HeadingText type="h6" textAlign="center">
-          No worries, we will send you reset password instruction
+          We sent a verification code to example@gmail.com
         </HeadingText>
       </View>
     </View>
@@ -17,14 +17,14 @@ export default function ForgotPasswordHeader() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 12,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  smallContainer: {
-    paddingHorizontal: 18,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+    container: {
+      paddingHorizontal: 12,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    smallContainer: {
+      paddingHorizontal: 12,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  });

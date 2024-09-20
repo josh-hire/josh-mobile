@@ -120,7 +120,6 @@ export default function RegisterForm() {
       </View>
       <PrimaryButton
         title="Sign Up"
-        link="/(tabs)/home"
         handler={handleSubmit}
       />
     </View>

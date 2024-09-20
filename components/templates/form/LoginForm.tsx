@@ -94,7 +94,6 @@ export default function LoginForm() {
       </View>
       <PrimaryButton
         title="Sign In"
-        link="/(tabs)/home"
         handler={handleSubmit}
       />
     </View>

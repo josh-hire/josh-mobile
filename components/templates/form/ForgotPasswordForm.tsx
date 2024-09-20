@@ -68,7 +68,6 @@ export default function ForgotPAsswordForm() {
       />
       <PrimaryButton
         title="Reset Password"
-        link="/(tabs)/home"
         handler={handleSubmit}
       />
     </View>

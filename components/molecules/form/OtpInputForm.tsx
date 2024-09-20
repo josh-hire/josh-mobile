@@ -1,3 +1,4 @@
+import { Colors } from "@/constants/Colors";
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -29,8 +30,8 @@ export default function OtpInputForm({
 
     const isValueFocused = isCurrentValue || (isLastValue && isCodeComplete);
     const StyledSplitBoxes =
-      isInputBoxFocused && isValueFocused ? styles.splitBoxesFocused : styles.splitBoxes;
-
+      digit != '' ? styles.splitBoxesFilled : isInputBoxFocused && isValueFocused ? styles.splitBoxesFocused : styles.splitBoxes;
+    
     return (
       <View style={StyledSplitBoxes} key={index}>
         <Text style={styles.splitBoxesText}>{digit}</Text>
@@ -42,7 +43,6 @@ export default function OtpInputForm({
   };
 
   const handleOnPress = () => {
-    console.log('here');
     setIsInputBoxFocused(true);
     inputRef.current?.focus();
   };
@@ -81,24 +81,31 @@ const styles = StyleSheet.create({
     position: 'absolute'
   },
   splitOTPBoxesContainer: {
-    width: "80%",
+    width: 300,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
   splitBoxes: {
-    borderColor: "#e5e5e5",
-    borderWidth: 2,
-    borderRadius: 5,
+    borderColor: Colors.neutral.n09,
+    borderWidth: 1,
+    borderRadius: 8,
     padding: 5,
-    minWidth: 30,
+    minWidth: 42,
   },
   splitBoxesFocused: {
-    borderColor: "#ecdbba",
-    backgroundColor: "grey",
-    borderWidth: 2,
-    borderRadius: 5,
+    borderColor: Colors.secondary.s07,
+    borderWidth: 3,
+    borderRadius: 8,
     padding: 5,
-    minWidth: 30,
+    minWidth: 42,
+  },
+  splitBoxesFilled: {
+    borderColor: Colors.secondary.s07,
+    backgroundColor: Colors.secondary.s07,
+    borderWidth: 3,
+    borderRadius: 8,
+    padding: 5,
+    minWidth: 42,
   },
   splitBoxesText: {
     fontSize: 20,

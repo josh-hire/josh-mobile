@@ -15,6 +15,10 @@ import { Colors } from "@/constants/Colors";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
+export const unstable_settings = {
+  initialRouteName: "(auth)/index",
+};
+
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -34,8 +38,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)/index" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)/register" options={{ headerShown: false }} />
         <Stack.Screen
           name="(auth)/forgot-password"
@@ -47,7 +50,11 @@ export default function RootLayout() {
         />
         <Stack.Screen
           name="(auth)/verification"
-          options={{ headerShown: false }}
+          options={{
+            headerShadowVisible: false,
+            headerTitle: "",
+            contentStyle: { backgroundColor: Colors.general.background },
+          }}
         />
         <Stack.Screen name="(tabs)/home" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
