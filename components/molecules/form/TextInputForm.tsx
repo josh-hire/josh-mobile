@@ -20,7 +20,7 @@ export default function TextInputForm({
 }: TextInputFormInterface) {
   return (
     <>
-      <HeadingText type="h6">{label}</HeadingText>
+      <HeadingText type="h4">{label}</HeadingText>
       <ThemedTextInput
         error={error}
         onChangeText={onChangeText}
