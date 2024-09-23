@@ -56,6 +56,14 @@ export default function RootLayout() {
             contentStyle: { backgroundColor: Colors.general.background },
           }}
         />
+        <Stack.Screen
+          name="(auth)/reset-password"
+          options={{
+            headerShadowVisible: false,
+            headerTitle: "",
+            contentStyle: { backgroundColor: Colors.general.background },
+          }}
+        />
         <Stack.Screen name="(tabs)/home" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>

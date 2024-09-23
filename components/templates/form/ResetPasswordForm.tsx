@@ -1,21 +1,23 @@
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
 import TextInputForm from "@/components/molecules/form/TextInputForm";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 interface FormData {
-  email: string;
+  password: string;
+  confirmPassword: string;
 }
 
 interface FormErrors {
-  email?: string;
+  password?: string;
+  confirmPassword?: string;
 }
 
 export default function ForgotPAsswordForm() {
   const [formData, setFormData] = useState<FormData>({
-    email: "",
+    password: "",
+    confirmPassword: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const router = useRouter();
@@ -27,21 +29,20 @@ export default function ForgotPAsswordForm() {
     }));
   };
 
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const validateForm = () => {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
 
-    if (!validateEmail(formData.email)) {
-      newErrors.email = "*Please used a valid email address";
+    if (formData.password.trim() === "") {
+      newErrors.password = "*Must be at least 8 characters";
       isValid = false;
     }
-    if (formData.email.trim() === "") {
-      newErrors.email = "*Please enter your email to continue";
+    if (formData.confirmPassword !== formData.password) {
+      newErrors.confirmPassword = "*Both passwords must match";
+      isValid = false;
+    }
+    if (formData.confirmPassword.trim() === "") {
+      newErrors.confirmPassword = "*Must be at least 8 characters";
       isValid = false;
     }
 
@@ -59,17 +60,24 @@ export default function ForgotPAsswordForm() {
   return (
     <View style={styles.loginForm}>
       <TextInputForm
-        label="Email"
-        onChangeText={(value: string) => handleInputChange("email", value)}
-        placeholder="example@gmail.com"
-        type="email"
-        text={formData.email}
-        error={errors.email}
+        label="Password"
+        onChangeText={(value: string) => handleInputChange("password", value)}
+        placeholder="********"
+        type="password"
+        text={formData.password}
+        error={errors.password}
       />
-      <PrimaryButton
-        title="Reset Password"
-        handler={handleSubmit}
+      <TextInputForm
+        label="Confirm Password"
+        onChangeText={(value: string) =>
+          handleInputChange("confirmPassword", value)
+        }
+        placeholder="********"
+        type="password"
+        text={formData.confirmPassword}
+        error={errors.confirmPassword}
       />
+      <PrimaryButton title="Reset Password" handler={handleSubmit} />
     </View>
   );
 }

@@ -29,7 +29,7 @@ export default function VerificationForm() {
         <HeadingText type="h6" color={Colors.neutral.n04}>
           Didn't get OTP Code?
         </HeadingText>
-        <Link href="/(auth)/forgot-password">
+        <Link href="/(auth)/reset-password">
           <HeadingText type="h6" color={Colors.primary.p04}>
             Resend Code
           </HeadingText>
