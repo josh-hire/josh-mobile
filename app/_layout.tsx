@@ -35,7 +35,7 @@ export default function RootLayout() {
     const checkLoginAndFont = async () => {
       if (loaded) {
         const loggedIn = await checkLoginStatus();
-        setIsLoggedIn(loggedIn); // Set status login
+        setIsLoggedIn(loggedIn);
         setLoading(false);
 
         await SplashScreen.hideAsync();
