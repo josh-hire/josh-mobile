@@ -12,7 +12,7 @@ export type PrimaryButtonProps = ButtonProps & {
 export function PrimaryButton({ title, handler }: PrimaryButtonProps) {
   return (
     <TouchableOpacity style={styles.buttonPrimary} onPress={handler}>
-      <HeadingText type="h4" color="white" fontWeight="bold">{title}</HeadingText>
+      <HeadingText type="h5" color="white" fontWeight="bold">{title}</HeadingText>
     </TouchableOpacity>
   );
 }

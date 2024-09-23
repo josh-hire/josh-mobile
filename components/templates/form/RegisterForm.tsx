@@ -72,7 +72,7 @@ export default function RegisterForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/(tabs)/home");
+      router.push("/(auth)/verification");
       console.log("Form Data:", formData);
     }
   };
@@ -107,7 +107,7 @@ export default function RegisterForm() {
         label="Phone Number"
         onChangeText={(value: string) => handleInputChange("phone", value)}
         placeholder="Enter your phone number"
-        type="number"
+        type="numeric"
         text={formData.phone}
         error={errors.phone}
       />

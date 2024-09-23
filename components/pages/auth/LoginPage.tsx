@@ -1,17 +1,17 @@
 import { StyleSheet, View } from "react-native";
 
-import RegisterHeader from "../organisms/header/RegisterHeader";
-import RegisterFooter from "../organisms/footer/RegisterFooter";
-import RegisterForm from "../templates/form/RegisterForm";
+import LoginForm from "@/components/templates/form/LoginForm";
+import LoginFooter from "@/components/organisms/footer/LoginFooter";
+import LoginHeader from "../../organisms/header/LoginHeader";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <View style={styles.screen}>
       <View style={styles.stepContainer}>
-        <RegisterHeader />
-        <RegisterForm />
+        <LoginHeader />
+        <LoginForm />
       </View>
-      <RegisterFooter />
+      <LoginFooter />
     </View>
   );
 }

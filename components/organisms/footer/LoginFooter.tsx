@@ -7,16 +7,6 @@ export default function LoginFooter() {
     <>
       <View style={styles.haveAccountContainer}>
         <HeadingText type="h6" fontWeight="bold">
-          Sample OTP Page
-        </HeadingText>
-        <Link href="/(auth)/verification">
-          <HeadingText type="h6" color="red" fontWeight="bold">
-            Go
-          </HeadingText>
-        </Link>
-      </View>
-      <View style={styles.haveAccountContainer}>
-        <HeadingText type="h6" fontWeight="bold">
           Don't Have An Account?
         </HeadingText>
         <Link href="/(auth)/register">

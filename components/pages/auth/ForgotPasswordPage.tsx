@@ -1,13 +1,13 @@
 import { StyleSheet, View } from "react-native";
-import VerificationHeader from "../organisms/header/VerificationHeader";
-import VerificationForm from "../templates/form/VerificationForm";
+import ForgotPasswordHeader from "../../organisms/header/ForgotPasswordHeader";
+import ForgotPAsswordForm from "../../templates/form/ForgotPasswordForm";
 
-export default function VerificationPage() {
+export default function ForgotPasswordPage() {
   return (
     <View style={styles.screen}>
       <View style={styles.stepContainer}>
-        <VerificationHeader />
-        <VerificationForm />
+        <ForgotPasswordHeader />
+        <ForgotPAsswordForm />
       </View>
     </View>
   );
@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   stepContainer: {
-    gap: 48,
-  },
+    gap: 48
+  }
 });

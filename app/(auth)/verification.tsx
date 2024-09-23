@@ -1,4 +1,4 @@
-import VerificationPage from "@/components/pages/VerificationPage";
+import VerificationPage from "@/components/pages/auth/VerificationPage";
 
 export default function VerificationScreen() {
   return <VerificationPage />;

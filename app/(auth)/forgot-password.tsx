@@ -1,4 +1,4 @@
-import ForgotPasswordPage from "@/components/pages/ForgotPasswordPage";
+import ForgotPasswordPage from "@/components/pages/auth/ForgotPasswordPage";
 
 export default function ForgotPasswordScreen() {
 
