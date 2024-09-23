@@ -3,7 +3,12 @@ import { HeadingText } from "@/components/atoms/text/HeadingText";
 import TextInputForm from "@/components/molecules/form/TextInputForm";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { useMutation } from "@tanstack/react-query";
+import { useAuthStore } from "../../../store/useAuthStore";
+import { login } from "../../../api/authApi";
+import ErrorBox from "@/components/atoms/error/ErrorBox";
+import { Colors } from "@/constants/Colors";
 
 interface FormData {
   email: string;
@@ -21,7 +26,22 @@ export default function LoginForm() {
     password: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [error, setError] = useState<string>("");
   const router = useRouter();
+
+  const { setToken } = useAuthStore();
+
+  const mutation = useMutation({
+    mutationFn: () => login(formData.email, formData.password),
+    onSuccess: (data) => {
+      setToken(data.token);
+      router.push("/(tabs)/home");
+    },
+    onError: (error) => {
+      setError(error.message);
+      console.error("Login failed:", error);
+    },
+  });
 
   const handleInputChange = (name: keyof FormData, value: string) => {
     setFormData((prevState) => ({
@@ -62,13 +82,13 @@ export default function LoginForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/(tabs)/home");
-      console.log("Form Data:", formData);
+      mutation.mutate();
     }
   };
 
   return (
     <View style={styles.loginForm}>
+      {error !== "" ? <ErrorBox error={error} /> : <View />}
       <TextInputForm
         label="Your email address"
         onChangeText={(value: string) => handleInputChange("email", value)}
@@ -92,10 +112,11 @@ export default function LoginForm() {
           </HeadingText>
         </Link>
       </View>
-      <PrimaryButton
-        title="Sign In"
-        handler={handleSubmit}
-      />
+      {mutation.isPending ? (
+        <ActivityIndicator size="large" color={Colors.primary.p04} />
+      ) : (
+        <PrimaryButton title="Sign In" handler={handleSubmit} />
+      )}
     </View>
   );
 }

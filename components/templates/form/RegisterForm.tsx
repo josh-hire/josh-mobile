@@ -3,7 +3,11 @@ import { HeadingText } from "@/components/atoms/text/HeadingText";
 import TextInputForm from "@/components/molecules/form/TextInputForm";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { useMutation } from "@tanstack/react-query";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { register } from "../../../api/authApi";
+import { Colors } from "@/constants/Colors";
+import ErrorBox from "@/components/atoms/error/ErrorBox";
 
 interface FormData {
   name: string;
@@ -27,7 +31,19 @@ export default function RegisterForm() {
     phone: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [error, setError] = useState<string>("");
   const router = useRouter();
+
+  const mutation = useMutation({
+    mutationFn: () => register(formData.email, "12345678"),
+    onSuccess: () => {
+      router.push("/(auth)");
+    },
+    onError: (error) => {
+      setError(error.message);
+      console.error("Registration failed:", error);
+    },
+  });
 
   const handleInputChange = (name: keyof FormData, value: string) => {
     setFormData((prevState) => ({
@@ -72,13 +88,13 @@ export default function RegisterForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/(auth)/verification");
-      console.log("Form Data:", formData);
+      mutation.mutate();
     }
   };
 
   return (
     <View style={styles.loginForm}>
+      {error !== "" ? <ErrorBox error={error} /> : <View />}
       <TextInputForm
         label="Name"
         onChangeText={(value: string) => handleInputChange("name", value)}
@@ -118,10 +134,11 @@ export default function RegisterForm() {
           </HeadingText>
         </Link>
       </View>
-      <PrimaryButton
-        title="Sign Up"
-        handler={handleSubmit}
-      />
+      {mutation.isPending ? (
+        <ActivityIndicator size="large" color={Colors.primary.p04} />
+      ) : (
+        <PrimaryButton title="Sign Up" handler={handleSubmit} />
+      )}
     </View>
   );
 }
