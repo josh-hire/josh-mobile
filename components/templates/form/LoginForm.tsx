@@ -35,7 +35,7 @@ export default function LoginForm() {
     mutationFn: () => login(formData.email, formData.password),
     onSuccess: (data) => {
       setToken(data.token);
-      router.push("/(tabs)/home");
+      router.replace("/(tabs)/home");
     },
     onError: (error) => {
       setError(error.message);

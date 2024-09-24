@@ -18,7 +18,7 @@ import { ActivityIndicator, View } from "react-native";
 SplashScreen.preventAutoHideAsync();
 
 export const unstable_settings = {
-  initialRouteName: "(auth)/index",
+  initialRouteName: "(tabs)/home",
 };
 
 export default function RootLayout() {
@@ -52,51 +52,54 @@ export default function RootLayout() {
       </View>
     );
   }
-  
+
+  // console.log(isLoggedIn);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        {isLoggedIn ? (
-          <Stack>
+        <Stack>
+          {/* {isLoggedIn ? (
             <Stack.Screen name="(tabs)/home" options={{ headerShown: false }} />
-          </Stack>
-        ) : (
-          <Stack>
+          ) : (
             <Stack.Screen
-              name="(auth)/index"
+              name="(auth)/login"
               options={{ headerShown: false }}
             />
-            <Stack.Screen
-              name="(auth)/register"
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="(auth)/forgot-password"
-              options={{
-                headerShadowVisible: false,
-                headerTitle: "",
-                contentStyle: { backgroundColor: Colors.general.background },
-              }}
-            />
-            <Stack.Screen
-              name="(auth)/verification"
-              options={{
-                headerShadowVisible: false,
-                headerTitle: "",
-                contentStyle: { backgroundColor: Colors.general.background },
-              }}
-            />
-            <Stack.Screen
-              name="(auth)/reset-password"
-              options={{
-                headerShadowVisible: false,
-                headerTitle: "",
-                contentStyle: { backgroundColor: Colors.general.background },
-              }}
-            />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-        )}
+          )}
+        </Stack> */}
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="(auth)/register"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="(auth)/forgot-password"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: "",
+              contentStyle: { backgroundColor: Colors.general.background },
+            }}
+          />
+          <Stack.Screen
+            name="(auth)/verification"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: "",
+              contentStyle: { backgroundColor: Colors.general.background },
+            }}
+          />
+          <Stack.Screen
+            name="(auth)/reset-password"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: "",
+              contentStyle: { backgroundColor: Colors.general.background },
+            }}
+          />
+          <Stack.Screen name="+not-found" />
+        </Stack>
       </ThemeProvider>
     </QueryClientProvider>
   );

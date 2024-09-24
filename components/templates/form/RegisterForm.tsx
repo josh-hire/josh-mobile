@@ -37,7 +37,7 @@ export default function RegisterForm() {
   const mutation = useMutation({
     mutationFn: () => register(formData.email, "12345678"),
     onSuccess: () => {
-      router.push("/(auth)");
+      router.push("/(auth)/login");
     },
     onError: (error) => {
       setError(error.message);
