@@ -52,7 +52,7 @@ export default function ForgotPAsswordForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/(auth)/verification");
+      router.push("/(auth)/success-forgot-password");
       console.log("Form Data:", formData);
     }
   };

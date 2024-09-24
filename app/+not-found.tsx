@@ -2,7 +2,7 @@ import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import { HeadingText } from "@/components/atoms/text/HeadingText";
 import { Colors } from "@/constants/Colors";
 import { Stack, useRouter } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 export default function NotFoundScreen() {
   const router = useRouter();
@@ -17,6 +17,9 @@ export default function NotFoundScreen() {
         }}
       />
       <View style={styles.screen}>
+        <View style={styles.imageContainer}>
+          <Image source={require("../assets/illustration/not-found.png")} />
+        </View>
         <View style={styles.textContainer}>
           <HeadingText type="h2" fontWeight="bold" textAlign="center">
             Page Not Found
@@ -43,15 +46,17 @@ export default function NotFoundScreen() {
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 16,
-    padding: 36,
+    paddingHorizontal: 36,
     height: "100%",
     backgroundColor: "white",
     justifyContent: "center",
     gap: 48,
   },
+  imageContainer: {
+    alignSelf: "center",
+  },
   textContainer: {
-    gap: 12
+    gap: 12,
   },
   paragraghText: {
     paddingHorizontal: 32,
