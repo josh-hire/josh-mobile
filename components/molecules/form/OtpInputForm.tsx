@@ -7,6 +7,7 @@ interface OtpInputFormProps {
   setOtpCode: Dispatch<SetStateAction<string>>;
   setIsPinReady: Dispatch<SetStateAction<boolean>>;
   maximumLength: number;
+  isExpired: boolean;
 }
 
 export default function OtpInputForm({
@@ -14,6 +15,7 @@ export default function OtpInputForm({
   setOtpCode,
   setIsPinReady,
   maximumLength,
+  isExpired,
 }: OtpInputFormProps) {
   const [isInputBoxFocused, setIsInputBoxFocused] = useState<boolean>(true);
 
@@ -29,12 +31,20 @@ export default function OtpInputForm({
     const isCodeComplete = otpCode.length === maximumLength;
 
     const isValueFocused = isCurrentValue || (isLastValue && isCodeComplete);
-    const StyledSplitBoxes =
-      digit != '' ? styles.splitBoxesFilled : isInputBoxFocused && isValueFocused ? styles.splitBoxesFocused : styles.splitBoxes;
-    
+    const StyledSplitBoxes = isExpired
+      ? styles.splitBoxesError
+      : digit != ""
+      ? styles.splitBoxesFilled
+      : isInputBoxFocused && isValueFocused
+      ? styles.splitBoxesFocused
+      : styles.splitBoxes;
+    const StyledSplitTextBoxes = isExpired || isCurrentValue
+      ? styles.splitBoxesTextError
+      : styles.splitBoxesText;
+
     return (
       <View style={StyledSplitBoxes} key={index}>
-        <Text style={styles.splitBoxesText}>{digit}</Text>
+        <Text style={StyledSplitTextBoxes}>{isCurrentValue ? "|" : digit}</Text>
       </View>
     );
   };
@@ -50,7 +60,10 @@ export default function OtpInputForm({
   return (
     <>
       <View style={styles.container}>
-        <Pressable onPress={handleOnPress} style={styles.splitOTPBoxesContainer}>
+        <Pressable
+          onPress={handleOnPress}
+          style={styles.splitOTPBoxesContainer}
+        >
           {boxArray.map(boxDigit)}
         </Pressable>
         <TextInput
@@ -78,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 15,
     opacity: 0,
-    position: 'absolute'
+    position: "absolute",
   },
   splitOTPBoxesContainer: {
     width: 300,
@@ -107,9 +120,21 @@ const styles = StyleSheet.create({
     padding: 5,
     minWidth: 42,
   },
+  splitBoxesError: {
+    borderColor: Colors.primary.p04,
+    borderWidth: 3,
+    borderRadius: 8,
+    padding: 5,
+    minWidth: 42,
+  },
   splitBoxesText: {
     fontSize: 20,
     textAlign: "center",
-    color: "#e5e5e5",
+    color: Colors.neutral.n00,
+  },
+  splitBoxesTextError: {
+    fontSize: 20,
+    textAlign: "center",
+    color: Colors.neutral.n09,
   },
 });

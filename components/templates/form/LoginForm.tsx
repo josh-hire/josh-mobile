@@ -106,7 +106,7 @@ export default function LoginForm() {
         error={errors.password}
       />
       <View style={styles.forgotPasswordContainer}>
-        <Link href="/(auth)/forgot-password">
+        <Link href="/(auth)/verification">
           <HeadingText type="label" color="red">
             Forgot Password?
           </HeadingText>
