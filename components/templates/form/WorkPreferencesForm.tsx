@@ -1,6 +1,7 @@
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import ErrorBox from "@/components/atoms/error/ErrorBox";
 import CheckboxList from "@/components/atoms/input/Checkbox";
+import CheckboxSingle from "@/components/atoms/input/CheckboxSingle";
 import Dropdown from "@/components/atoms/input/Dropdown";
 import { HeadingText } from "@/components/atoms/text/HeadingText";
 import { Colors } from "@/constants/Colors";
@@ -9,7 +10,7 @@ import { StyleSheet, View } from "react-native";
 
 interface FormData {
   city: string;
-  workplace: string[];
+  isRemote: boolean;
   worktype: string[];
 }
 
@@ -21,7 +22,7 @@ interface FormErrors {
 export default function WorkPreferencesForm() {
   const [formData, setFormData] = useState<FormData>({
     city: "",
-    workplace: [],
+    isRemote: false,
     worktype: [],
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -29,7 +30,7 @@ export default function WorkPreferencesForm() {
 
   const handleInputChange = (
     name: keyof FormData,
-    value: string | string[]
+    value: string | string[] | boolean
   ) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -83,10 +84,10 @@ export default function WorkPreferencesForm() {
         <HeadingText type="h4" fontWeight="bold" style={styles.label}>
           Workplace models
         </HeadingText>
-        <CheckboxList
+        <CheckboxSingle
           data={["I want to work remotely"]}
-          onSelectionChange={(value: string[]) =>
-            handleInputChange("workplace", value)
+          onSelectionChange={(value: boolean) =>
+            handleInputChange("isRemote", value)
           }
         />
         <HeadingText type="h4" fontWeight="bold" style={styles.label}>
