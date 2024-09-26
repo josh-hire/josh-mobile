@@ -12,9 +12,10 @@ import { Colors } from "@/constants/Colors";
 
 interface DropdownProps {
   data: string[];
-  selectedValue?: string;
+  selectedValue: string | null;
   onValueChange: (value: string) => void;
   placeholder?: string;
+  error?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -22,6 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   selectedValue,
   onValueChange,
   placeholder = "Select...",
+  error
 }) => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState<string>(selectedValue || "");
@@ -53,7 +55,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <TouchableOpacity
         ref={dropdownRef}
         onPress={openDropdown}
-        style={styles.dropdown}
+        style={[styles.dropdown, error != null && styles.dropdownError ]}
       >
         <HeadingText type="h5" style={styles.selectedText}>
           {selected ? selected : placeholder}
@@ -127,6 +129,10 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  dropdownError: {
+    borderColor: Colors.primary.p04,
+    borderWidth: 2
   },
   selectedText: {
     color: "#000",

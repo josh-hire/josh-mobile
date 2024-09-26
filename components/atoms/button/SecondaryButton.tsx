@@ -1,11 +1,19 @@
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
+import { ButtonProps, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 
-export default function SecondaryButton() {
+export type SecondaryButtonProps = ButtonProps & {
+  title: string;
+  handler: () => void;
+};
+
+export default function SecondaryButton({
+  title,
+  handler,
+}: SecondaryButtonProps) {
   return (
-    <TouchableOpacity style={styles.secondaryButton}>
+    <TouchableOpacity style={styles.secondaryButton} onPress={handler}>
       <Image source={require("../../../assets/icons/plus-01.png")}></Image>
-      <HeadingText type="h5">Add Job Title</HeadingText>
+      <HeadingText type="h5">{title}</HeadingText>
     </TouchableOpacity>
   );
 }

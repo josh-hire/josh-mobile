@@ -1,6 +1,5 @@
 import { Colors } from "@/constants/Colors";
-import { Href } from "expo-router";
-import { type ButtonProps, StyleSheet, Text } from "react-native";
+import { type ButtonProps, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 

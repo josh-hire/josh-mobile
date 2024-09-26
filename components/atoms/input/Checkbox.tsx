@@ -13,12 +13,14 @@ interface CheckboxListProps {
   data: string[];
   onSelectionChange: (selectedItems: string[]) => void;
   numColumns?: number;
+  error?: string;
 }
 
 export default function CheckboxList({
   data,
   onSelectionChange,
-  numColumns = 2,
+  numColumns = 1,
+  error
 }: CheckboxListProps) {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
@@ -48,7 +50,7 @@ export default function CheckboxList({
             style={
               selectedItems.includes(item)
                 ? styles.checkboxChecked
-                : styles.checkbox
+                : error != null ? styles.checkboxError : styles.checkbox
             }
           >
             {selectedItems.includes(item) && (
@@ -82,6 +84,13 @@ const styles = StyleSheet.create({
     height: 18,
     borderWidth: 2,
     borderColor: Colors.neutral.n09,
+    marginRight: 10,
+  },
+  checkboxError: {
+    width: 18,
+    height: 18,
+    borderWidth: 2,
+    borderColor: Colors.primary.p04,
     marginRight: 10,
   },
   checkboxChecked: {

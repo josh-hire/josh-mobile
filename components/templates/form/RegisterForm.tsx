@@ -87,9 +87,10 @@ export default function RegisterForm() {
   };
 
   const handleSubmit = () => {
-    if (validateForm()) {
-      mutation.mutate();
-    }
+    router.push('/registration/professional-information')
+    // if (validateForm()) {
+    //   mutation.mutate();
+    // }
   };
 
   return (
