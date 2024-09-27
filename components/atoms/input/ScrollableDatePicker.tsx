@@ -8,6 +8,7 @@ import {
   Animated,
   Dimensions,
   Pressable,
+  Image,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
@@ -133,6 +134,7 @@ const ScrollableDatePicker = ({
       <HeadingText type="h4">{title}</HeadingText>
       <TouchableOpacity onPress={showModal} style={styles.openButton}>
         <HeadingText style={styles.openButtonText}>{selectedDate.toLocaleString('default', { month: 'long' })} {selectedDate.getFullYear()}</HeadingText>
+        <Image source={require("../../../assets/icons/chevron-down.png")} />
       </TouchableOpacity>
       {isModalVisible && (
         <Modal
@@ -176,7 +178,9 @@ const styles = StyleSheet.create({
   openButton: {
     borderRadius: 8,
     borderWidth: 1,
-    padding: 8
+    padding: 8,
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   openButtonText: {
     fontSize: 16,

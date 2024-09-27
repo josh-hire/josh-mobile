@@ -108,7 +108,7 @@ export function TextInputSuggestion({
       )}
 
       {error && (
-        <HeadingText style={{ color: Colors.primary.p04, marginTop: 5 }}>
+        <HeadingText type="label" style={{ color: Colors.primary.p04, marginTop: 5 }}>
           {error}
         </HeadingText>
       )}
