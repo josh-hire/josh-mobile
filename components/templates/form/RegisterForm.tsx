@@ -87,7 +87,7 @@ export default function RegisterForm() {
   };
 
   const handleSubmit = () => {
-    router.push('/registration/last-work')
+    router.push('/registration/education-background')
 
   };
 
