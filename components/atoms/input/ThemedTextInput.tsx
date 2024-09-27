@@ -5,6 +5,8 @@ import {
   View,
   InputModeOptions,
   TouchableOpacity,
+  TextInputSubmitEditingEventData,
+  NativeSyntheticEvent,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
@@ -13,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 export type ThemedTextInputProps = {
   text: string;
   onChangeText: (text: string) => void;
+  onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
   placeholder: string;
   type: string;
   error?: string;
@@ -21,6 +24,7 @@ export type ThemedTextInputProps = {
 export function ThemedTextInput({
   text,
   onChangeText,
+  onSubmit,
   placeholder,
   type,
   error,
@@ -59,6 +63,7 @@ export function ThemedTextInput({
           secureTextEntry={type === "password" && !showPassword}
           inputMode={type === "password" ? "text" : (type as InputModeOptions)}
           placeholderTextColor="#999"
+          onSubmitEditing={onSubmit}
         />
 
          {type === "password" && (

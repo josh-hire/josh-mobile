@@ -5,6 +5,7 @@ import CheckboxSingle from "@/components/atoms/input/CheckboxSingle";
 import Dropdown from "@/components/atoms/input/Dropdown";
 import { HeadingText } from "@/components/atoms/text/HeadingText";
 import { Colors } from "@/constants/Colors";
+import { router } from "expo-router";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
@@ -61,6 +62,7 @@ export default function WorkPreferencesForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
+        router.push("/(auth)/registration/skill-possesed")
     }
   };
 
