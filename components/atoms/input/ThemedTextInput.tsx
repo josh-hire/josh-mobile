@@ -5,14 +5,17 @@ import {
   View,
   InputModeOptions,
   TouchableOpacity,
+  TextInputSubmitEditingEventData,
+  NativeSyntheticEvent,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
-import { Ionicons } from "@expo/vector-icons"; // Ikon dari Ionicons
+import { Ionicons } from "@expo/vector-icons";
 
 export type ThemedTextInputProps = {
   text: string;
   onChangeText: (text: string) => void;
+  onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
   placeholder: string;
   type: string;
   error?: string;
@@ -21,19 +24,20 @@ export type ThemedTextInputProps = {
 export function ThemedTextInput({
   text,
   onChangeText,
+  onSubmit,
   placeholder,
   type,
   error,
 }: ThemedTextInputProps) {
   const [isFocused, setIsFocused] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // State untuk toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleBlur = () => {
     setIsFocused(false);
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword); // Toggle visibilitas password
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -56,19 +60,19 @@ export function ThemedTextInput({
           placeholder={placeholder}
           onFocus={() => setIsFocused(true)}
           onBlur={handleBlur}
-          secureTextEntry={type === "password" && !showPassword} // Tampilkan atau sembunyikan password
+          secureTextEntry={type === "password" && !showPassword}
           inputMode={type === "password" ? "text" : (type as InputModeOptions)}
           placeholderTextColor="#999"
+          onSubmitEditing={onSubmit}
         />
 
-        {/* Jika type password, tambahkan tombol untuk toggle visibilitas */}
-        {type === "password" && (
+         {type === "password" && (
           <TouchableOpacity
             onPress={togglePasswordVisibility}
             style={styles.icon}
           >
             <Ionicons
-              name={showPassword ? "eye-off" : "eye"} // Ikon berganti sesuai visibilitas
+              name={showPassword ? "eye-off" : "eye"}
               size={24}
               color="#999"
             />

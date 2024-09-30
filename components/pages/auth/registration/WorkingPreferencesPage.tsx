@@ -1,31 +1,29 @@
 import { StyleSheet, View } from "react-native";
 
-import LoginForm from "@/components/templates/form/LoginForm";
-import LoginFooter from "@/components/organisms/footer/LoginFooter";
-import LoginHeader from "../organisms/header/LoginHeader";
+import WorkPreferencesHeader from "@/components/organisms/header/WorkPreferencesHeader";
+import WorkPreferencesForm from "@/components/templates/form/WorkPreferencesForm";
 
-export default function LoginPage() {
+export default function WorkPreferencesPage() {
   return (
     <View style={styles.screen}>
       <View style={styles.stepContainer}>
-        <LoginHeader />
-        <LoginForm />
+        <WorkPreferencesHeader />
+        <WorkPreferencesForm />
       </View>
-      <LoginFooter />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 16,
-    padding: 36,
+    paddingTop: 12,
+    paddingHorizontal: 36,
     height: "100%",
     backgroundColor: "white",
     justifyContent: "space-between",
   },
   stepContainer: {
-    gap: 20,
+    gap: 42,
     marginBottom: 8,
   },
 });

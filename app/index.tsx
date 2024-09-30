@@ -1,28 +1,27 @@
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { useAuthStore } from "@/store/useAuthStore";
+import { Redirect } from "expo-router";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, View } from "react-native";
 
-import { Link } from "expo-router";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+export default function AppLayout() {
+  const { checkLoginStatus, token } = useAuthStore();
+  const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-export default function OnboardingScreen() {
-  return (
-    <SafeAreaView>
-      <View style={styles.titleContainer}>
-        <HeadingText type="h4">Welcome Onboard!</HeadingText>
-      </View>
-      <Link href={"/(auth)/login"}>Login</Link>
-      <Link href={"/(auth)/register"}>Register</Link>
-      <Link href="/(auth)/verification">
-        <HeadingText type="h2">Verification</HeadingText>
-      </Link>
-    </SafeAreaView>
-  );
+  useEffect(() => {
+    const checkLoginAndFont = async () => {
+      const loggedIn = await checkLoginStatus();
+      console.log(loggedIn)
+      setIsLoggedIn(loggedIn);
+      setLoading(false);
+    };
+    
+    checkLoginAndFont();
+  }, []);
+  
+  if(loading) {
+    return <ActivityIndicator />
+  }
+  
+  return <Redirect href={isLoggedIn ? "/(tabs)/home" : "/(auth)/login"} />;
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    marginTop: 28,
-  },
-});

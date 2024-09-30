@@ -1,18 +1,17 @@
 import { Colors } from "@/constants/Colors";
-import { Href } from "expo-router";
-import { type ButtonProps, StyleSheet, Text } from "react-native";
+import { type ButtonProps, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
+import { HeadingText } from "../text/HeadingText";
 
 export type PrimaryButtonProps = ButtonProps & {
   title: string;
-  link: Href<string | object>;
   handler: () => void;
 };
 
-export function PrimaryButton({ title, link, handler }: PrimaryButtonProps) {
+export function PrimaryButton({ title, handler }: PrimaryButtonProps) {
   return (
     <TouchableOpacity style={styles.buttonPrimary} onPress={handler}>
-      <Text style={styles.buttonPrimaryText}>{title}</Text>
+      <HeadingText type="h5" color="white" fontWeight="bold">{title}</HeadingText>
     </TouchableOpacity>
   );
 }
@@ -25,9 +24,4 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     height: 40,
   },
-  buttonPrimaryText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontFamily: 'TelkomselBatik'
-  }
 });

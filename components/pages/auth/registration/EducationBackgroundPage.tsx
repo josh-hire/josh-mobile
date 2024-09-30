@@ -1,31 +1,28 @@
+import EducationBackgroundHeader from "@/components/organisms/header/EducationBackgroundHeader";
+import EducationBackgroundForm from "@/components/templates/form/EducationBackgroundForm";
 import { StyleSheet, View } from "react-native";
 
-import RegisterHeader from "../organisms/header/RegisterHeader";
-import RegisterFooter from "../organisms/footer/RegisterFooter";
-import RegisterForm from "../templates/form/RegisterForm";
 
-export default function RegisterPage() {
+export default function EducationBackgroundPage() {
   return (
     <View style={styles.screen}>
       <View style={styles.stepContainer}>
-        <RegisterHeader />
-        <RegisterForm />
+        <EducationBackgroundHeader />
+        <EducationBackgroundForm />
       </View>
-      <RegisterFooter />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 16,
-    padding: 36,
+    paddingHorizontal: 36,
     height: "100%",
     backgroundColor: "white",
     justifyContent: "space-between",
   },
   stepContainer: {
-    gap: 20,
+    gap: 42,
     marginBottom: 8,
   },
 });

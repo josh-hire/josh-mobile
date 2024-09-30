@@ -4,24 +4,26 @@ import { StyleSheet, View } from "react-native";
 
 export default function LoginFooter() {
   return (
-    <View style={styles.haveAccountContainer}>
-      <HeadingText type="h6" fontWeight="bold">
-        Don't Have An Account?
-      </HeadingText>
-      <Link href="/(auth)/register">
-        <HeadingText type="h6" color="red" fontWeight="bold">
-          Sign Up
+    <>
+      <View style={styles.haveAccountContainer}>
+        <HeadingText type="h6" fontWeight="bold">
+          Don't Have An Account?
         </HeadingText>
-      </Link>
-    </View>
+        <Link href="/(auth)/register">
+          <HeadingText type="h6" color="red" fontWeight="bold">
+            Sign Up
+          </HeadingText>
+        </Link>
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-    haveAccountContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 4,
-    },
-  });
+  haveAccountContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 4,
+  },
+});
