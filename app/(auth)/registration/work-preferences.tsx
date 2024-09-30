@@ -1,4 +1,4 @@
-import WorkPreferencesPage from "@components/pages/auth/registration/WorkingPreferencesPage";
+import WorkPreferencesPage from "@modules/feature/auth/registrations/workingPreferencesPage";
 import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
