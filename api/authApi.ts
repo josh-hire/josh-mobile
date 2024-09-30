@@ -1,6 +1,8 @@
+import { API_URL } from "@/configs";
+
 export const login = async (email: string, password: string) => {
   const response = await fetch(
-    "https://sc-express-movieapi.vercel.app/api/login",
+    `${API_URL}/login`,
     {
       method: "POST",
       headers: {
@@ -20,16 +22,13 @@ export const login = async (email: string, password: string) => {
 };
 
 export const register = async (email: string, password: string) => {
-  const response = await fetch(
-    "https://sc-express-movieapi.vercel.app/api/user",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    }
-  );
+  const response = await fetch(`${API_URL}/user`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
 
   const data = await response.json();
 
