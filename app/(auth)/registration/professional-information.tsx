@@ -1,5 +1,5 @@
-import ProfessionalInformationPage from "@/components/pages/auth/registration/ProfessionalInformationPage";
-import { Colors } from "@/constants/Colors";
+import ProfessionalInformationPage from "@/modules/feature/auth/registrations/professionalInformationPage";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function ProfessionalInformation() {

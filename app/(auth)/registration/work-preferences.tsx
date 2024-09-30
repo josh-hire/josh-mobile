@@ -1,5 +1,5 @@
-import WorkPreferencesPage from "@/components/pages/auth/registration/WorkingPreferencesPage";
-import { Colors } from "@/constants/Colors";
+import WorkPreferencesPage from "@components/pages/auth/registration/WorkingPreferencesPage";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function WorkPreferences() {

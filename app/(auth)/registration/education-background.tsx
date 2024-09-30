@@ -1,5 +1,5 @@
 import EducationBackgroundPage from "@modules/feature/auth/registrations/educationBackgroundPage";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function EducationBackground() {
