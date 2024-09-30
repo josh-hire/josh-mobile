@@ -1,14 +1,14 @@
-import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import TextInputForm from "@/components/molecules/form/TextInputForm";
+import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { TextArea } from "@components/atoms/input/TextArea";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { useMutation } from "@tanstack/react-query";
 import { useAuthStore } from "../../../store/useAuthStore";
 import { login } from "../../../api/authApi";
-import ErrorBox from "@/components/atoms/error/ErrorBox";
-import { Colors } from "@/constants/Colors";
+import ErrorBox from "@components/atoms/error/ErrorBox";
+import { Colors } from "@constants/Colors";
 
 interface FormData {
   email: string;
@@ -89,7 +89,7 @@ export default function LoginForm() {
   return (
     <View style={styles.loginForm}>
       {error !== "" ? <ErrorBox error={error} /> : <View />}
-      <TextInputForm
+      <TextArea
         label="Your email address"
         onChangeText={(value: string) => handleInputChange("email", value)}
         placeholder="Afgan@gmail.com"
@@ -97,7 +97,7 @@ export default function LoginForm() {
         text={formData.email}
         error={errors.email}
       />
-      <TextInputForm
+      <TextArea
         label="Your password"
         onChangeText={(value: string) => handleInputChange("password", value)}
         placeholder="************"
