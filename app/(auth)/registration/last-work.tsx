@@ -1,4 +1,4 @@
-import LastWorkPage from "@/components/pages/auth/registration/LastWorkPage";
+import LastWorkPage from "@modules/feature/auth/registrations/lastWorkPage";
 import { Colors } from "@/constants/Colors";
 import { Stack } from "expo-router";
 
