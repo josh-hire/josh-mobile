@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
+import { Assets } from "@/constants/Assets";
 
 const ITEM_HEIGHT = 40;
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");
@@ -134,7 +135,7 @@ const ScrollableDatePicker = ({
       <HeadingText type="h4">{title}</HeadingText>
       <TouchableOpacity onPress={showModal} style={styles.openButton}>
         <HeadingText style={styles.openButtonText}>{selectedDate.toLocaleString('default', { month: 'long' })} {selectedDate.getFullYear()}</HeadingText>
-        <Image source={require("../../../assets/icons/chevron-down.png")} />
+        <Image source={Assets.icons.chevronDown} />
       </TouchableOpacity>
       {isModalVisible && (
         <Modal

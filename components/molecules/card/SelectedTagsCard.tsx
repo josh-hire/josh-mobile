@@ -1,4 +1,5 @@
 import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { Assets } from "@/constants/Assets";
 import { Colors } from "@/constants/Colors";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
@@ -14,7 +15,7 @@ export default function SelectedTagsCard({ title, onTap }: SelectedTagsCardProps
         <HeadingText type="h6" color={Colors.neutral.n00}>
           {title}
         </HeadingText>
-        <Image source={require("../../../assets/icons/x-02.png")}></Image>
+        <Image source={Assets.icons.x02}></Image>
       </View>
     </TouchableOpacity>
   );
