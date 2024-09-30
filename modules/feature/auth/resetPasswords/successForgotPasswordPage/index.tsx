@@ -1,8 +1,8 @@
-import { StyleSheet, View } from "react-native";
-import SuccessForgotPasswordHeader from "@components/organisms/header/SuccessForgotPasswordHeader";
+import { View } from "react-native";
+import SuccessForgotPasswordHeader from "@/modules/feature/auth/resetPasswords/successForgotPasswordPage/SuccessForgotPasswordHeader";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { useRouter } from "expo-router";
-import styles from "@modules/feature/auth/resetPasswords/successForgotPasswordPage/successForgot.styles"
+import styles from "@styles/global.styles";
 
 export default function SuccessForgotPasswordPage() {
   const router = useRouter();

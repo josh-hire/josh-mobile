@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  screen: {
-    paddingHorizontal: 36,
-    paddingTop: 48,
-    height: "100%",
-    backgroundColor: "white",
+  container: {
+    paddingHorizontal: 12,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  stepContainer: {
-    gap: 64,
+  smallContainer: {
+    paddingHorizontal: 18,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
