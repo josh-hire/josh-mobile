@@ -12,23 +12,25 @@ import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
-export type ThemedTextInputProps = {
+export type TextAreaProps = {
   text: string;
   onChangeText: (text: string) => void;
-  onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
+  onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void;
   placeholder: string;
   type: string;
   error?: string;
+  label?: string;
 };
 
-export function ThemedTextInput({
+export function TextArea({
   text,
   onChangeText,
   onSubmit,
   placeholder,
   type,
   error,
-}: ThemedTextInputProps) {
+  label,
+}: TextAreaProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -41,14 +43,14 @@ export function ThemedTextInput({
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <View
         style={[
-          styles.container,
           isFocused && styles.containerFocused,
           error ? styles.containerError : {},
         ]}
       >
+        <HeadingText type="h4">{label}</HeadingText>
         <TextInput
           style={[
             styles.textInput,
@@ -66,7 +68,7 @@ export function ThemedTextInput({
           onSubmitEditing={onSubmit}
         />
 
-         {type === "password" && (
+        {type === "password" && (
           <TouchableOpacity
             onPress={togglePasswordVisibility}
             style={styles.icon}
@@ -90,8 +92,7 @@ export function ThemedTextInput({
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 10,
-    height: 40
+    marginBottom: 20,
   },
   containerFocused: {
     elevation: 10,
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary.p04,
   },
   textInput: {
-    height: 40,
+    minHeight: 40,
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
@@ -116,6 +117,6 @@ const styles = StyleSheet.create({
   icon: {
     position: "absolute",
     right: 10,
-    top: 8,
+    top: 32,
   },
 });

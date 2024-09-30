@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 
-export type TextInputSuggestionProps = {
+export type TextAreaSuggestionProps = {
   text: string;
   onChangeText: (text: string) => void;
   placeholder: string;
@@ -18,14 +18,14 @@ export type TextInputSuggestionProps = {
   suggestions: string[];
 };
 
-export function TextInputSuggestion({
+export function TextAreaSuggestion({
   text,
   onChangeText,
   placeholder,
   type,
   error,
   suggestions,
-}: TextInputSuggestionProps) {
+}: TextAreaSuggestionProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
   const [pressedItem, setPressedItem] = useState<string | null>(null);
