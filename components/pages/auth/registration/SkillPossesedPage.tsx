@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 
 import SkillPossesedHeader from "@/components/organisms/header/SkillPossesedHeader";
-import SkillPossesedForm from "@/components/templates/form/SkillPossesedForm";
+import SkillPossesedForm from "@/components/molecules/form/SkillPossesedForm";
 
 export default function SkillPossesedPage() {
   return (

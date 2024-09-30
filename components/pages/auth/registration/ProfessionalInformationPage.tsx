@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 
 import ProfessionalInformationHeader from "@/components/organisms/header/ProfessionalInformationHeader";
-import ProfessionalInformationForm from "@/components/templates/form/ProfessionalInformationForm";
+import ProfessionalInformationForm from "@/components/molecules/form/ProfessionalInformationForm";
 
 export default function ProfessionalInformationPage() {
   return (

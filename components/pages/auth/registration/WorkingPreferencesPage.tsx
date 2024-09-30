@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 
 import WorkPreferencesHeader from "@/components/organisms/header/WorkPreferencesHeader";
-import WorkPreferencesForm from "@/components/templates/form/WorkPreferencesForm";
+import WorkPreferencesForm from "@/components/molecules/form/WorkPreferencesForm";
 
 export default function WorkPreferencesPage() {
   return (
