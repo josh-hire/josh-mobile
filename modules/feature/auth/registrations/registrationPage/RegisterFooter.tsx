@@ -1,6 +1,7 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Link } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import styles from "@modules/feature/auth/registrations/registrationPage/registration.styles"
 
 export default function RegisterFooter() {
   return (
@@ -16,12 +17,3 @@ export default function RegisterFooter() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    haveAccountContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: 4,
-    },
-  });
