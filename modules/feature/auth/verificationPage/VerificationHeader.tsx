@@ -1,5 +1,6 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { StyleSheet, View } from "react-native";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { View } from "react-native";
+import styles from "@modules/feature/auth/verificationPage/verification.styles";
 
 export default function VerificationHeader() {
   return (
@@ -15,16 +16,3 @@ export default function VerificationHeader() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      paddingHorizontal: 12,
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    smallContainer: {
-      paddingHorizontal: 12,
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  });
