@@ -1,13 +1,14 @@
 import { StyleSheet, View } from "react-native";
-import SuccessForgotPasswordHeader from "../../organisms/header/SuccessForgotPasswordHeader";
-import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
+import SuccessForgotPasswordHeader from "@components/organisms/header/SuccessForgotPasswordHeader";
+import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { useRouter } from "expo-router";
+import styles from "@modules/feature/auth/resetPasswords/successForgotPasswordPage/successForgot.styles"
 
 export default function SuccessForgotPasswordPage() {
   const router = useRouter();
 
   const handleSubmit = () => {
-      router.replace("/(auth)/success-forgot-password");
+    router.replace("/(auth)/success-forgot-password");
   };
 
   return (
@@ -19,15 +20,3 @@ export default function SuccessForgotPasswordPage() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    paddingHorizontal: 36,
-    paddingTop: 48,
-    height: "100%",
-    backgroundColor: "white",
-  },
-  stepContainer: {
-    gap: 64,
-  },
-});
