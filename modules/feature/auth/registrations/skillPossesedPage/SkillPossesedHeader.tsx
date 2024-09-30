@@ -1,5 +1,6 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { StyleSheet, View } from "react-native";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { View } from "react-native";
+import styles from "@modules/feature/auth/registrations/skillPossesedPage/skillPossesed.styles"
 
 export default function SkillPossesedHeader() {
   return (
@@ -11,9 +12,3 @@ export default function SkillPossesedHeader() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 8,
-  },
-});

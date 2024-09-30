@@ -1,4 +1,4 @@
-import SkillPossesedPage from "@/components/pages/auth/registration/SkillPossesedPage";
+import SkillPossesedPage from "@/modules/feature/auth/registrations/skillPossesedPage";
 import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
