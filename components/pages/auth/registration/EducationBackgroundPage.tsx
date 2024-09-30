@@ -1,5 +1,5 @@
 import EducationBackgroundHeader from "@/components/organisms/header/EducationBackgroundHeader";
-import EducationBackgroundForm from "@/components/templates/form/EducationBackgroundForm";
+import EducationBackgroundForm from "@/components/molecules/form/EducationBackgroundForm";
 import { StyleSheet, View } from "react-native";
 
 

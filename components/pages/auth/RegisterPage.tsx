@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 
 import RegisterHeader from "../../organisms/header/RegisterHeader";
 import RegisterFooter from "../../organisms/footer/RegisterFooter";
-import RegisterForm from "../../templates/form/RegisterForm";
+import RegisterForm from "../../molecules/form/RegisterForm";
 
 export default function RegisterPage() {
   return (

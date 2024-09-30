@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import VerificationHeader from "../../organisms/header/VerificationHeader";
-import VerificationForm from "../../templates/form/VerificationForm";
+import VerificationForm from "../../molecules/form/VerificationForm";
 
 export default function VerificationPage() {
   return (

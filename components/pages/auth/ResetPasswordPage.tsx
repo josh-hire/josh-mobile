@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import ResetPasswordHeader from "../../organisms/header/ResetPasswordHeader";
-import ResetPasswordForm from "../../templates/form/ResetPasswordForm";
+import ResetPasswordForm from "../../molecules/form/ResetPasswordForm";
 
 export default function ResetPasswordPage() {
   return (

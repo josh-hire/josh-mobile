@@ -1,5 +1,5 @@
 import LastWorkHeader from "@/components/organisms/header/LastWorkHeader";
-import LastWorkForm from "@/components/templates/form/LastWorkForm";
+import LastWorkForm from "@/components/molecules/form/LastWorkForm";
 import { StyleSheet, View } from "react-native";
 
 

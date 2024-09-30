@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import ForgotPasswordHeader from "../../organisms/header/ForgotPasswordHeader";
-import ForgotPAsswordForm from "../../templates/form/ForgotPasswordForm";
+import ForgotPAsswordForm from "../../molecules/form/ForgotPasswordForm";
 
 export default function ForgotPasswordPage() {
   return (
