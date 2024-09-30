@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { Colors } from "@/constants/Colors";
+import { Assets } from "@/constants/Assets";
 
 interface DropdownProps {
   data: string[];
@@ -62,11 +63,11 @@ const Dropdown: React.FC<DropdownProps> = ({
         </HeadingText>
         {visible ? (
           <Image
-            source={require("../../../assets/icons/chevron-up.png")}
+            source={Assets.icons.chevronUp}
           ></Image>
         ) : (
           <Image
-            source={require("../../../assets/icons/chevron-down.png")}
+            source={Assets.icons.chevronDown}
           ></Image>
         )}
       </TouchableOpacity>

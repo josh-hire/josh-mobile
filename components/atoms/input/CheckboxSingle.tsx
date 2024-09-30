@@ -2,6 +2,7 @@ import { FlatList, TouchableOpacity, View, Image, StyleSheet } from "react-nativ
 import { HeadingText } from "../text/HeadingText";
 import { useState } from "react";
 import { Colors } from "@/constants/Colors";
+import { Assets } from "@/constants/Assets";
 
 interface CheckboxSingleProps {
   data: string[];
@@ -45,7 +46,7 @@ export default function CheckboxSingle({
           >
             {selectedItem === item && (
               <View style={styles.checked}>
-                <Image source={require("../../../assets/icons/check-01.png")} />
+                <Image source={Assets.icons.check01} />
               </View>
             )}
           </View>

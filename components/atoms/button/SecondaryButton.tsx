@@ -1,5 +1,6 @@
 import { ButtonProps, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { HeadingText } from "../text/HeadingText";
+import { Assets } from "@/constants/Assets";
 
 export type SecondaryButtonProps = ButtonProps & {
   title: string;
@@ -12,7 +13,7 @@ export default function SecondaryButton({
 }: SecondaryButtonProps) {
   return (
     <TouchableOpacity style={styles.secondaryButton} onPress={handler}>
-      <Image source={require("../../../assets/icons/plus-01.png")}></Image>
+      <Image source={Assets.icons.plus01}></Image>
       <HeadingText type="h5">{title}</HeadingText>
     </TouchableOpacity>
   );

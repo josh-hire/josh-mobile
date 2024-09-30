@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
+import { Assets } from "@/constants/Assets";
 
 interface CheckboxListProps {
   data: string[];
@@ -56,7 +57,7 @@ export default function CheckboxList({
             {selectedItems.includes(item) && (
               <View style={styles.checked}>
                 <Image
-                  source={require("../../../assets/icons/check-01.png")}
+                  source={Assets.icons.check01}
                 ></Image>
               </View>
             )}

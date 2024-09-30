@@ -1,5 +1,6 @@
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
 import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { Assets } from "@/constants/Assets";
 import { Colors } from "@/constants/Colors";
 import { Stack, useRouter } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
@@ -18,7 +19,7 @@ export default function NotFoundScreen() {
       />
       <View style={styles.screen}>
         <View style={styles.imageContainer}>
-          <Image source={require("../assets/illustration/not-found.png")} />
+          <Image source={Assets.illustrations.notFound} />
         </View>
         <View style={styles.textContainer}>
           <HeadingText type="h2" fontWeight="bold" textAlign="center">
