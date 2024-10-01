@@ -7,6 +7,7 @@ import ErrorBox from "@components/atoms/error/ErrorBox";
 import { TextAreaSuggestion } from "@components/atoms/input/TextAreaSuggestion";
 import ScrollableDatePicker from "@components/atoms/input/ScrollableDatePicker";
 import CheckboxSingle from "@components/atoms/input/CheckboxSingle";
+import { required } from "@utils/validate";
 
 interface FormData {
   jobPosition: string;
@@ -48,11 +49,11 @@ export default function LastWorkForm() {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
 
-    if (formData.jobPosition.trim() === "") {
+    if (!required(formData.jobPosition)) {
       newErrors.jobPosition = "*Please enter your job position";
       isValid = false;
     }
-    if (formData.company.trim() === "") {
+    if (!required(formData.company)) {
       newErrors.company = "*Please enter your company";
       isValid = false;
     }

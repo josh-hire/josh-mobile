@@ -5,6 +5,7 @@ import TagsCard from "@components/molecules/card/TagsCard";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { elementsNotEmpty } from "@utils/validate";
 
 interface FormErrors {
   skills?: string;
@@ -32,7 +33,7 @@ export default function SkillPossesedForm() {
     let isValid = true;
     let newErrors: FormErrors = { skills: "" };
 
-    if (selectedSkills.length === 0) {
+    if (!elementsNotEmpty(selectedSkills)) {
       newErrors.skills = "Please add your skill";
       isValid = false;
     } else {

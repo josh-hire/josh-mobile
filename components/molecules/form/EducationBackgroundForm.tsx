@@ -7,6 +7,7 @@ import { TextAreaSuggestion } from "@components/atoms/input/TextAreaSuggestion";
 import ScrollableDatePicker from "@components/atoms/input/ScrollableDatePicker";
 import CheckboxSingle from "@components/atoms/input/CheckboxSingle";
 import Dropdown from "@components/atoms/input/Dropdown";
+import { required } from "@utils/validate";
 
 interface FormData {
   levelEducation: string;
@@ -48,15 +49,15 @@ export default function EducationBackgroundForm() {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
 
-    if (formData.levelEducation.trim() === "") {
+    if (!required(formData.levelEducation)) {
       newErrors.levelEducation = "*Please select your level of education";
       isValid = false;
     }
-    if (formData.institute.trim() === "") {
+    if (!required(formData.institute)) {
       newErrors.institute = "*Please enter your institute";
       isValid = false;
     }
-    if (formData.category.trim() === "") {
+    if (!required(formData.category)) {
       newErrors.category = "*Please enter your education category";
       isValid = false;
     }

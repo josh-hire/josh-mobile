@@ -8,6 +8,7 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { register } from "../../../api/authApi";
 import { Colors } from "@constants/Colors";
 import ErrorBox from "@components/atoms/error/ErrorBox";
+import { charOnly, numberOnly, required, validateEmail } from "@utils/validate";
 
 interface FormData {
   name: string;
@@ -52,33 +53,40 @@ export default function RegisterForm() {
     }));
   };
 
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const validateForm = () => {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
 
+    if (!charOnly(formData.name)) {
+      newErrors.name = "*Please enter valid name";
+      isValid = false;
+    }
+    if (!required(formData.name)) {
+      newErrors.name = "*Please enter your name";
+      isValid = false;
+    }
+    if (!charOnly(formData.address)) {
+      newErrors.address = "*Please enter valid address";
+      isValid = false;
+    }
+    if (!required(formData.address)) {
+      newErrors.address = "*Please enter your address";
+      isValid = false;
+    }
     if (!validateEmail(formData.email)) {
       newErrors.email = "*Please used a valid email address";
       isValid = false;
     }
-    if (formData.name.trim() === "") {
-      newErrors.name = "*Please enter your name";
-      isValid = false;
-    }
-    if (formData.address.trim() === "") {
-      newErrors.address = "*Please enter your address";
-      isValid = false;
-    }
-    if (formData.email.trim() === "") {
+    if (!required(formData.email)) {
       newErrors.email = "*Please enter your email";
       isValid = false;
     }
-    if (formData.phone.trim() === "") {
-      newErrors.phone = "*Please enter your password";
+    if (!numberOnly(formData.phone)) {
+      newErrors.phone = "*Please enter valid phone number";
+      isValid = false;
+    }
+    if (!required(formData.phone)) {
+      newErrors.phone = "*Please enter your phone";
       isValid = false;
     }
 
@@ -87,8 +95,7 @@ export default function RegisterForm() {
   };
 
   const handleSubmit = () => {
-    router.push('/registration/education-background')
-
+    router.push("/registration/education-background");
   };
 
   return (

@@ -25,6 +25,12 @@
       "@configs/*": [
         "./configs/*"
       ],
+      "@utils/*": [
+        "./utils/*"
+      ],
+      "@api/*": [
+        "./api/*"
+      ],
     }
   },
   "include": [

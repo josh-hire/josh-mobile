@@ -9,6 +9,7 @@ import { useAuthStore } from "../../../store/useAuthStore";
 import { login } from "../../../api/authApi";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import { Colors } from "@constants/Colors";
+import { minimumEightChar, required, validateEmail } from "@utils/validate";
 
 interface FormData {
   email: string;
@@ -50,11 +51,6 @@ export default function LoginForm() {
     }));
   };
 
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const validateForm = () => {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
@@ -63,15 +59,15 @@ export default function LoginForm() {
       newErrors.email = "*Please used a valid email address";
       isValid = false;
     }
-    if (formData.email.trim() === "") {
+    if (!required(formData.email)) {
       newErrors.email = "*Please enter your email to continue";
       isValid = false;
     }
-    if (formData.password.length < 8) {
+    if (!minimumEightChar(formData.password)) {
       newErrors.password = "*Password must be at least 8 characters";
       isValid = false;
     }
-    if (formData.password.trim() === "") {
+    if (!required(formData.password)) {
       newErrors.password = "*Please enter your password";
       isValid = false;
     }

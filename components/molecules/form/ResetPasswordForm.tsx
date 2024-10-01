@@ -1,3 +1,4 @@
+import { passwordMatch, required } from "@/utils/validate";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useRouter } from "expo-router";
@@ -33,15 +34,15 @@ export default function ForgotPAsswordForm() {
     let isValid: boolean = true;
     let newErrors: FormErrors = {};
 
-    if (formData.password.trim() === "") {
+    if (!required(formData.password)) {
       newErrors.password = "*Must be at least 8 characters";
       isValid = false;
     }
-    if (formData.confirmPassword !== formData.password) {
+    if (!passwordMatch(formData.password, formData.confirmPassword)) {
       newErrors.confirmPassword = "*Both passwords must match";
       isValid = false;
     }
-    if (formData.confirmPassword.trim() === "") {
+    if (!required(formData.confirmPassword)) {
       newErrors.confirmPassword = "*Must be at least 8 characters";
       isValid = false;
     }

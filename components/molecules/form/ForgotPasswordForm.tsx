@@ -1,3 +1,4 @@
+import { required } from "@utils/validate";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useRouter } from "expo-router";
@@ -39,7 +40,7 @@ export default function ForgotPAsswordForm() {
       newErrors.email = "*Please used a valid email address";
       isValid = false;
     }
-    if (formData.email.trim() === "") {
+    if (!required(formData.email)) {
       newErrors.email = "*Please enter your email to continue";
       isValid = false;
     }

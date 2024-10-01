@@ -1,3 +1,4 @@
+import { elementsNotEmpty, required } from "@utils/validate";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import CheckboxList from "@components/atoms/input/Checkbox";
@@ -43,13 +44,13 @@ export default function WorkPreferencesForm() {
     let isValid = true;
     let newErrors: FormErrors = { city: "", worktype: "" };
 
-    if (formData.city.trim() === "") {
+    if (!required(formData.city)) {
       newErrors.city = "*Please select your city";
       isValid = false;
     } else {
       newErrors.city = undefined;
     }
-    if (formData.worktype.length === 0) {
+    if (!elementsNotEmpty(formData.worktype)) {
       newErrors.worktype = "*Please select your preferences";
       isValid = false;
     } else {
