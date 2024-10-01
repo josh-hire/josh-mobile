@@ -8,7 +8,8 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Colors } from "@constants/Colors";
 import { router } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import styles from "@components/molecules/form/workPreferencesForm/workPreferencesForm";
 
 interface FormData {
   city: string;
@@ -63,15 +64,14 @@ export default function WorkPreferencesForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-        router.push("/(auth)/registration/skill-possesed")
+      router.push("/(auth)/registration/skill-possesed");
     }
   };
 
   return (
     <View style={styles.container}>
       <View>
-        {(errors.city != undefined ||
-          errors.worktype != undefined) && (
+        {(errors.city != undefined || errors.worktype != undefined) && (
           <ErrorBox error="Please select your work preferences" />
         )}
         <HeadingText type="h4" fontWeight="bold" style={styles.label}>
@@ -114,12 +114,3 @@ export default function WorkPreferencesForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 32,
-  },
-  label: {
-    marginVertical: 12,
-  },
-});

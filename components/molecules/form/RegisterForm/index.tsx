@@ -4,11 +4,12 @@ import { TextArea } from "@components/atoms/input/TextArea";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { register } from "../../../api/authApi";
+import { ActivityIndicator, View } from "react-native";
+import { register } from "@api/authApi";
 import { Colors } from "@constants/Colors";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import { charOnly, numberOnly, required, validateEmail } from "@utils/validate";
+import styles from "@components/molecules/form/RegisterForm/registerForm.styles";
 
 interface FormData {
   name: string;
@@ -148,13 +149,3 @@ export default function RegisterForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  loginForm: {
-    gap: 12,
-  },
-  forgotPasswordContainer: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-  },
-});

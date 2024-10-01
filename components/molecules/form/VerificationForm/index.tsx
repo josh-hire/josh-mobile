@@ -5,8 +5,9 @@ import OtpInputForm from "@components/atoms/input/OtpInputForm";
 import { Colors } from "@constants/Colors";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import ErrorBox from "@components/atoms/error/ErrorBox";
+import styles from "@components/molecules/form/VerificationForm/verificationForm.styles";
 
 export default function VerificationForm() {
   const [otpCode, setOtpCode] = useState<string>("");
@@ -29,10 +30,12 @@ export default function VerificationForm() {
           setIsPinReady={setIsPinReady}
           isExpired={isExpired}
         />
-        <CountdownTimer onExpired={() => {
-          setIsExpired(true)
-          setOtpCode('')
-        }} />
+        <CountdownTimer
+          onExpired={() => {
+            setIsExpired(true);
+            setOtpCode("");
+          }}
+        />
         <View style={styles.primaryButton}>
           <PrimaryButton title="Verify" handler={() => {}} />
         </View>
@@ -50,23 +53,3 @@ export default function VerificationForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    gap: 48,
-  },
-  containerForm: {
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 12,
-  },
-  primaryButton: {
-    width: "100%",
-  },
-  resendContainer: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-});

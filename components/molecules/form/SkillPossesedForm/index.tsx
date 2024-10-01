@@ -4,8 +4,9 @@ import SelectedTagsCard from "@components/molecules/card/SelectedTagsCard";
 import TagsCard from "@components/molecules/card/TagsCard";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { elementsNotEmpty } from "@utils/validate";
+import styles from "@components/molecules/form/SkillPossesedForm/skillPossesedForm.styles";
 
 interface FormErrors {
   skills?: string;
@@ -100,29 +101,3 @@ export default function SkillPossesedForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 24,
-  },
-  label: {
-    marginVertical: 12,
-  },
-  selectedContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  availableContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-  },
-  column: {
-    width: "50%",
-    padding: 10,
-  },
-  horizontalLine: {
-    borderBottomColor: "black",
-    borderBottomWidth: 1,
-  },
-});
