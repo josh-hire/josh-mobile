@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import {
   TextInput,
-  StyleSheet,
   View,
   InputModeOptions,
   TouchableOpacity,
   TextInputSubmitEditingEventData,
   NativeSyntheticEvent,
 } from "react-native";
-import { HeadingText } from "../text/HeadingText";
+import { HeadingText } from "../../text/HeadingText";
 import { Colors } from "@constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import styles from "@components/atoms/input/TextArea/textArea.styles";
 
 export type TextAreaProps = {
   text: string;
@@ -89,34 +89,3 @@ export function TextArea({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 20,
-  },
-  containerFocused: {
-    elevation: 10,
-  },
-  containerError: {
-    borderColor: Colors.primary.p04,
-  },
-  textInput: {
-    minHeight: 40,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: "#FFF",
-    flex: 1,
-  },
-  textInputFocused: {
-    borderWidth: 2,
-  },
-  textInputError: {
-    borderColor: Colors.primary.p04,
-  },
-  icon: {
-    position: "absolute",
-    right: 10,
-    top: 32,
-  },
-});
