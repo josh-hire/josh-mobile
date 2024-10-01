@@ -1,14 +1,13 @@
-import { Colors } from "@constants/Colors";
 import React, { useState } from "react";
 import {
   FlatList,
   TouchableOpacity,
-  StyleSheet,
   View,
   Image,
 } from "react-native";
-import { HeadingText } from "../text/HeadingText";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Assets } from "@constants/Assets";
+import styles from "@/components/atoms/input/Checkbox/checkbox.styles";
 
 interface CheckboxListProps {
   data: string[];
@@ -73,45 +72,3 @@ export default function CheckboxList({
   );
 }
 
-const styles = StyleSheet.create({
-  checkboxContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    flex: 1,
-  },
-  checkbox: {
-    width: 18,
-    height: 18,
-    borderWidth: 2,
-    borderColor: Colors.neutral.n09,
-    marginRight: 10,
-  },
-  checkboxError: {
-    width: 18,
-    height: 18,
-    borderWidth: 2,
-    borderColor: Colors.primary.p04,
-    marginRight: 10,
-  },
-  checkboxChecked: {
-    width: 18,
-    height: 18,
-    borderColor: Colors.neutral.n09,
-    marginRight: 10,
-  },
-  checked: {
-    width: 18,
-    height: 18,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.secondary.s05,
-  },
-  label: {
-    fontSize: 16,
-    color: "#000",
-  },
-  columnWrapper: {
-    justifyContent: "space-between",
-  },
-});
