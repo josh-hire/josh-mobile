@@ -3,15 +3,16 @@ import LoginForm from "@components/molecules/form/LoginForm";
 import LoginFooter from "@modules/feature/auth/loginPage/LoginFooter";
 import LoginHeader from "@modules/feature/auth/loginPage/LoginHeader";
 import styles from "@styles/global.styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoginPage() {
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <View style={styles.stepContainer}>
         <LoginHeader />
         <LoginForm />
       </View>
       <LoginFooter />
-    </View>
+    </SafeAreaView>
   );
 }

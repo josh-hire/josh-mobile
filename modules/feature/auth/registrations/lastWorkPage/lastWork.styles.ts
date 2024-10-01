@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  containerFooter: {
+    marginBottom: 36,
+  },
 });
 
 export default styles;

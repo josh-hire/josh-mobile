@@ -96,7 +96,7 @@ export default function RegisterForm() {
   };
 
   const handleSubmit = () => {
-    router.push("/registration/education-background");
+    router.push("/registration/professional-information");
   };
 
   return (
