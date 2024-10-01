@@ -1,8 +1,8 @@
 import { FlatList, TouchableOpacity, View, Image, StyleSheet } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 import { useState } from "react";
-import { Colors } from "@/constants/Colors";
-import { Assets } from "@/constants/Assets";
+import { Colors } from "@constants/Colors";
+import { Assets } from "@constants/Assets";
 
 interface CheckboxSingleProps {
   data: string[];

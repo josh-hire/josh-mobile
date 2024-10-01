@@ -8,8 +8,8 @@ import {
   Image,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
-import { Colors } from "@/constants/Colors";
-import { Assets } from "@/constants/Assets";
+import { Colors } from "@constants/Colors";
+import { Assets } from "@constants/Assets";
 
 interface DropdownProps {
   data: string[];

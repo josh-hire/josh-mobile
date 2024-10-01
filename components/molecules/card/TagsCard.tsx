@@ -1,5 +1,5 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { Colors } from "@/constants/Colors";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { Colors } from "@constants/Colors";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 interface TagsCard {

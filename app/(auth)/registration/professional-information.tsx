@@ -1,4 +1,4 @@
-import ProfessionalInformationPage from "@/modules/feature/auth/registrations/professionalInformationPage";
+import ProfessionalInformationPage from "@modules/feature/auth/registrations/professionalInformationPage";
 import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 

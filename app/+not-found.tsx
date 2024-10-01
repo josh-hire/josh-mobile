@@ -1,7 +1,7 @@
-import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { Assets } from "@/constants/Assets";
-import { Colors } from "@/constants/Colors";
+import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { Assets } from "@constants/Assets";
+import { Colors } from "@constants/Colors";
 import { Stack, useRouter } from "expo-router";
 import { Image, StyleSheet, View } from "react-native";
 

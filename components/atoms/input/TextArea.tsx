@@ -9,7 +9,7 @@ import {
   NativeSyntheticEvent,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
 export type TextAreaProps = {

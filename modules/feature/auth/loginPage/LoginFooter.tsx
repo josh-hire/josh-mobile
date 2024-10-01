@@ -1,4 +1,4 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Link } from "expo-router";
 import { View } from "react-native";
 import styles from "@modules/feature/auth/loginPage/login.styles";

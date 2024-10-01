@@ -1,6 +1,6 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { Assets } from "@/constants/Assets";
-import { Colors } from "@/constants/Colors";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { Assets } from "@constants/Assets";
+import { Colors } from "@constants/Colors";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 interface SelectedTagsCardProps {

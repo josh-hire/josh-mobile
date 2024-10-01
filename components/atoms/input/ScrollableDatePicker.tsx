@@ -11,8 +11,8 @@ import {
   Image,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
-import { Colors } from "@/constants/Colors";
-import { Assets } from "@/constants/Assets";
+import { Colors } from "@constants/Colors";
+import { Assets } from "@constants/Assets";
 
 const ITEM_HEIGHT = 40;
 const { height: SCREEN_HEIGHT } = Dimensions.get("window");

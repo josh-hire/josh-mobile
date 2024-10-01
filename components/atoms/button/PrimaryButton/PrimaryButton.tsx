@@ -1,7 +1,7 @@
 import { Colors } from "@constants/Colors";
 import { type ButtonProps, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { HeadingText } from "../text/HeadingText";
+import { HeadingText } from "../../text/HeadingText";
 
 export type PrimaryButtonProps = ButtonProps & {
   title: string;

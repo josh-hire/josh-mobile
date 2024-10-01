@@ -1,4 +1,4 @@
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@constants/Colors";
 import React, { useState } from "react";
 import {
   FlatList,
@@ -8,7 +8,7 @@ import {
   Image,
 } from "react-native";
 import { HeadingText } from "../text/HeadingText";
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
 
 interface CheckboxListProps {
   data: string[];

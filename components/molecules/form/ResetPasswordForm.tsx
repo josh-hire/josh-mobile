@@ -1,4 +1,4 @@
-import { passwordMatch, required } from "@/utils/validate";
+import { passwordMatch, required } from "@utils/validate";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useRouter } from "expo-router";

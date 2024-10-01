@@ -1,6 +1,6 @@
 import { ButtonProps, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { HeadingText } from "../text/HeadingText";
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
 
 export type SecondaryButtonProps = ButtonProps & {
   title: string;

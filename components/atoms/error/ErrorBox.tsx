@@ -1,4 +1,4 @@
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@constants/Colors";
 import { StyleSheet, View } from "react-native";
 import { HeadingText } from "../text/HeadingText";
 
