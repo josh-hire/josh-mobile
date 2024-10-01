@@ -1,13 +1,14 @@
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import { TextAreaSuggestion } from "@components/atoms/input/TextAreaSuggestion";
 import ScrollableDatePicker from "@components/atoms/input/ScrollableDatePicker";
 import CheckboxSingle from "@components/atoms/input/CheckboxSingle";
 import Dropdown from "@components/atoms/input/Dropdown";
 import { required } from "@utils/validate";
+import styles from "@components/molecules/form/EducationBackgroundForm/educationForm.styles";
 
 interface FormData {
   levelEducation: string;
@@ -138,13 +139,3 @@ export default function EducationBackgroundForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  loginForm: {
-    gap: 12,
-  },
-  forgotPasswordContainer: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-  },
-});

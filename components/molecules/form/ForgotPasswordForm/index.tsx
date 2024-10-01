@@ -3,7 +3,8 @@ import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import styles from "@components/molecules/form/ForgotPasswordForm/forgotPasswordForm.styles";
 
 interface FormData {
   email: string;
@@ -73,13 +74,3 @@ export default function ForgotPAsswordForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  loginForm: {
-    gap: 12,
-  },
-  forgotPasswordContainer: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-  },
-});

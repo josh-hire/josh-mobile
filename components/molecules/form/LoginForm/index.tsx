@@ -5,11 +5,12 @@ import { Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { useMutation } from "@tanstack/react-query";
-import { useAuthStore } from "../../../store/useAuthStore";
-import { login } from "../../../api/authApi";
+import { useAuthStore } from "../../../../store/useAuthStore";
+import { login } from "../../../../api/authApi";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import { Colors } from "@constants/Colors";
 import { minimumEightChar, required, validateEmail } from "@utils/validate";
+import styles from "@components/molecules/form/LoginForm/loginForm.styles";
 
 interface FormData {
   email: string;
@@ -116,13 +117,3 @@ export default function LoginForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  loginForm: {
-    gap: 12,
-  },
-  forgotPasswordContainer: {
-    alignItems: "flex-end",
-    justifyContent: "flex-end",
-  },
-});

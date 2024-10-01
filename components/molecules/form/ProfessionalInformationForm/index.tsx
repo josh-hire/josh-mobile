@@ -6,7 +6,8 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Colors } from "@constants/Colors";
 import { router } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
+import styles from "@components/molecules/form/ProfessionalInformationForm/professionaInfoForm.styles";
 
 interface IDropdown {
   selectedOption: string | null;
@@ -119,12 +120,3 @@ export default function ProfessionalInformationForm() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    gap: 32,
-  },
-  checkboxLabel: {
-    marginVertical: 12,
-  },
-});
