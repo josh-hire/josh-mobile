@@ -1,8 +1,8 @@
-import { FlatList, TouchableOpacity, View, Image, StyleSheet } from "react-native";
-import { HeadingText } from "../text/HeadingText";
+import { FlatList, TouchableOpacity, View, Image } from "react-native";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { useState } from "react";
-import { Colors } from "@constants/Colors";
 import { Assets } from "@constants/Assets";
+import styles from "@components/atoms/input/CheckboxSingle/checkboxSingle.styles"
 
 interface CheckboxSingleProps {
   data: string[];
@@ -60,46 +60,3 @@ export default function CheckboxSingle({
     />
   );
 }
-
-const styles = StyleSheet.create({
-  checkboxContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    flex: 1,
-  },
-  checkbox: {
-    width: 18,
-    height: 18,
-    borderWidth: 2,
-    borderColor: Colors.neutral.n09,
-    marginRight: 10,
-  },
-  checkboxError: {
-    width: 18,
-    height: 18,
-    borderWidth: 2,
-    borderColor: Colors.primary.p04,
-    marginRight: 10,
-  },
-  checkboxChecked: {
-    width: 18,
-    height: 18,
-    borderColor: Colors.neutral.n09,
-    marginRight: 10,
-  },
-  checked: {
-    width: 18,
-    height: 18,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.secondary.s05,
-  },
-  label: {
-    fontSize: 16,
-    color: "#000",
-  },
-  columnWrapper: {
-    justifyContent: "space-between",
-  },
-});

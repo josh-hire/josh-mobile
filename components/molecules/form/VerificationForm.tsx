@@ -1,7 +1,7 @@
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import CountdownTimer from "@components/atoms/text/CountdownTimer";
-import OtpInputForm from "@components/atoms/input/OtpInputForm";
+import OtpInputForm from "@/components/atoms/input/OtpInputForm";
 import { Colors } from "@constants/Colors";
 import { Link } from "expo-router";
 import { useState } from "react";
