@@ -1,5 +1,5 @@
-import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { useAuthStore } from "@/store/useAuthStore";
 import { router } from "expo-router";
 import { View } from "react-native";

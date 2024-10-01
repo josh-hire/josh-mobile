@@ -1,5 +1,5 @@
-import EducationBackgroundPage from "@/components/pages/auth/registration/EducationBackgroundPage";
-import { Colors } from "@/constants/Colors";
+import EducationBackgroundPage from "@modules/feature/auth/registrations/educationBackgroundPage";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function EducationBackground() {
@@ -10,7 +10,7 @@ export default function EducationBackground() {
           headerShadowVisible: false,
           contentStyle: { backgroundColor: Colors.general.background },
           headerBackButtonMenuEnabled: false,
-          headerTitle: ''
+          headerTitle: "",
         }}
       />
       <EducationBackgroundPage />

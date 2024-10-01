@@ -1,5 +1,5 @@
-import LastWorkPage from "@/components/pages/auth/registration/LastWorkPage";
-import { Colors } from "@/constants/Colors";
+import LastWorkPage from "@modules/feature/auth/registrations/lastWorkPage";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function LastWork() {

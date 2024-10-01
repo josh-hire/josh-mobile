@@ -1,5 +1,5 @@
-import SkillPossesedPage from "@/components/pages/auth/registration/SkillPossesedPage";
-import { Colors } from "@/constants/Colors";
+import SkillPossesedPage from "@modules/feature/auth/registrations/skillPossesedPage";
+import { Colors } from "@constants/Colors";
 import { Stack } from "expo-router";
 
 export default function SkillPossesed() {

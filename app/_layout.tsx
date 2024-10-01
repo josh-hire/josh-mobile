@@ -10,10 +10,11 @@ import { useEffect, useState } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Colors } from "@/constants/Colors";
+import { Colors } from "@constants/Colors";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useAuthStore } from "@/store/useAuthStore";
 import { ActivityIndicator, View } from "react-native";
+import { Assets } from "@constants/Assets";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,7 +29,7 @@ export default function RootLayout() {
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loaded] = useFonts({
-    TelkomselBatik: require("../assets/fonts/TelkomselBatikSans-Regular.otf"),
+    TelkomselBatik: Assets.fonts.telkomselBatik,
   });
 
   useEffect(() => {

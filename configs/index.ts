@@ -1,0 +1,1 @@
+export const API_URL = "https://sc-express-movieapi.vercel.app/api/";

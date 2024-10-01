@@ -1,4 +1,4 @@
-import ResetPasswordPage from "@/components/pages/auth/ResetPasswordPage";
+import ResetPasswordPage from "@modules/feature/auth/resetPasswords/resetPasswordPage";
 
 export default function ForgotPasswordScreen() {
 
