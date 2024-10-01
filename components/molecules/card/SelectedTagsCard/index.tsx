@@ -1,14 +1,18 @@
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Assets } from "@constants/Assets";
 import { Colors } from "@constants/Colors";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
+import styles from "@components/molecules/card/SelectedTagsCard/selectedTagsCard.styles";
 
 interface SelectedTagsCardProps {
   title: string;
   onTap: () => void;
 }
 
-export default function SelectedTagsCard({ title, onTap }: SelectedTagsCardProps) {
+export default function SelectedTagsCard({
+  title,
+  onTap,
+}: SelectedTagsCardProps) {
   return (
     <TouchableOpacity onPress={onTap}>
       <View style={styles.SelectedTagsCard}>
@@ -20,18 +24,3 @@ export default function SelectedTagsCard({ title, onTap }: SelectedTagsCardProps
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  SelectedTagsCard: {
-    backgroundColor: Colors.secondary.s05,
-    borderRadius: 8,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    height: 33,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    marginRight: 10,
-    marginBottom: 10,
-  },
-});
