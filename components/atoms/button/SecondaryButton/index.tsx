@@ -1,6 +1,7 @@
-import { ButtonProps, Image, StyleSheet, TouchableOpacity } from "react-native";
-import { HeadingText } from "../text/HeadingText";
+import { ButtonProps, Image, TouchableOpacity } from "react-native";
+import { HeadingText } from "../../text/HeadingText";
 import { Assets } from "@constants/Assets";
+import styles from "@components/atoms/button/SecondaryButton/secondaryButton.styles";
 
 export type SecondaryButtonProps = ButtonProps & {
   title: string;
@@ -18,13 +19,3 @@ export default function SecondaryButton({
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  secondaryButton: {
-    borderRadius: 8,
-    borderWidth: 1,
-    padding: 12,
-    gap: 12,
-    flexDirection: "row",
-  },
-});
