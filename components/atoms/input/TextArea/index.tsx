@@ -43,43 +43,49 @@ export function TextArea({
   };
 
   return (
-    <View style={styles.container}>
-      <View
-        style={[
-          isFocused && styles.containerFocused,
-          error ? styles.containerError : {},
-        ]}
-      >
-        <HeadingText type="h4">{label}</HeadingText>
-        <TextInput
-          style={[
-            styles.textInput,
-            isFocused && styles.textInputFocused,
-            error ? styles.textInputError : {},
-          ]}
-          onChangeText={onChangeText}
-          value={text}
-          placeholder={placeholder}
-          onFocus={() => setIsFocused(true)}
-          onBlur={handleBlur}
-          secureTextEntry={type === "password" && !showPassword}
-          inputMode={type === "password" ? "text" : (type as InputModeOptions)}
-          placeholderTextColor="#999"
-          onSubmitEditing={onSubmit}
-        />
-
-        {type === "password" && (
-          <TouchableOpacity
-            onPress={togglePasswordVisibility}
-            style={styles.icon}
+    <View>
+      <View style={styles.container}>
+        <View>
+          <HeadingText type="h4">{label}</HeadingText>
+          <View
+            style={[
+              isFocused ? styles.containerFocused : {},
+              error ? styles.containerError : {},
+            ]}
           >
-            <Ionicons
-              name={showPassword ? "eye-off" : "eye"}
-              size={24}
-              color="#999"
+            <TextInput
+              style={[
+                styles.textInput,
+                isFocused && styles.textInputFocused,
+                error ? styles.textInputError : {},
+              ]}
+              onChangeText={onChangeText}
+              value={text}
+              placeholder={placeholder}
+              onFocus={() => setIsFocused(true)}
+              onBlur={handleBlur}
+              secureTextEntry={type === "password" && !showPassword}
+              inputMode={
+                type === "password" ? "text" : (type as InputModeOptions)
+              }
+              placeholderTextColor="#999"
+              onSubmitEditing={onSubmit}
             />
-          </TouchableOpacity>
-        )}
+
+            {type === "password" && (
+              <TouchableOpacity
+                onPress={togglePasswordVisibility}
+                style={styles.icon}
+              >
+                <Ionicons
+                  name={showPassword ? "eye-off" : "eye"}
+                  size={24}
+                  color="#999"
+                />
+              </TouchableOpacity>
+            )}
+          </View>
+        </View>
       </View>
       {error && (
         <HeadingText type="label" color={Colors.primary.p04}>

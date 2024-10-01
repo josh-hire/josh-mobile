@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import SkillPossesedHeader from "@modules/feature/auth/registrations/skillPossesedPage";
+import SkillPossesedHeader from "@modules/feature/auth/registrations/skillPossesedPage/SkillPossesedHeader";
 import SkillPossesedForm from "@components/molecules/form/SkillPossesedForm";
 import styles from "@styles/global.styles";
 

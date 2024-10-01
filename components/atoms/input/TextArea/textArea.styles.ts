@@ -7,11 +7,13 @@ const styles = StyleSheet.create({
   },
   containerFocused: {
     elevation: 10,
+    borderColor: Colors.neutral.n09,
   },
   containerError: {
     borderColor: Colors.primary.p04,
   },
   textInput: {
+    marginTop: 4,
     minHeight: 40,
     borderWidth: 1,
     padding: 10,
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
   icon: {
     position: "absolute",
     right: 10,
-    top: 32,
+    top: 12,
   },
 });
 
