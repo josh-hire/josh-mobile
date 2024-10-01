@@ -1,4 +1,4 @@
-import { HeadingText } from "../text/HeadingText";
+import { HeadingText } from "../../text/HeadingText";
 
 export default function AppLogo() {
   return (

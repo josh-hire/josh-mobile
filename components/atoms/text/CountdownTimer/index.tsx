@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { HeadingText } from "./HeadingText";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 
 const OTP_DURATION = 10;
 
