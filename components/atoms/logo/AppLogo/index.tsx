@@ -1,9 +1,19 @@
-import { HeadingText } from "../../text/HeadingText";
+import { Image, View } from "react-native";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { Assets } from "@constants/Assets";
+import styles from "@components/atoms/logo/AppLogo/appLogo.styles";
 
-export default function AppLogo() {
+interface AppLogoInterface {
+  color?: string;
+}
+
+export default function AppLogo({ color }: Readonly<AppLogoInterface>) {
   return (
-    <HeadingText type="h2" fontWeight="bold">
-      JOSH
-    </HeadingText>
+    <View style={styles.logoContainer}>
+      <Image source={Assets.logos.logo}></Image>
+      <HeadingText type="h2" color={color ?? ""} fontWeight="bold">
+        JOSH
+      </HeadingText>
+    </View>
   );
 }
