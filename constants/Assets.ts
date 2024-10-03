@@ -14,6 +14,7 @@ export const Assets = {
   },
   images: {
     login: require("@assets/images/login.png"),
+    register: require("@assets/images/register.png"),
   },
   fonts: {
     telkomselBatik: require("@assets/fonts/TelkomselBatikSans-Regular.otf"),

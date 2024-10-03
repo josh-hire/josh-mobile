@@ -14,13 +14,6 @@ export default function SelectRegisterBody() {
         </HeadingText>
         <View style={styles.buttonContainer}>
           <PrimaryButton
-            title="Sign Up Recruiter"
-            handler={() => {}}
-          ></PrimaryButton>
-          <HeadingText type="h4" textAlign="center" fontWeight="bold">
-            Or
-          </HeadingText>
-          <PrimaryButton
             title="Sign Up Jobseeker"
             handler={() => {}}
           ></PrimaryButton>

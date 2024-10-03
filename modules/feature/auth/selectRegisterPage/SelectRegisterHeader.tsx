@@ -8,7 +8,7 @@ export default function SelectRegisterHeader() {
   return (
     <View style={styles.titleContainer}>
       <View style={styles.imageBackground}>
-        <Image style={styles.imageBackground} source={Assets.images.login}></Image>
+        <Image style={styles.imageBackground} source={Assets.images.register}></Image>
       </View>
       <View style={styles.appLogo}>
         <AppLogo color="white"/>
