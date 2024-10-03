@@ -35,7 +35,6 @@ export default function LastWorkForm() {
     isWork: false,
   });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [error, setError] = useState<string>("");
 
   const handleInputChange = (
     name: keyof FormData,
