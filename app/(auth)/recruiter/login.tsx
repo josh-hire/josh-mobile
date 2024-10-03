@@ -1,5 +1,5 @@
 import { Colors } from "@constants/Colors";
-import LoginPage from "@modules/feature/auth/loginPage";
+import LoginPage from "@modules/feature/auth/loginRecruiterPage";
 import { Stack } from "expo-router";
 
 export default function LoginScreen() {

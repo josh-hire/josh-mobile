@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import styles from "@modules/feature/auth/selectLoginPage/selectLogin.styles";
 import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
+import { router } from "expo-router";
 
 export default function SelectLoginBody() {
   return (
@@ -15,14 +16,18 @@ export default function SelectLoginBody() {
         <View style={styles.buttonContainer}>
           <PrimaryButton
             title="Sign In Recruiter"
-            handler={() => {}}
+            handler={() => {
+              router.push("/(auth)/recruiter/login");
+            }}
           ></PrimaryButton>
           <HeadingText type="h4" textAlign="center" fontWeight="bold">
             Or
           </HeadingText>
           <PrimaryButton
             title="Sign In Jobseeker"
-            handler={() => {}}
+            handler={() => {
+              router.push("/(auth)/jobseeker/login");
+            }}
           ></PrimaryButton>
         </View>
       </View>
