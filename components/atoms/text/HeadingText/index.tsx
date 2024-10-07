@@ -6,7 +6,7 @@ export type HeadingTextProps = TextProps & {
   type?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "paragraph" | "label";
   fontWeight?: "regular" | "bold";
   textAlign?: "center" | "left";
-  color?: "black" | "red" | string;
+  color?: string;
 };
 
 export function HeadingText({

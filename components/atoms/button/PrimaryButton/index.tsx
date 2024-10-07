@@ -1,5 +1,4 @@
-import { type ButtonProps } from "react-native";
-import { TouchableOpacity } from "react-native";
+import { type ButtonProps, TouchableOpacity } from "react-native";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import styles from "@components/atoms/button/PrimaryButton/primaryButton.styles";
 
