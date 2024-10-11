@@ -16,6 +16,7 @@ import { IconButton } from "@/components/atoms/button/IconButton";
 import { Assets } from "@/constants/Assets";
 import JobCard from "@/components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
+import MatchModal from "@/components/molecules/modal/MatchModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -73,6 +74,8 @@ export default function HomePage() {
   const cardPositions = useRef(cards.map(() => new Animated.Value(0))).current;
   const pan = useRef(new Animated.Value(0)).current;
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
   const SwipeUpResponder = useRef(
     PanResponder.create({
@@ -287,7 +290,9 @@ export default function HomePage() {
             </View>
           </Animated.View>
           <IconButton
-            handler={() => {}}
+            handler={() => {
+              setIsModalVisible(true);
+            }}
             icon={Assets.icons.fliter}
             color={Colors.secondary.s08}
             width={centerButtonSize}
@@ -330,6 +335,7 @@ export default function HomePage() {
           ))}
         </ScrollView>
       </Animated.View>
+      <MatchModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />
     </SafeAreaView>
   );
 }
