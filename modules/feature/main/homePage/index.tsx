@@ -16,7 +16,7 @@ import { IconButton } from "@/components/atoms/button/IconButton";
 import { Assets } from "@/constants/Assets";
 import JobCard from "@/components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
-import MatchModal from "@/components/molecules/modal/MatchModal";
+import FilterModal from "@/components/molecules/modal/FIlterModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -335,7 +335,7 @@ export default function HomePage() {
           ))}
         </ScrollView>
       </Animated.View>
-      <MatchModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />
+      <FilterModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />
     </SafeAreaView>
   );
 }

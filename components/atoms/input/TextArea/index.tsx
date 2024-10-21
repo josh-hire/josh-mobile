@@ -20,6 +20,7 @@ export type TextAreaProps = {
   type: string;
   error?: string;
   label?: string;
+  labelSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "label" | "paragraph";
 };
 
 export function TextArea({
@@ -30,7 +31,8 @@ export function TextArea({
   type,
   error,
   label,
-}: TextAreaProps) {
+  labelSize,
+}: Readonly<TextAreaProps>) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -46,7 +48,7 @@ export function TextArea({
     <View>
       <View style={styles.container}>
         <View>
-          <HeadingText type="h4">{label}</HeadingText>
+          <HeadingText type={labelSize ?? "h4"}>{label}</HeadingText>
           <View
             style={[
               isFocused ? styles.containerFocused : {},

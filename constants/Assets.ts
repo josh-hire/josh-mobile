@@ -9,6 +9,7 @@ export const Assets = {
     no: require("@assets/icons/no.png"),
     fliter: require("@assets/icons/filter.png"),
     swipeup: require("@assets/icons/swipeup.png"),
+    arrowBack: require("@assets/icons/arrow_back.png"),
   },
   logos: {
     logo: require("@assets/logo/logo.png"),
