@@ -3,8 +3,9 @@ import styles from "@components/atoms/chat/profile/profileChat.styles";
 
 interface BubbleChatProps {
   url: ImageSourcePropType;
+  size: number;
 }
 
-export default function ProfileChat({ url }: Readonly<BubbleChatProps>) {
-  return <Image source={url} style={styles.profileImage} />;
+export default function ProfileChat({ url, size }: Readonly<BubbleChatProps>) {
+  return <Image source={url} style={styles(size).profileImage} />;
 }

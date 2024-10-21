@@ -4,6 +4,7 @@ export const Assets = {
     check01: require("@assets/icons/check-01.png"),
     chevronUp: require("@assets/icons/chevron-up.png"),
     chevronDown: require("@assets/icons/chevron-down.png"),
+    chevronRight: require("@assets/icons/chevron-right.png"),
     x02: require("@assets/icons/x-02.png"),
     yes: require("@assets/icons/yes.png"),
     no: require("@assets/icons/no.png"),

@@ -50,7 +50,7 @@ export default function MatchModal({
             />
           </View>
           <View style={styles.chatContainer}>
-            <ProfileChat url={Assets.logos.logo} />
+            <ProfileChat url={Assets.logos.logo} size={48}/>
             <View style={styles.bubbleContainer}>
               <BubbleChat message="Congratulations!" />
               <BubbleChat message="You meet the criteria and have been connected with Telkomsel!" />
