@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import LoginForm from "@components/molecules/form/LoginForm";
-import LoginFooter from "@modules/feature/auth/loginPage/LoginFooter";
-import LoginHeader from "@modules/feature/auth/loginPage/LoginHeader";
+import LoginFooter from "@modules/feature/auth/loginRecruiterPage/LoginFooter";
+import LoginHeader from "@modules/feature/auth/loginRecruiterPage/LoginHeader";
 import styles from "@styles/global.styles";
 import { SafeAreaView } from "react-native-safe-area-context";
 

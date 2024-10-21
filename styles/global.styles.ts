@@ -2,8 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   screen: {
-    marginTop: 16,
-    padding: 36,
+    paddingHorizontal: 36,
     height: "100%",
     backgroundColor: "white",
     justifyContent: "space-between",

@@ -5,7 +5,7 @@ export const charOnly = (message: string): boolean => charRegex(message);
 export const minimumEightChar = (message: string): boolean => message.length >= 8;
 export const passwordMatch = (message1: string, message2: string): boolean => message1 === message2;
 
-export const elementsNotEmpty = (elements: string[]): boolean => elements.length === 0;
+export const elementsNotEmpty = (elements: string[]): boolean => elements.length !== 0;
 
 export const emailRegex = (value: string) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value);
 export const charRegex = (value: string) => /^[A-Za-z\s]+$/.test(value);

@@ -2,6 +2,7 @@ import LastWorkHeader from "@modules/feature/auth/registrations/lastWorkPage/Las
 import LastWorkForm from "@components/molecules/form/LastWorkForm";
 import { View } from "react-native";
 import styles from "@styles/global.styles";
+import LastWorkFooter from "@modules/feature/auth/registrations/lastWorkPage/LastWorkFooter";
 
 export default function LastWorkPage() {
   return (
@@ -10,6 +11,7 @@ export default function LastWorkPage() {
         <LastWorkHeader />
         <LastWorkForm />
       </View>
+      <LastWorkFooter />
     </View>
   );
 }

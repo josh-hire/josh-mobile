@@ -1,10 +1,10 @@
 import { useAuthStore } from "@/store/useAuthStore";
 import { Redirect } from "expo-router";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 export default function AppLayout() {
-  const { checkLoginStatus, token } = useAuthStore();
+  const { checkLoginStatus } = useAuthStore();
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
@@ -23,5 +23,5 @@ export default function AppLayout() {
     return <ActivityIndicator />
   }
   
-  return <Redirect href={isLoggedIn ? "/(tabs)/home" : "/(auth)/login"} />;
+  return <Redirect href={isLoggedIn ? "/(tabs)/home" : "/(auth)/select-login"} />;
 }

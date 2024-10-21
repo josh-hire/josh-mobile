@@ -54,51 +54,11 @@ export default function RootLayout() {
     );
   }
 
-  // console.log(isLoggedIn);
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack>
-          {/* {isLoggedIn ? (
-            <Stack.Screen name="(tabs)/home" options={{ headerShown: false }} />
-          ) : (
-            <Stack.Screen
-              name="(auth)/login"
-              options={{ headerShown: false }}
-            />
-          )}
-        </Stack> */}
           <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
-          <Stack.Screen
-            name="(auth)/register"
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="(auth)/forgot-password"
-            options={{
-              headerShadowVisible: false,
-              headerTitle: "",
-              contentStyle: { backgroundColor: Colors.general.background },
-            }}
-          />
-          <Stack.Screen
-            name="(auth)/verification"
-            options={{
-              headerShadowVisible: false,
-              headerTitle: "",
-              contentStyle: { backgroundColor: Colors.general.background },
-            }}
-          />
-          <Stack.Screen
-            name="(auth)/reset-password"
-            options={{
-              headerShadowVisible: false,
-              headerTitle: "",
-              contentStyle: { backgroundColor: Colors.general.background },
-            }}
-          />
           <Stack.Screen name="+not-found" />
         </Stack>
       </ThemeProvider>

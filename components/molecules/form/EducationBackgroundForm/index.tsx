@@ -68,8 +68,7 @@ export default function EducationBackgroundForm() {
   };
 
   const handleSubmit = () => {
-    if (validateForm()) {
-    }
+    if (validateForm()) {}
   };
 
   return (

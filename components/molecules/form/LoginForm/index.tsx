@@ -3,7 +3,7 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { TextArea } from "@components/atoms/input/TextArea";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { useMutation } from "@tanstack/react-query";
 import { useAuthStore } from "../../../../store/useAuthStore";
 import { login } from "../../../../api/authApi";

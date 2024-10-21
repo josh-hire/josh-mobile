@@ -7,6 +7,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import { elementsNotEmpty } from "@utils/validate";
 import styles from "@components/molecules/form/SkillPossesedForm/skillPossesedForm.styles";
+import { router } from "expo-router";
 
 interface FormErrors {
   skills?: string;
@@ -59,6 +60,7 @@ export default function SkillPossesedForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
+      router.push("/registration/last-work");
     }
   };
 
@@ -88,7 +90,7 @@ export default function SkillPossesedForm() {
       <View style={styles.horizontalLine} />
       <View style={styles.availableContainer}>
         {options.map((option, index) => (
-          <View style={styles.column}>
+          <View key={index} style={styles.column}>
             <TagsCard
               key={index}
               title={option}

@@ -9,6 +9,7 @@ import ScrollableDatePicker from "@components/atoms/input/ScrollableDatePicker";
 import CheckboxSingle from "@components/atoms/input/CheckboxSingle";
 import { required } from "@utils/validate";
 import styles from "@components/molecules/form/LastWorkForm/lastWorkForm.styles";
+import { router } from "expo-router";
 
 interface FormData {
   jobPosition: string;
@@ -34,7 +35,6 @@ export default function LastWorkForm() {
     isWork: false,
   });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [error, setError] = useState<string>("");
 
   const handleInputChange = (
     name: keyof FormData,
@@ -65,6 +65,7 @@ export default function LastWorkForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
+      router.push("/registration/education-background");
     }
   };
 
