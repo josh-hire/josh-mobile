@@ -10,6 +10,12 @@ export const Assets = {
     fliter: require("@assets/icons/filter.png"),
     swipeup: require("@assets/icons/swipeup.png"),
     arrowBack: require("@assets/icons/arrow_back.png"),
+    home: require("@assets/icons/home_ic.png"),
+    message: require("@assets/icons/message_ic.png"),
+    profile: require("@assets/icons/profile_ic.png"),
+    activity: require("@assets/icons/activity_ic.png"),
+    home_fill: require("@assets/icons/home_fill_ic.png"),
+    profile_fill: require("@assets/icons/profile_fill_ic.png"),
   },
   logos: {
     logo: require("@assets/logo/logo.png"),

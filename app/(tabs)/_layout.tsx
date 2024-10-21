@@ -1,4 +1,5 @@
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
+import { Colors } from "@constants/Colors";
 import { Tabs } from "expo-router";
 import React from "react";
 import { Image } from "react-native";
@@ -14,8 +15,12 @@ export default function TabLayout() {
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, focused }) => (
-            <Image source={Assets.icons.chevronUp}></Image>
+          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? Assets.icons.home_fill : Assets.icons.home}
+              style={{ width: 28, height: 28 }}
+            ></Image>
           ),
         }}
       />
@@ -23,8 +28,25 @@ export default function TabLayout() {
         name="chat"
         options={{
           title: "Chat",
-          tabBarIcon: ({ color, focused }) => (
-            <Image source={Assets.icons.chevronDown}></Image>
+          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarIcon: ({ }) => (
+            <Image
+              source={Assets.icons.message}
+              style={{ width: 28, height: 28 }}
+            ></Image>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="activity"
+        options={{
+          title: "My Activity",
+          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarIcon: () => (
+            <Image
+              source={Assets.icons.activity}
+              style={{ width: 28, height: 28 }}
+            ></Image>
           ),
         }}
       />
@@ -32,8 +54,12 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarIcon: ({ color, focused }) => (
-            <Image source={Assets.icons.plus01}></Image>
+          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={focused ? Assets.icons.profile_fill : Assets.icons.profile}
+              style={{ width: 28, height: 28 }}
+            ></Image>
           ),
         }}
       />
