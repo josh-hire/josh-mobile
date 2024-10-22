@@ -1,5 +1,5 @@
 import { HeadingText } from "@components/atoms/text/HeadingText";
-import ProfileChat from "@components/atoms/chat/profile";
+import ProfilePhoto from "@components/atoms/chat/profile";
 import { Assets } from "@constants/Assets";
 import { View } from "react-native";
 import styles from "@modules/feature/main/profilePage/profile.styles";
@@ -7,7 +7,7 @@ import styles from "@modules/feature/main/profilePage/profile.styles";
 export default function ProfileHeader() {
   return (
     <View style={styles.headerContainer}>
-      <ProfileChat url={Assets.images.telkomselLogo} size={120} />
+      <ProfilePhoto url={Assets.images.telkomselLogo} size={120} />
       <HeadingText type="h5" color="white" fontWeight="bold">
         Afgansyah Putra
       </HeadingText>

@@ -5,7 +5,7 @@ import { Assets } from "@constants/Assets";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import BubbleChat from "@components/atoms/chat/bubble";
-import ProfileChat from "@components/atoms/chat/profile";
+import ProfilePhoto from "@components/atoms/chat/profile";
 
 interface MatchModalProps {
   isVisible: boolean;
@@ -50,7 +50,7 @@ export default function MatchModal({
             />
           </View>
           <View style={styles.chatContainer}>
-            <ProfileChat url={Assets.logos.logo} size={48}/>
+            <ProfilePhoto url={Assets.logos.logo} size={48}/>
             <View style={styles.bubbleContainer}>
               <BubbleChat message="Congratulations!" />
               <BubbleChat message="You meet the criteria and have been connected with Telkomsel!" />
