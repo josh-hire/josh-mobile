@@ -1,19 +1,18 @@
 import { router, Stack } from "expo-router";
-import PersonalInfoProfilePage from "@/modules/feature/main/profilePersonalInfoPage";
 import { Colors } from "@constants/Colors";
 import { HeaderBackButton } from "@react-navigation/elements";
-import ConfirmationModal from "@/components/molecules/modal/ConfirmationModal";
+import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
-import ProfilePersonalInfoPage from "@/modules/feature/main/profilePersonalInfoPage";
+import ProfileProfessionalInfoPage from "@modules/feature/main/profileProfessionalInfoPage";
 
-export default function ProfilePersonalInformationScreen() {
+export default function ProfileProfessionalInformationScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
 
   return (
     <>
       <Stack.Screen
         options={{
-          headerTitle: "Personal Information",
+          headerTitle: "Professional Information",
           headerShadowVisible: false,
           headerTintColor: Colors.neutral.n00,
           headerLeft: () => (
@@ -30,7 +29,7 @@ export default function ProfilePersonalInformationScreen() {
           },
         }}
       />
-      <ProfilePersonalInfoPage />
+      <ProfileProfessionalInfoPage />
       <ConfirmationModal
         title="Cancel all edits?"
         description="everything you change will be saved"

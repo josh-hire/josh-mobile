@@ -22,7 +22,12 @@ export default function ProfileProfessional() {
           </HeadingText>
           <Image source={Assets.icons.chevronRight}></Image>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={styles.optionButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(profile)/jobseeker/professional-info");
+          }}
+          style={styles.optionButton}
+        >
           <HeadingText type="h6" color="white">
             Professional Information
           </HeadingText>

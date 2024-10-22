@@ -6,16 +6,16 @@ import {
   View,
 } from "react-native";
 import globalStyles from "@styles/global.styles";
-import styles from "@modules/feature/main/personalInfoPage/personalInfo.styles";
-import { Assets } from "@constants/Assets";
-import PersonalInfoForm from "@components/molecules/form/PersonalInfoForm";
+import styles from "@modules/feature/main/profilePersonalInfoPage/profilePersonalInfo.styles";
 import ProfileEditPhoto from "@components/atoms/chat/profileEdit";
+import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
+import ProfilePersonalInfoForm from "@components/molecules/form/ProfilePersonalInfoForm";
+import { Assets } from "@constants/Assets";
 import { useEffect, useState } from "react";
 import { router } from "expo-router";
-import ConfirmationModal from "@/components/molecules/modal/ConfirmationModal";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 
-export default function PersonalInfoProfilePage() {
+export default function ProfilePersonalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
@@ -41,7 +41,7 @@ export default function PersonalInfoProfilePage() {
           setModalVisible(true);
         }}
       />
-      <PersonalInfoForm />
+      <ProfilePersonalInfoForm />
 
       <Modal
         animationType="slide"

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import ErrorBox from "@components/atoms/error/ErrorBox";
 import { charOnly, numberOnly, required, validateEmail } from "@utils/validate";
-import styles from "@components/molecules/form/PersonalInfoForm/personalInfo.styles";
+import styles from "@components/molecules/form/ProfilePersonalInfoForm/profilePersonalInfo.styles";
 
 interface FormData {
   name: string;
@@ -21,7 +21,7 @@ interface FormErrors {
   address?: string;
 }
 
-export default function PersonalInfoForm() {
+export default function ProfilePersonalInfoForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
