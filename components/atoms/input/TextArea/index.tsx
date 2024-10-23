@@ -26,6 +26,8 @@ export type TextAreaProps = {
   textColor?: string;
   isRequired?: boolean;
   isMultiline?: boolean;
+  multilineHeight?: number;
+  pressHandler?: () => void;
 };
 
 export function TextArea({
@@ -42,6 +44,8 @@ export function TextArea({
   textColor,
   isRequired,
   isMultiline,
+  multilineHeight,
+  pressHandler = () => {},
 }: Readonly<TextAreaProps>) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -56,7 +60,7 @@ export function TextArea({
 
   return (
     <View>
-      <View style={[styles.container, {height: isMultiline ? 120 : 50}]}>
+      <View style={[styles.container, { height: isMultiline ? 120 : 50 }]}>
         <View>
           <View style={styles.textLabelContainer}>
             <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
@@ -86,14 +90,17 @@ export function TextArea({
                 {
                   borderColor: borderColor ?? "black",
                   color: textColor ?? "black",
-                  minHeight: isMultiline ? 100 : 40,
+                  minHeight: isMultiline ? multilineHeight : 40,
                 },
                 error ? styles.textInputError : {},
               ]}
               onChangeText={onChangeText}
               value={text}
+              onPress={pressHandler}
               placeholder={placeholder}
-              onFocus={() => setIsFocused(true)}
+              onFocus={() => {
+                setIsFocused(true);
+              }}
               onBlur={handleBlur}
               secureTextEntry={type === "password" && !showPassword}
               inputMode={

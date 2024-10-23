@@ -127,6 +127,7 @@ export default function ProfilePersonalInfoForm() {
         textColor="white"
         isRequired={true}
         isMultiline={true}
+        multilineHeight={100}
         onChangeText={(value: string) => handleInputChange("address", value)}
         placeholder="Jl. Jalan"
         type="text"

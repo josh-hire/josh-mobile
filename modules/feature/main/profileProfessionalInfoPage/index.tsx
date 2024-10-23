@@ -2,14 +2,17 @@ import globalStyles from "@styles/global.styles";
 import styles from "@modules/feature/main/profileProfessionalInfoPage/profileProfessionalInfo.styles";
 import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import ProfilePhoto from "@components/atoms/chat/profile";
-import { BackHandler, View } from "react-native";
+import { BackHandler, ScrollView, View } from "react-native";
 import { Assets } from "@constants/Assets";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { router } from "expo-router";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { TextButton } from "@components/atoms/button/TextButton";
+import SummarySection from "./sections/summarySection";
+import WorkExperienceSection from "./sections/workExpSection";
 
 export default function ProfileProfessionalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
+  const [currentSection, setCurrentSection] = useState<string>("summary");
 
   useEffect(() => {
     const backAction = () => {
@@ -24,10 +27,64 @@ export default function ProfileProfessionalInfoPage() {
 
     return () => backHandler.remove();
   }, []);
+
+  const renderedSection = () => {
+    if (currentSection === "summary") {
+      return <SummarySection />;
+    } else {
+      return <WorkExperienceSection />;
+    }
+  };
+
   return (
     <View style={[[globalStyles.screen, styles.screenBackground]]}>
       <ProfilePhoto url={Assets.images.telkomselLogo} size={120} />
-      <HeadingText type="h6" color="white">See my profile</HeadingText>
+      <TextButton title="See my profile" isFocused={false} handler={() => {}} />
+      <ScrollView horizontal={true} style={styles.horizontalScroll}>
+        <TextButton
+          title="Summary"
+          isFocused={currentSection === "summary"}
+          handler={() => {
+            setCurrentSection("summary");
+          }}
+        />
+        <TextButton
+          title="Work Experience"
+          isFocused={currentSection === "workexp"}
+          handler={() => {
+            setCurrentSection("workexp");
+          }}
+        />
+        <TextButton
+          title="Education"
+          isFocused={currentSection === "education"}
+          handler={() => {
+            setCurrentSection("education");
+          }}
+        />
+        <TextButton
+          title="Licenses & Certification"
+          isFocused={currentSection === "license"}
+          handler={() => {
+            setCurrentSection("license");
+          }}
+        />
+        <TextButton
+          title="Skill"
+          isFocused={currentSection === "skill"}
+          handler={() => {
+            setCurrentSection("skill");
+          }}
+        />
+        <TextButton
+          title="Honor & Awards"
+          isFocused={currentSection === "honor"}
+          handler={() => {
+            setCurrentSection("honor");
+          }}
+        />
+      </ScrollView>
+      {renderedSection()}
 
       <ConfirmationModal
         title="Cancel all edits?"
