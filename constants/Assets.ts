@@ -1,9 +1,11 @@
 export const Assets = {
   icons: {
     plus01: require("@assets/icons/plus-01.png"),
+    plus01White: require("@assets/icons/plus-01-white.png"),
     check01: require("@assets/icons/check-01.png"),
     chevronUp: require("@assets/icons/chevron-up.png"),
     chevronDown: require("@assets/icons/chevron-down.png"),
+    chevronDownWhite: require("@assets/icons/chevron-down-white.png"),
     chevronRight: require("@assets/icons/chevron-right.png"),
     x02: require("@assets/icons/x-02.png"),
     yes: require("@assets/icons/yes.png"),
