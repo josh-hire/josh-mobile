@@ -33,6 +33,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 20,
   },
+  educationBox: {
+    flexDirection: "row",
+    borderColor: "#FFFFFF",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    backgroundColor: "#002f4f",
+    gap: 18,
+  },
 });
 
 export default styles;
