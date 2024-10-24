@@ -72,6 +72,7 @@ export default function ProfileWorkExperienceForm() {
 
   const handleSubmit = () => {
     validateForm();
+    console.log(formData);
   };
 
   return (
@@ -88,18 +89,18 @@ export default function ProfileWorkExperienceForm() {
         suggestions={["Data Entry", "Data Analyst", "Data Science"]}
         error={errors.jobPosition}
       />
-      <TextArea
+      <TextAreaSuggestion
+        type="text"
         label="Company"
         labelColor="white"
-        borderColor="white"
-        textColor="white"
+        color="white"
         isRequired={true}
-        type="text"
         text={formData.company}
         placeholder="Ex: Telkom Indonesia"
         onChangeText={(value) => handleInputChange("company", value)}
+        suggestions={["Telkom Indonesia", "Telkom Corpu", "Telkomsel"]}
         error={errors.company}
-      ></TextArea>
+      />
       <Dropdown
         label="Employment Type"
         labelColor="white"
@@ -146,7 +147,7 @@ export default function ProfileWorkExperienceForm() {
         )}
       </View>
       <CheckboxSingle
-      color="white"
+        color="white"
         data={["I am currently working in this role"]}
         onSelectionChange={(value: boolean) =>
           handleInputChange("isWork", value)
