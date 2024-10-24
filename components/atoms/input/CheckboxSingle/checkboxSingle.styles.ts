@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    color: "#000",
   },
   columnWrapper: {
     justifyContent: "space-between",

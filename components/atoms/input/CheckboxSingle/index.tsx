@@ -2,13 +2,14 @@ import { FlatList, TouchableOpacity, View, Image } from "react-native";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { useState } from "react";
 import { Assets } from "@constants/Assets";
-import styles from "@components/atoms/input/CheckboxSingle/checkboxSingle.styles"
+import styles from "@components/atoms/input/CheckboxSingle/checkboxSingle.styles";
 
 interface CheckboxSingleProps {
   data: string[];
   onSelectionChange: (isSelected: boolean) => void;
   numColumns?: number;
   error?: string;
+  color?: string;
 }
 
 export default function CheckboxSingle({
@@ -16,6 +17,7 @@ export default function CheckboxSingle({
   onSelectionChange,
   numColumns = 1,
   error,
+  color,
 }: CheckboxSingleProps) {
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
@@ -36,13 +38,14 @@ export default function CheckboxSingle({
           onPress={() => handleSelect(item)}
         >
           <View
-            style={
+            style={[
               selectedItem === item
                 ? styles.checkboxChecked
                 : error != null
                 ? styles.checkboxError
-                : styles.checkbox
-            }
+                : styles.checkbox,
+              { borderColor: color },
+            ]}
           >
             {selectedItem === item && (
               <View style={styles.checked}>
@@ -50,7 +53,7 @@ export default function CheckboxSingle({
               </View>
             )}
           </View>
-          <HeadingText type="h6" style={styles.label}>
+          <HeadingText type="h6" style={styles.label} color={"white"}>
             {item}
           </HeadingText>
         </TouchableOpacity>
