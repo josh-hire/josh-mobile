@@ -1,14 +1,8 @@
 import React, { useState, useRef } from "react";
-import {
-  Modal,
-  View,
-  TouchableOpacity,
-  FlatList,
-  Image,
-} from "react-native";
+import { Modal, View, TouchableOpacity, FlatList, Image } from "react-native";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Assets } from "@constants/Assets";
-import styles from "@components/atoms/input/Dropdown/dropdown.styles"
+import styles from "@components/atoms/input/Dropdown/dropdown.styles";
 
 interface DropdownProps {
   data: string[];
@@ -16,6 +10,10 @@ interface DropdownProps {
   onValueChange: (value: string) => void;
   placeholder?: string;
   error?: string;
+  color?: string;
+  label?: string;
+  labelSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "label" | "paragraph";
+  labelColor?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -23,10 +21,14 @@ const Dropdown: React.FC<DropdownProps> = ({
   selectedValue,
   onValueChange,
   placeholder = "Select...",
-  error
+  error,
+  color = "black",
+  label,
+  labelSize,
+  labelColor,
 }) => {
   const [visible, setVisible] = useState(false);
-  const [selected, setSelected] = useState<string>(selectedValue || "");
+  const [selected, setSelected] = useState<string>(selectedValue ?? "");
   const [dropdownPosition, setDropdownPosition] = useState({
     top: 0,
     left: 0,
@@ -51,34 +53,36 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <View>
+    <View style={styles(color).container}>
+      <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+        {label}
+      </HeadingText>
       <TouchableOpacity
         ref={dropdownRef}
         onPress={openDropdown}
-        style={[styles.dropdown, error != null && styles.dropdownError ]}
+        style={[
+          styles(color).dropdown,
+          error != null && styles(color).dropdownError,
+        ]}
       >
-        <HeadingText type="h5" style={styles.selectedText}>
-          {selected ? selected : placeholder}
+        <HeadingText type="h6" color={color}>
+          {selected || placeholder}
         </HeadingText>
         {visible ? (
-          <Image
-            source={Assets.icons.chevronUp}
-          ></Image>
+          <Image source={Assets.icons.chevronUp}></Image>
         ) : (
-          <Image
-            source={Assets.icons.chevronDown}
-          ></Image>
+          <Image source={Assets.icons.chevronDown}></Image>
         )}
       </TouchableOpacity>
 
       <Modal visible={visible} transparent={true} animationType="fade">
         <TouchableOpacity
-          style={styles.overlay}
+          style={styles(color).overlay}
           onPress={() => setVisible(false)}
         >
           <View
             style={[
-              styles.modalContainer,
+              styles(color).modalContainer,
               {
                 top: dropdownPosition.top - 40,
                 left: dropdownPosition.left,
@@ -96,16 +100,17 @@ const Dropdown: React.FC<DropdownProps> = ({
                   onPress={() => handleSelect(item)}
                   activeOpacity={1}
                   style={[
-                    styles.item,
-                    pressedItem === item ? styles.itemPressed : null,
+                    styles(color).item,
+                    pressedItem === item ? styles(color).itemPressed : null,
                   ]}
                 >
                   <HeadingText
-                    type="h5"
+                    type="h6"
+                    color={color}
                     style={
                       pressedItem === item
-                        ? styles.itemTextPressed
-                        : styles.itemText
+                        ? styles(color).itemTextPressed
+                        : styles(color).itemText
                     }
                   >
                     {item}
