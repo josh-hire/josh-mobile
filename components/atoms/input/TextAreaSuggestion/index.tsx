@@ -17,6 +17,11 @@ export type TextAreaSuggestionProps = {
   type: string;
   error?: string;
   suggestions: string[];
+  label?: string;
+  labelSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "label" | "paragraph";
+  labelColor?: string;
+  isRequired?: boolean;
+  color?: string;
 };
 
 export function TextAreaSuggestion({
@@ -26,6 +31,11 @@ export function TextAreaSuggestion({
   type,
   error,
   suggestions,
+  label,
+  labelSize,
+  labelColor,
+  isRequired,
+  color,
 }: TextAreaSuggestionProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<string[]>([]);
@@ -54,6 +64,18 @@ export function TextAreaSuggestion({
 
   return (
     <View>
+      <View style={styles.textLabelContainer}>
+        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+          {label}
+        </HeadingText>
+        {isRequired === true ? (
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+            *
+          </HeadingText>
+        ) : (
+          <View />
+        )}
+      </View>
       <View
         style={[
           styles.container,
@@ -66,6 +88,7 @@ export function TextAreaSuggestion({
             styles.textInput,
             isFocused && styles.textInputFocused,
             error ? styles.textInputError : {},
+            { borderColor: color, color: color },
           ]}
           onChangeText={handleChangeText}
           value={text}
@@ -91,12 +114,13 @@ export function TextAreaSuggestion({
               ]}
             >
               <HeadingText
-                type="h5"
+                type="h6"
                 style={[
                   styles.suggestionItem,
                   pressedItem === item
                     ? styles.itemTextPressed
                     : styles.itemText,
+                  { color: color },
                 ]}
               >
                 {item}
@@ -109,12 +133,13 @@ export function TextAreaSuggestion({
       )}
 
       {error && (
-        <HeadingText type="label" style={{ color: Colors.primary.p04, marginTop: 5 }}>
+        <HeadingText
+          type="label"
+          style={{ color: Colors.primary.p04, marginTop: 5 }}
+        >
           {error}
         </HeadingText>
       )}
     </View>
   );
 }
-
-
