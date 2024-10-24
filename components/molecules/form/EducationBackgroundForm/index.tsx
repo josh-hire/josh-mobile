@@ -68,7 +68,8 @@ export default function EducationBackgroundForm() {
   };
 
   const handleSubmit = () => {
-    if (validateForm()) {}
+    if (validateForm()) {
+    }
   };
 
   return (
@@ -115,13 +116,13 @@ export default function EducationBackgroundForm() {
         error={errors.category}
       />
       <ScrollableDatePicker
-        title="Study Start"
+        label="Study Start"
         onDateChange={(date) => handleInputChange("studyStart", date)}
         initialDate={new Date()}
       />
       {!formData.isStudy ? (
         <ScrollableDatePicker
-          title="Study End"
+          label="Study End"
           onDateChange={(date) => handleInputChange("studyEnd", date)}
           initialDate={new Date()}
         />

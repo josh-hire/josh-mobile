@@ -92,13 +92,13 @@ export default function LastWorkForm() {
         error={errors.company}
       ></TextArea>
       <ScrollableDatePicker
-        title="Start Job"
+        label="Start Job"
         onDateChange={(date) => handleInputChange("startJob", date)}
         initialDate={new Date()}
       />
       {!formData.isWork ? (
         <ScrollableDatePicker
-          title="End Job"
+          label="End Job"
           onDateChange={(date) => handleInputChange("endJob", date)}
           initialDate={new Date()}
         />
