@@ -7,9 +7,10 @@ import { Assets } from "@constants/Assets";
 import React, { useEffect, useState } from "react";
 import { router } from "expo-router";
 import { TextButton } from "@components/atoms/button/TextButton";
-import SummarySection from "./sections/summarySection";
-import WorkExperienceSection from "./sections/workExpSection";
-import EducationSection from "./sections/educationSection";
+import SummarySection from "@modules/feature/main/profileProfessionalInfoPage/sections/summarySection";
+import WorkExperienceSection from "@modules/feature/main/profileProfessionalInfoPage/sections/workExpSection";
+import EducationSection from "@modules/feature/main/profileProfessionalInfoPage/sections/educationSection";
+import LicenseSection from "@modules/feature/main/profileProfessionalInfoPage/sections/licenseSection";
 
 export default function ProfileProfessionalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -36,6 +37,8 @@ export default function ProfileProfessionalInfoPage() {
       return <WorkExperienceSection />;
     } else if (currentSection === "education") {
       return <EducationSection />;
+    } else if (currentSection === "license") {
+      return <LicenseSection />;
     }
   };
 
