@@ -20,13 +20,21 @@ const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 interface DatePickerProps {
   onDateChange: (date: Date) => void;
   initialDate?: Date;
-  title: string;
+  label?: string;
+  labelSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "label" | "paragraph";
+  labelColor?: string;
+  isRequired?: boolean;
+  color?: string;
 }
 
 const ScrollableDatePicker = ({
   onDateChange,
   initialDate = new Date(),
-  title
+  label,
+  labelSize,
+  labelColor,
+  isRequired,
+  color,
 }: DatePickerProps) => {
   const [selectedDate, setSelectedDate] = useState(initialDate);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -105,7 +113,9 @@ const ScrollableDatePicker = ({
     >
       {data.map((item, index) => (
         <View key={index} style={styles.item}>
-          <HeadingText type="h6" style={styles.itemText}>{item}</HeadingText>
+          <HeadingText type="h6" style={styles.itemText}>
+            {item}
+          </HeadingText>
         </View>
       ))}
     </ScrollView>
@@ -132,10 +142,24 @@ const ScrollableDatePicker = ({
 
   return (
     <View style={styles.container}>
-      <HeadingText type="h4">{title}</HeadingText>
-      <TouchableOpacity onPress={showModal} style={styles.openButton}>
-        <HeadingText style={styles.openButtonText}>{selectedDate.toLocaleString('default', { month: 'long' })} {selectedDate.getFullYear()}</HeadingText>
-        <Image source={Assets.icons.chevronDown} />
+      <View style={styles.textLabelContainer}>
+        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+          {label}
+        </HeadingText>
+        {isRequired === true ? (
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+            *
+          </HeadingText>
+        ) : (
+          <View />
+        )}
+      </View>
+      <TouchableOpacity onPress={showModal} style={[styles.openButton, {borderColor: color ?? ""}]}>
+        <HeadingText style={[styles.openButtonText, {color: color ?? ""}]}>
+          {selectedDate.toLocaleString("default", { month: "long" })}{" "}
+          {selectedDate.getFullYear()}
+        </HeadingText>
+        <Image source={color === "white" ? Assets.icons.chevronDownWhite : Assets.icons.chevronDown} />
       </TouchableOpacity>
       {isModalVisible && (
         <Modal
@@ -153,17 +177,26 @@ const ScrollableDatePicker = ({
           >
             <View style={styles.pickerContainer}>
               <View style={styles.singleContainer}>
-                <HeadingText type="h5" fontWeight="bold">Month</HeadingText>
+                <HeadingText type="h5" fontWeight="bold">
+                  Month
+                </HeadingText>
                 {renderScrollColumn(months, monthRef, "month")}
               </View>
               <View style={styles.singleContainer}>
-                <HeadingText type="h5" fontWeight="bold">Years</HeadingText>
+                <HeadingText type="h5" fontWeight="bold">
+                  Years
+                </HeadingText>
                 {renderScrollColumn(years, yearRef, "year")}
               </View>
               <View style={styles.selectionOverlay} pointerEvents="none" />
             </View>
             <Pressable onPress={hideModal} style={styles.closeButton}>
-              <HeadingText style={styles.closeButtonText} color={Colors.primary.p04}>Cancel</HeadingText>
+              <HeadingText
+                style={styles.closeButtonText}
+                color={Colors.primary.p04}
+              >
+                Cancel
+              </HeadingText>
             </Pressable>
           </Animated.View>
         </Modal>
