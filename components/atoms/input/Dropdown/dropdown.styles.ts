@@ -6,6 +6,9 @@ const styles = (color: string) =>
     container: {
       gap: 8,
     },
+    textLabelContainer: {
+      flexDirection: "row",
+    },
     dropdown: {
       width: "100%",
       borderWidth: 1,

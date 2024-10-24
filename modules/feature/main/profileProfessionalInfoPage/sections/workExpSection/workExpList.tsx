@@ -1,9 +1,8 @@
 import WorkExperienceCard from "@components/molecules/card/workExperienceCard";
-import { ScrollView, View } from "react-native";
+import { View } from "react-native";
 import styles from "@modules/feature/main/profileProfessionalInfoPage/sections/workExpSection/workExpSection.styles";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import ProfilePhoto from "@/components/atoms/chat/profile";
-import { Assets } from "@/constants/Assets";
+import ProfilePhoto from "@components/atoms/chat/profile";
+import { Assets } from "@constants/Assets";
 
 interface WorkExpData {
   id: string;

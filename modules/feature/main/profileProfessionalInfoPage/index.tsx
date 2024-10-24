@@ -9,6 +9,7 @@ import { router } from "expo-router";
 import { TextButton } from "@components/atoms/button/TextButton";
 import SummarySection from "./sections/summarySection";
 import WorkExperienceSection from "./sections/workExpSection";
+import EducationSection from "./sections/educationSection";
 
 export default function ProfileProfessionalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -31,8 +32,10 @@ export default function ProfileProfessionalInfoPage() {
   const renderedSection = () => {
     if (currentSection === "summary") {
       return <SummarySection />;
-    } else {
+    } else if (currentSection === "workexp") {
       return <WorkExperienceSection />;
+    } else if (currentSection === "education") {
+      return <EducationSection />;
     }
   };
 

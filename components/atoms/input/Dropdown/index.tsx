@@ -14,6 +14,7 @@ interface DropdownProps {
   label?: string;
   labelSize?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "label" | "paragraph";
   labelColor?: string;
+  isRequired?: boolean;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -26,6 +27,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   label,
   labelSize,
   labelColor,
+  isRequired = false,
 }) => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState<string>(selectedValue ?? "");
@@ -54,9 +56,18 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <View style={styles(color).container}>
-      <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
-        {label}
-      </HeadingText>
+      <View style={styles(color).textLabelContainer}>
+        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+          {label}
+        </HeadingText>
+        {isRequired === true ? (
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+            *
+          </HeadingText>
+        ) : (
+          <View />
+        )}
+      </View>
       <TouchableOpacity
         ref={dropdownRef}
         onPress={openDropdown}
@@ -65,7 +76,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           error != null && styles(color).dropdownError,
         ]}
       >
-        <HeadingText type="h6" color={color}>
+        <HeadingText type="h6" color={selected ? color : "#999"}>
           {selected || placeholder}
         </HeadingText>
         {visible ? (
