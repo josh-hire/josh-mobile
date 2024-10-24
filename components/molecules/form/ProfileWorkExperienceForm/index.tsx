@@ -71,8 +71,9 @@ export default function ProfileWorkExperienceForm() {
   };
 
   const handleSubmit = () => {
-    validateForm();
-    console.log(formData);
+    if(validateForm()) {
+      
+    }   
   };
 
   return (

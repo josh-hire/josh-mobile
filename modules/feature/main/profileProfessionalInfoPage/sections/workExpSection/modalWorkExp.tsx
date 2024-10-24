@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
 import { Image, Modal, TouchableOpacity, View } from "react-native";
-import styles from "@modules/feature/main/profileProfessionalInfoPage/sections/summarySection/summarySection.styles";
+import styles from "@modules/feature/main/profileProfessionalInfoPage/sections/workExpSection/workExpSection.styles";
 import { Assets } from "@constants/Assets";
 import { HeadingText } from "@components/atoms/text/HeadingText";
-import ProfileWorkExperienceForm from "@/components/molecules/form/ProfileWorkExperienceForm";
+import ProfileWorkExperienceForm from "@components/molecules/form/ProfileWorkExperienceForm";
 
 interface ModalWorkExpProps {
   modalVisible: boolean;
