@@ -13,6 +13,7 @@ import EducationSection from "@modules/feature/main/profileProfessionalInfoPage/
 import LicenseSection from "@modules/feature/main/profileProfessionalInfoPage/sections/licenseSection";
 import HonorSection from "@modules/feature/main/profileProfessionalInfoPage/sections/honorSection";
 import JobPrefSection from "@modules/feature/main/profileProfessionalInfoPage/sections/jobPrefSection";
+import SkillSection from "@modules/feature/main/profileProfessionalInfoPage/sections/skillSection";
 
 export default function ProfileProfessionalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -45,6 +46,8 @@ export default function ProfileProfessionalInfoPage() {
       return <HonorSection />;
     } else if (currentSection === "jobpref") {
       return <JobPrefSection />;
+    } else if (currentSection === "skill") {
+      return <SkillSection />;
     }
   };
 
