@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  FlatList,
-  TouchableOpacity,
-  View,
-  Image,
-} from "react-native";
+import { FlatList, TouchableOpacity, View, Image } from "react-native";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Assets } from "@constants/Assets";
 import styles from "@/components/atoms/input/Checkbox/checkbox.styles";
@@ -14,14 +9,16 @@ interface CheckboxListProps {
   onSelectionChange: (selectedItems: string[]) => void;
   numColumns?: number;
   error?: string;
+  color?: string;
 }
 
 export default function CheckboxList({
   data,
   onSelectionChange,
   numColumns = 1,
-  error
-}: CheckboxListProps) {
+  error,
+  color,
+}: Readonly<CheckboxListProps>) {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
   const handleSelect = (item: string) => {
@@ -47,28 +44,28 @@ export default function CheckboxList({
           onPress={() => handleSelect(item)}
         >
           <View
-            style={
+            style={[
               selectedItems.includes(item)
                 ? styles.checkboxChecked
-                : error != null ? styles.checkboxError : styles.checkbox
-            }
+                : error != null
+                ? styles.checkboxError
+                : styles.checkbox,
+              { borderColor: color },
+            ]}
           >
             {selectedItems.includes(item) && (
               <View style={styles.checked}>
-                <Image
-                  source={Assets.icons.check01}
-                ></Image>
+                <Image source={Assets.icons.check01}></Image>
               </View>
             )}
           </View>
-          <HeadingText type="h6" style={styles.label}>
+          <HeadingText type="h6" color={color}>
             {item}
           </HeadingText>
         </TouchableOpacity>
       )}
-      numColumns={numColumns} 
+      numColumns={numColumns}
       columnWrapperStyle={numColumns > 1 ? styles.columnWrapper : null}
     />
   );
 }
-

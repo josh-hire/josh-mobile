@@ -18,6 +18,7 @@ export const Assets = {
     profile: require("@assets/icons/profile_ic.png"),
     activity: require("@assets/icons/activity_ic.png"),
     edit: require("@assets/icons/edit_ic.png"),
+    edit_2: require("@assets/icons/edit_2_ic.png"),
     dash: require("@assets/icons/dash_ic.png"),
 
     home_fill: require("@assets/icons/home_fill_ic.png"),

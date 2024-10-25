@@ -82,7 +82,13 @@ const Dropdown: React.FC<DropdownProps> = ({
         {visible ? (
           <Image source={Assets.icons.chevronUp}></Image>
         ) : (
-          <Image source={Assets.icons.chevronDown}></Image>
+          <Image
+            source={
+              color === "white"
+                ? Assets.icons.chevronDownWhite
+                : Assets.icons.chevronDown
+            }
+          ></Image>
         )}
       </TouchableOpacity>
 
