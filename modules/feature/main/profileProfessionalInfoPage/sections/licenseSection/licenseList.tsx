@@ -36,7 +36,7 @@ const groupLicenseByOrganization = (licenses: License[]): LicenseGroup[] => {
   }));
 };
 
-export default function LicenseList({ licenseData }: LicenseListProps) {
+export default function LicenseList({ licenseData }: Readonly<LicenseListProps>) {
   const groupedLicense = groupLicenseByOrganization(licenseData);
   return (
     <>

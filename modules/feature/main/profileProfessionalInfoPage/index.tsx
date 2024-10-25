@@ -11,6 +11,7 @@ import SummarySection from "@modules/feature/main/profileProfessionalInfoPage/se
 import WorkExperienceSection from "@modules/feature/main/profileProfessionalInfoPage/sections/workExpSection";
 import EducationSection from "@modules/feature/main/profileProfessionalInfoPage/sections/educationSection";
 import LicenseSection from "@modules/feature/main/profileProfessionalInfoPage/sections/licenseSection";
+import HonorSection from "@modules/feature/main/profileProfessionalInfoPage/sections/honorSection";
 
 export default function ProfileProfessionalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -39,6 +40,8 @@ export default function ProfileProfessionalInfoPage() {
       return <EducationSection />;
     } else if (currentSection === "license") {
       return <LicenseSection />;
+    } else if (currentSection === "honor") {
+      return <HonorSection />;
     }
   };
 
@@ -87,6 +90,13 @@ export default function ProfileProfessionalInfoPage() {
           isFocused={currentSection === "honor"}
           handler={() => {
             setCurrentSection("honor");
+          }}
+        />
+        <TextButton
+          title="Job Preferences"
+          isFocused={currentSection === "jobpref"}
+          handler={() => {
+            setCurrentSection("jobpref");
           }}
         />
       </ScrollView>
