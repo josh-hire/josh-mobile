@@ -39,7 +39,7 @@ export default function HonorSection() {
   return (
     <View style={styles.honorContainer}>
       <HeadingText type="h6" color={Colors.neutral.n00}>
-        Boost your profile by adding the appropriate honors and certifications.
+        Make your profile shine by featuring the awards and recognitions that demonstrate your excellence
       </HeadingText>
       <SecondaryButton
         title="Add Honor"
