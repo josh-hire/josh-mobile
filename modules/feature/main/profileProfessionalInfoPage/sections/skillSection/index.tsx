@@ -1,11 +1,12 @@
 import { Colors } from "@constants/Colors";
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { useState } from "react";
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styles from "@modules/feature/main/profileProfessionalInfoPage/sections/skillSection/profileSkill.styles";
 import SecondaryButton from "@components/atoms/button/SecondaryButton";
 import ModalSkill from "@modules/feature/main/profileProfessionalInfoPage/sections/skillSection/modalSkill";
 import TagsCard from "@/components/molecules/card/TagsCard";
+import { Assets } from "@/constants/Assets";
 
 export default function SkillSection() {
   const skillData: string[] = ["Communication", "Team Work", "Responsible"];
@@ -26,8 +27,11 @@ export default function SkillSection() {
       />
       <View style={styles.skillBoxContainer}>
         {skillData.map((skill) => (
-          <TagsCard key={skill} title={skill} onTap={() => {}} />
+          <View key={skill} style={styles.skillItem}>
+            <TagsCard title={skill} onTap={() => {}} />
+          </View>
         ))}
+        <Image source={Assets.icons.edit_2} style={styles.editIcon}/>
       </View>
 
       <ModalSkill

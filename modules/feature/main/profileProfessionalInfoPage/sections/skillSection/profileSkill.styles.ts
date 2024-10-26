@@ -36,9 +36,22 @@ const styles = StyleSheet.create({
   },
   skillBoxContainer: {
     flexDirection: "row",
-    flexWrap: "wrap", // Membungkus elemen ke baris berikutnya
-    justifyContent: "space-between", // Meratakan elemen secara merata di antara baris
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    padding: 12,
+    borderColor: "white",
+    borderRadius: 12,
+    borderWidth: 1,
   },
+  skillItem: {
+    width: "45%",
+  },
+  editIcon: {
+    position: "absolute",
+    right: "6%",
+    top: 12,
+  }
 });
 
 export default styles;
