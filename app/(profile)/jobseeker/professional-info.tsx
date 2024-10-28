@@ -3,7 +3,7 @@ import { Colors } from "@constants/Colors";
 import { HeaderBackButton } from "@react-navigation/elements";
 import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
-import ProfileProfessionalInfoPage from "@modules/feature/main/profileProfessionalInfoPage";
+import ProfileProfessionalInfoPage from "@modules/feature/profile/profileProfessionalInfoPage";
 
 export default function ProfileProfessionalInformationScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);

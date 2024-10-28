@@ -3,7 +3,7 @@ import { Colors } from "@constants/Colors";
 import { HeaderBackButton } from "@react-navigation/elements";
 import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
-import UploadCvPage from "@modules/feature/main/uploadCvPage";
+import UploadCvPage from "@modules/feature/profile/uploadCvPage";
 
 export default function UploadCVScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
