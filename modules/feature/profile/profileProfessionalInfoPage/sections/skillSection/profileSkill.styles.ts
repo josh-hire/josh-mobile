@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 12,
     borderWidth: 1,
+    marginBottom: 12,
   },
   skillItem: {
     width: "45%",
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: "6%",
     top: 12,
-  }
+  },
 });
 
 export default styles;
