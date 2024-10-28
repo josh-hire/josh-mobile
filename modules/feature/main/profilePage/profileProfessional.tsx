@@ -33,7 +33,12 @@ export default function ProfileProfessional() {
           </HeadingText>
           <Image source={Assets.icons.chevronRight}></Image>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={styles.optionBottomButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(profile)/jobseeker/upload-cv");
+          }}
+          style={styles.optionBottomButton}
+        >
           <HeadingText type="h6" color="white">
             Upload CV
           </HeadingText>

@@ -2,6 +2,7 @@ export const Assets = {
   icons: {
     plus01: require("@assets/icons/plus-01.png"),
     plus01White: require("@assets/icons/plus-01-white.png"),
+    plus01Blue: require("@assets/icons/plus-01-blue.png"),
     check01: require("@assets/icons/check-01.png"),
     chevronUp: require("@assets/icons/chevron-up.png"),
     chevronDown: require("@assets/icons/chevron-down.png"),
@@ -20,6 +21,7 @@ export const Assets = {
     edit: require("@assets/icons/edit_ic.png"),
     edit_2: require("@assets/icons/edit_2_ic.png"),
     dash: require("@assets/icons/dash_ic.png"),
+    file02: require("@assets/icons/file-02.png"),
 
     home_fill: require("@assets/icons/home_fill_ic.png"),
     profile_fill: require("@assets/icons/profile_fill_ic.png"),
