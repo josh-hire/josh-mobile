@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import HomePage from "@/modules/feature/main/homePage";
+import ProfilePage from "@modules/feature/profile/profilePage";
 
 export default function ProfileScreen() {
   return (
@@ -9,7 +9,7 @@ export default function ProfileScreen() {
           headerShown: false
         }}
       />
-      <HomePage />
+      <ProfilePage />
     </>
   );
 }

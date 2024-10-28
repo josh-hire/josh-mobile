@@ -35,10 +35,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: Colors.secondary.s05,
   },
-  label: {
-    fontSize: 16,
-    color: "#000",
-  },
   columnWrapper: {
     justifyContent: "space-between",
   },

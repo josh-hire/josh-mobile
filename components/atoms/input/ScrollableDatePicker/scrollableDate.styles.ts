@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     padding: 16,
   },
+  textLabelContainer: {
+    flexDirection: "row",
+  },
   overlay: {
     flex: 1,
     backgroundColor: "rgba(0,0,0,0.5)",

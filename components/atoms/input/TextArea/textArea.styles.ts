@@ -12,13 +12,15 @@ const styles = StyleSheet.create({
   containerError: {
     borderColor: Colors.primary.p04,
   },
+  textLabelContainer: {
+    flexDirection: "row",
+  },
   textInput: {
     marginTop: 4,
     minHeight: 40,
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
-    backgroundColor: "#FFF",
     flex: 1,
   },
   textInputFocused: {

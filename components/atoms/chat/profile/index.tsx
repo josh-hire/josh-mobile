@@ -1,10 +1,11 @@
 import { Image, ImageSourcePropType } from "react-native";
-import styles from "@components/atoms/chat/profile/profileChat.styles";
+import styles from "@/components/atoms/chat/profile/profile.styles";
 
-interface BubbleChatProps {
+interface ProfilePhotoProps {
   url: ImageSourcePropType;
+  size: number;
 }
 
-export default function ProfileChat({ url }: Readonly<BubbleChatProps>) {
-  return <Image source={url} style={styles.profileImage} />;
+export default function ProfilePhoto({ url, size }: Readonly<ProfilePhotoProps>) {
+  return <Image source={url} style={styles(size).profileImage} />;
 }

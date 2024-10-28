@@ -1,8 +1,8 @@
 import { Colors } from "@constants/Colors";
+import { StyleSheet } from "react-native";
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    marginBottom: 10,
     height: 40,
   },
   containerFocused: {
@@ -16,9 +16,11 @@ const styles = {
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
-    backgroundColor: "#FFF",
     flex: 1,
     fontSize: 16,
+  },
+  textLabelContainer: {
+    flexDirection: "row",
   },
   textInputFocused: {
     borderWidth: 2,
@@ -27,7 +29,6 @@ const styles = {
     borderColor: Colors.primary.p04,
   },
   suggestionList: {
-    backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: Colors.neutral.n02,
     maxHeight: 200,
@@ -52,6 +53,6 @@ const styles = {
   itemTextPressed: {
     color: Colors.neutral.n01,
   },
-};
+});
 
 export default styles;
