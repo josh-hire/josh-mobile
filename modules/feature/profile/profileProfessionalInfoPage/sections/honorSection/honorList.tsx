@@ -1,6 +1,7 @@
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/honorSection/profileHonor.styles";
 import HonorCard from "@components/molecules/card/honorCard";
+import { Assets } from "@constants/Assets";
 
 interface Honor {
   id: string;
@@ -41,7 +42,7 @@ export default function HonorList({ honorData }: Readonly<HonorListProps>) {
     <>
       {groupedHonor.map((group) => (
         <View key={group.organization} style={styles.honorBox}>
-          <View>
+          <View style={styles.mainHonorContainer}>
             {group.honors.map((honor, index) => {
               return (
                 <HonorCard
@@ -52,6 +53,7 @@ export default function HonorList({ honorData }: Readonly<HonorListProps>) {
               );
             })}
           </View>
+          <Image source={Assets.icons.edit_2} />
         </View>
       ))}
     </>
