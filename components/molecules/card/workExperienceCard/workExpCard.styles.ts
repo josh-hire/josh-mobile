@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    maxWidth: "85%",
     gap: 6
   },
   companyBox: {

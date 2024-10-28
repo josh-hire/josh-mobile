@@ -22,7 +22,7 @@ interface WorkExperienceCardProps {
 export default function WorkExperienceCard({
   workExpData,
   isLast,
-}: WorkExperienceCardProps) {
+}: Readonly<WorkExperienceCardProps>) {
   return (
     <View style={styles.container}>
       <HeadingText type="h4" fontWeight="bold" style={styles.position}>

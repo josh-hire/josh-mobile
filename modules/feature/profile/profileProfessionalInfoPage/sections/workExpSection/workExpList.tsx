@@ -1,5 +1,5 @@
 import WorkExperienceCard from "@components/molecules/card/workExperienceCard";
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/workExpSection/workExpSection.styles";
 import ProfilePhoto from "@components/atoms/chat/profile";
 import { Assets } from "@constants/Assets";
@@ -49,7 +49,7 @@ export default function WorkExperienceList({
       {groupedJobs.map((group) => (
         <View key={group.company} style={styles.companyBox}>
           <ProfilePhoto url={Assets.images.telkomselLogo} size={48} />
-          <View>
+          <View style={styles.mainWorkExpContainer}>
             {group.jobs.map((job, index) => {
               return (
                 <WorkExperienceCard
@@ -60,6 +60,7 @@ export default function WorkExperienceList({
               );
             })}
           </View>
+          <Image source={Assets.icons.edit_2} />
         </View>
       ))}
     </>
