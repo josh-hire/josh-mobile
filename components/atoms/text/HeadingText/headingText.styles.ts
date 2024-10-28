@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     fontFamily: "TelkomselBatik",
   },
   label: {
-    fontSize: 10,
+    fontSize: 12,
     lineHeight: 15,
     fontFamily: "TelkomselBatik",
   },
