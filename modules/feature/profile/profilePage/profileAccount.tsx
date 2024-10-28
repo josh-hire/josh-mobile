@@ -3,8 +3,13 @@ import { Image, TouchableOpacity, View } from "react-native";
 import styles from "@modules/feature/profile/profilePage/profile.styles";
 import { Assets } from "@constants/Assets";
 import { router } from "expo-router";
+import ConfirmationModal from "@/components/molecules/modal/ConfirmationModal";
+import { useState } from "react";
 
 export default function ProfileAccount() {
+  const [signoutModalVisible, setSignoutModalVisible] =
+    useState<boolean>(false);
+
   return (
     <View style={styles.sectionContainer}>
       <HeadingText type="h5" color="white" fontWeight="bold">
@@ -22,13 +27,23 @@ export default function ProfileAccount() {
           </HeadingText>
           <Image source={Assets.icons.chevronRight}></Image>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}} style={styles.optionButton}>
+        <TouchableOpacity
+          onPress={() => setSignoutModalVisible(true)}
+          style={styles.optionBottomButton}
+        >
           <HeadingText type="h6" color="white">
             Logout
           </HeadingText>
           <Image source={Assets.icons.chevronRight}></Image>
         </TouchableOpacity>
       </View>
+      <ConfirmationModal
+        title="Sign Out"
+        description="Are you sure want to sign out"
+        isConfirmVisible={signoutModalVisible}
+        setIsConfirmVisible={setSignoutModalVisible}
+        handleCloseModal={() => setSignoutModalVisible(false)}
+      />
     </View>
   );
 }
