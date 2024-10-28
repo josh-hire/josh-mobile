@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import ProfilePage from "@/modules/feature/main/profilePage";
+import ProfilePage from "@modules/feature/profile/profilePage";
 
 export default function ProfileScreen() {
   return (

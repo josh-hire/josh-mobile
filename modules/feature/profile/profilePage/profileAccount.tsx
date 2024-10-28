@@ -1,7 +1,8 @@
 import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Image, TouchableOpacity, View } from "react-native";
 import styles from "@modules/feature/profile/profilePage/profile.styles";
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
+import { router } from "expo-router";
 
 export default function ProfileAccount() {
   return (
@@ -10,7 +11,12 @@ export default function ProfileAccount() {
         Account
       </HeadingText>
       <View style={styles.optionContainer}>
-        <TouchableOpacity onPress={() => {}} style={styles.optionButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(profile)/jobseeker/setting");
+          }}
+          style={styles.optionButton}
+        >
           <HeadingText type="h6" color="white">
             Setting
           </HeadingText>
