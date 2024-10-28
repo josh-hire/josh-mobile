@@ -1,10 +1,9 @@
 import { router, Stack } from "expo-router";
-import PersonalInfoProfilePage from "@/modules/feature/main/profilePersonalInfoPage";
 import { Colors } from "@constants/Colors";
 import { HeaderBackButton } from "@react-navigation/elements";
-import ConfirmationModal from "@/components/molecules/modal/ConfirmationModal";
+import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
-import ProfilePersonalInfoPage from "@/modules/feature/main/profilePersonalInfoPage";
+import ProfilePersonalInfoPage from "@modules/feature/profile/profilePersonalInfoPage";
 
 export default function ProfilePersonalInformationScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
