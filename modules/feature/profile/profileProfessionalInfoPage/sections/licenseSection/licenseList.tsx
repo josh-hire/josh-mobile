@@ -1,6 +1,7 @@
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/licenseSection/profileLicense.styles";
 import LicenseCard from "@components/molecules/card/LicenseCard";
+import { Assets } from "@constants/Assets";
 
 interface License {
   id: string;
@@ -42,7 +43,7 @@ export default function LicenseList({ licenseData }: Readonly<LicenseListProps>)
     <>
       {groupedLicense.map((group) => (
         <View key={group.organization} style={styles.licenseBox}>
-          <View>
+          <View style={styles.mainLicenseContainer}>
             {group.licenses.map((license, index) => {
               return (
                 <LicenseCard
@@ -53,6 +54,7 @@ export default function LicenseList({ licenseData }: Readonly<LicenseListProps>)
               );
             })}
           </View>
+          <Image source={Assets.icons.edit_2} />
         </View>
       ))}
     </>

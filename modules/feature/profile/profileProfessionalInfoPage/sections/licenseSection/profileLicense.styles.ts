@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#002f4f",
     gap: 18,
   },
+  mainLicenseContainer: {
+    width: "85%",
+  },
 });
 
 export default styles;
