@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/educationSection/educationSection.styles";
 import ProfilePhoto from "@components/atoms/chat/profile";
 import { Assets } from "@constants/Assets";
@@ -38,14 +38,16 @@ const groupEducationByInstitution = (jobs: Education[]): EducationGroup[] => {
   }));
 };
 
-export default function EducationList({ educationData }: Readonly<EducationListProps>) {
+export default function EducationList({
+  educationData,
+}: Readonly<EducationListProps>) {
   const groupedEducation = groupEducationByInstitution(educationData);
   return (
     <>
       {groupedEducation.map((group) => (
         <View key={group.institute} style={styles.educationBox}>
           <ProfilePhoto url={Assets.images.telkomselLogo} size={48} />
-          <View>
+          <View style={styles.mainEducationContainer}>
             {group.jobs.map((job, index) => {
               return (
                 <EducationCard
@@ -56,6 +58,7 @@ export default function EducationList({ educationData }: Readonly<EducationListP
               );
             })}
           </View>
+          <Image source={Assets.icons.edit_2} />
         </View>
       ))}
     </>

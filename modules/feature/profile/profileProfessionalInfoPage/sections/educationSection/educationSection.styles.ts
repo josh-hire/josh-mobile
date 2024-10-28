@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#002f4f",
     gap: 18,
   },
+  mainEducationContainer: {
+    width: "65%",
+  },
 });
 
 export default styles;

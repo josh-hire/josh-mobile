@@ -20,7 +20,7 @@ interface EducationCardProps {
 export default function EducationCard({
   educationData,
   isLast,
-}: EducationCardProps) {
+}: Readonly<EducationCardProps>) {
   return (
     <View style={styles.container}>
       <HeadingText type="h4" fontWeight="bold" style={styles.position}>
