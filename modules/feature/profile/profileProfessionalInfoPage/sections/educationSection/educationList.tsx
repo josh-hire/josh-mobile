@@ -15,26 +15,26 @@ interface Education {
 
 interface EducationGroup {
   institute: string;
-  jobs: Education[];
+  educations: Education[];
 }
 
 interface EducationListProps {
   educationData: Education[];
 }
 
-const groupEducationByInstitution = (jobs: Education[]): EducationGroup[] => {
+const groupEducationByInstitution = (educations: Education[]): EducationGroup[] => {
   const grouped: Record<string, Education[]> = {};
 
-  jobs.forEach((job) => {
-    if (!grouped[job.institute]) {
-      grouped[job.institute] = [];
+  educations.forEach((education) => {
+    if (!grouped[education.institute]) {
+      grouped[education.institute] = [];
     }
-    grouped[job.institute].push(job);
+    grouped[education.institute].push(education);
   });
 
   return Object.keys(grouped).map((institute) => ({
     institute,
-    jobs: grouped[institute],
+    educations: grouped[institute],
   }));
 };
 
@@ -48,12 +48,12 @@ export default function EducationList({
         <View key={group.institute} style={styles.educationBox}>
           <ProfilePhoto url={Assets.images.telkomselLogo} size={48} />
           <View style={styles.mainEducationContainer}>
-            {group.jobs.map((job, index) => {
+            {group.educations.map((education, index) => {
               return (
                 <EducationCard
-                  key={job.id}
-                  educationData={job}
-                  isLast={index === group.jobs.length - 1}
+                  key={education.id}
+                  educationData={education}
+                  isLast={index === group.educations.length - 1}
                 />
               );
             })}
