@@ -54,7 +54,13 @@ export default function ProfileProfessionalInfoPage() {
   return (
     <View style={[[globalStyles.screen, styles.screenBackground]]}>
       <ProfilePhoto url={Assets.images.telkomselLogo} size={120} />
-      <TextButton title="See my profile" isFocused={false} handler={() => {}} />
+      <TextButton
+        title="See my profile"
+        isFocused={false}
+        handler={() => {
+          router.push("/(profile)/jobseeker/preview");
+        }}
+      />
       <ScrollView horizontal={true} style={styles.horizontalScroll}>
         <TextButton
           title="Summary"
