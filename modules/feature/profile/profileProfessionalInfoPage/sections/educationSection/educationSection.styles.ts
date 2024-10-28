@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 15,
     backgroundColor: "#002f4f",
-    gap: 18,
+    gap: 8,
   },
   mainEducationContainer: {
-    width: "65%",
+    width: "75%",
   },
 });
 
