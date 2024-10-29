@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   containerFocused: {
-    elevation: 10,
+    elevation: 3,
     borderColor: Colors.neutral.n09,
   },
   containerError: {
