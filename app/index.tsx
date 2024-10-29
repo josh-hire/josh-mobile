@@ -23,5 +23,5 @@ export default function AppLayout() {
     return <ActivityIndicator />
   }
   
-  return <Redirect href={isLoggedIn ? "/(tabs)/home" : "/(tabs)/home"} />;
+  return <Redirect href={isLoggedIn ? "/(tabs)/home" : "/(auth)/select-login"} />;
 }

@@ -34,6 +34,7 @@ export const Assets = {
   },
   images: {
     login: require("@assets/images/login.png"),
+    loginJobseeker: require("@assets/images/login-jobseeker.png"),
     register: require("@assets/images/register.png"),
     job: require("@assets/images/job-bg.jpg"),
     telkomselLogo: require("@assets/images/telkomsel-logo.jpg"),
