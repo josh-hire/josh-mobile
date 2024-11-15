@@ -29,9 +29,9 @@ export default function TabLayout() {
         options={{
           title: "Chat",
           tabBarActiveTintColor: Colors.primary.p04,
-          tabBarIcon: ({ }) => (
+          tabBarIcon: ({ focused }) => (
             <Image
-              source={Assets.icons.message}
+              source={focused ? Assets.icons.message_fill : Assets.icons.message}
               style={{ width: 28, height: 28 }}
             ></Image>
           ),
