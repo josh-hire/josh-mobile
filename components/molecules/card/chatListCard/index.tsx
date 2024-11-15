@@ -1,6 +1,5 @@
 import ProfilePhoto from "@components/atoms/chat/profile";
 import { HeadingText } from "@components/atoms/text/HeadingText";
-import { Assets } from "@constants/Assets";
 import { ImageSourcePropType, TouchableOpacity, View } from "react-native";
 import styles from "@components/molecules/card/chatListCard/chatListCard.styles";
 
@@ -11,6 +10,7 @@ interface ChatListCardProps {
   message: string;
   imageUrl: ImageSourcePropType;
   date: string;
+  handler: () => void;
 }
 
 export default function ChatListCard({
@@ -20,9 +20,10 @@ export default function ChatListCard({
   message,
   imageUrl,
   date,
+  handler,
 }: ChatListCardProps) {
   return (
-    <TouchableOpacity style={styles(isLast).cardContainer}>
+    <TouchableOpacity style={styles(isLast).cardContainer} onPress={handler}>
       <View>
         <ProfilePhoto size={64} url={imageUrl} />
       </View>

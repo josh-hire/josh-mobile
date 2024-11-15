@@ -14,6 +14,7 @@ export const Assets = {
     fliter: require("@assets/icons/filter.png"),
     swipeup: require("@assets/icons/swipeup.png"),
     arrowBack: require("@assets/icons/arrow_back.png"),
+    arrowBackWhite: require("@assets/icons/arrow_back_white.png"),
     home: require("@assets/icons/home_ic.png"),
     message: require("@assets/icons/message_ic.png"),
     profile: require("@assets/icons/profile_ic.png"),
@@ -22,7 +23,9 @@ export const Assets = {
     edit_2: require("@assets/icons/edit_2_ic.png"),
     dash: require("@assets/icons/dash_ic.png"),
     file02: require("@assets/icons/file-02.png"),
-    
+    video: require("@assets/icons/video_ic.png"),
+    dot_vertical: require("@assets/icons/dot_vertical_ic.png"),
+
     message_fill: require("@assets/icons/message_fill_ic.png"),
     home_fill: require("@assets/icons/home_fill_ic.png"),
     profile_fill: require("@assets/icons/profile_fill_ic.png"),

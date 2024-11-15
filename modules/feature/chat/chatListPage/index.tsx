@@ -4,7 +4,8 @@ import globalStyles from "@styles/global.styles";
 import styles from "@modules/feature/chat/chatListPage/chatList.styles";
 import ChatListCard from "@/components/molecules/card/chatListCard";
 import { View } from "react-native";
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
+import { router } from "expo-router";
 
 export default function ChatListPage() {
   return (
@@ -20,6 +21,9 @@ export default function ChatListPage() {
           company="Telkomsel"
           message="You're matches, you can communicate"
           date="Nov 11"
+          handler={() => {
+            router.push("/(chat)/jobseeker/chat");
+          }}
         />
         <ChatListCard
           isLast={false}
@@ -28,6 +32,7 @@ export default function ChatListPage() {
           company="Telkom"
           message="You're matches, you can communicate"
           date="Nov 8"
+          handler={() => {}}
         />
       </View>
     </SafeAreaView>
