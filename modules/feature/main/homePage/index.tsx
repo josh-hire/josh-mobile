@@ -7,7 +7,6 @@ import {
   Dimensions,
   Text,
   Image,
-  ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "@styles/global.styles";
@@ -17,6 +16,7 @@ import { Assets } from "@/constants/Assets";
 import JobCard from "@/components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
 import FilterModal from "@/components/molecules/modal/FIlterModal";
+import DetailJobModal from "@/components/molecules/modal/DetailJobModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -312,30 +312,14 @@ export default function HomePage() {
           />
         </View>
       </View>
-      <Animated.View
-        style={[
-          styles.drawer,
-          {
-            transform: [{ translateY: drawerTranslateY }],
-          },
-        ]}
-      >
-        <View style={styles.drawerHandle} {...SwipeUpResponder.panHandlers}>
-          <View style={styles.drawerHandlerItem} />
-        </View>
-        <ScrollView
-          style={styles.scrollView}
-          contentContainerStyle={styles.scrollViewContent}
-        >
-          <Text style={styles.drawerContent}>Bottom Drawer Content</Text>
-          {[...Array(30)].map((_, index) => (
-            <Text key={index + 1} style={styles.contentItem}>
-              Scrollable Content Item {index + 1}
-            </Text>
-          ))}
-        </ScrollView>
-      </Animated.View>
-      <FilterModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />
+      <DetailJobModal
+        drawerTranslateY={drawerTranslateY}
+        panHandlers={SwipeUpResponder.panHandlers}
+      />
+      <FilterModal
+        isVisible={isModalVisible}
+        setIsVisible={setIsModalVisible}
+      />
     </SafeAreaView>
   );
 }

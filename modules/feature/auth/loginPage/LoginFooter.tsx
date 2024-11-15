@@ -10,7 +10,7 @@ export default function LoginFooter() {
         <HeadingText type="h6" fontWeight="bold">
           Don't Have An Account?
         </HeadingText>
-        <Link href="/(auth)/register">
+        <Link href="/(auth)/jobseeker/register">
           <HeadingText type="h6" color="red" fontWeight="bold">
             Sign Up
           </HeadingText>

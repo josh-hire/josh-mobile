@@ -7,6 +7,7 @@ export default function LoginScreen() {
     <>
       <Stack.Screen
         options={{
+          headerTransparent: true,
           headerShadowVisible: false,
           contentStyle: { backgroundColor: Colors.general.background },
           headerBackButtonMenuEnabled: false,

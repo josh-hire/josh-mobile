@@ -79,7 +79,12 @@ export function TextArea({
           </View>
           <View
             style={[
-              isFocused ? styles.containerFocused : {},
+              isFocused
+                ? {
+                    ...styles.containerFocused,
+                    height: isMultiline ? multilineHeight : 40,
+                  }
+                : {},
               error ? styles.containerError : {},
             ]}
           >

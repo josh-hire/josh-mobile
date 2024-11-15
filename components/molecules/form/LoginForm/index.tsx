@@ -83,6 +83,8 @@ export default function LoginForm() {
     }
   };
 
+  const isFormFilled = formData.email !== "" && formData.password !== "";
+
   return (
     <View style={styles.loginForm}>
       {error !== "" ? <ErrorBox error={error} /> : <View />}
@@ -112,7 +114,11 @@ export default function LoginForm() {
       {mutation.isPending ? (
         <ActivityIndicator size="large" color={Colors.primary.p04} />
       ) : (
-        <PrimaryButton title="Sign In" handler={handleSubmit} />
+        <PrimaryButton
+          isDisabled={!isFormFilled}
+          title="Sign In"
+          handler={handleSubmit}
+        />
       )}
     </View>
   );

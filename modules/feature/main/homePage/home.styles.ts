@@ -2,51 +2,8 @@ import { Colors } from "@/constants/Colors";
 import { Dimensions, StyleSheet } from "react-native";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
-const SCREEN_HEIGHT = Dimensions.get("window").height;
-
-const DRAWER_HEIGHT = SCREEN_HEIGHT;
 
 const styles = StyleSheet.create({
-  drawer: {
-    height: DRAWER_HEIGHT - 10,
-    width: SCREEN_WIDTH,
-    backgroundColor: "white",
-    position: "absolute",
-    bottom: -DRAWER_HEIGHT,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    elevation: 6,
-    zIndex: 100,
-  },
-  drawerHandle: {
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    zIndex: 100,
-    backgroundColor: "white",
-    height: 50,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  drawerHandlerItem: {
-    backgroundColor: Colors.neutral.n03,
-    borderRadius: 30,
-    height: 8,
-    width: 50,
-  },
-  scrollView: {
-    flex: 1,
-  },
-  scrollViewContent: {
-    padding: 20,
-  },
-  drawerContent: {
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  contentItem: {
-    fontSize: 16,
-    marginBottom: 10,
-  },
   buttonContainer: {
     position: "absolute",
     bottom: 10,
