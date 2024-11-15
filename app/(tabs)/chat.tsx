@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import HomePage from "@/modules/feature/main/homePage";
+import ChatListPage from "@modules/feature/chat/chatListPage";
 
 export default function ChatScreen() {
   return (
@@ -9,7 +9,7 @@ export default function ChatScreen() {
           headerShown: false
         }}
       />
-      <HomePage />
+      <ChatListPage />
     </>
   );
 }
