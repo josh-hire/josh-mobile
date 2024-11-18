@@ -6,7 +6,7 @@ interface ChatInfoCardProps {
   text: string;
 }
 
-export default function ChatInfoCard({ text }: ChatInfoCardProps) {
+export default function ChatInfoCard({ text }: Readonly<ChatInfoCardProps>) {
   return (
     <View style={styles.infoContainer}>
       <HeadingText type="label">{text}</HeadingText>

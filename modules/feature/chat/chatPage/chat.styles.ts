@@ -7,14 +7,18 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   chatContainer: {
-    paddingVertical: 18,
+    paddingBottom: 18,
+    paddingTop: 6,
     paddingHorizontal: 32,
+    gap: 18,
   },
   headerContainer: {
+    backgroundColor: Colors.secondary.s08,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
+    paddingBottom: 12,
   },
   rowContainer: {
     flexDirection: "row",

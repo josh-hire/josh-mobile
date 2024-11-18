@@ -21,7 +21,7 @@ export default function ChatListCard({
   imageUrl,
   date,
   handler,
-}: ChatListCardProps) {
+}: Readonly<ChatListCardProps>) {
   return (
     <TouchableOpacity style={styles(isLast).cardContainer} onPress={handler}>
       <View>
