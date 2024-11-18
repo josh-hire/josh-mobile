@@ -1,15 +1,15 @@
 import { Stack } from "expo-router";
-import ChatListPage from "@modules/feature/chat/chatListPage";
+import ChatPage from "@modules/feature/chat/chatPage";
 
 export default function ChatScreen() {
   return (
     <>
       <Stack.Screen
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
-      <ChatListPage />
+      <ChatPage />
     </>
   );
 }
