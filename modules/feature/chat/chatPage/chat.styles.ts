@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   sendCBButton: {
-    backgroundColor: "#EAEAEA",
     borderRadius: 50,
     padding: 8,
     justifyContent: "center",
