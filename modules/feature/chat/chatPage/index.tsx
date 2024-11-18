@@ -5,15 +5,14 @@ import { ScrollView, View } from "react-native";
 import ChatInfoCard from "@components/molecules/card/chatInfoCard";
 import ChatDateCard from "@components/molecules/card/chatDateCard";
 import ChatMessageCard from "@components/molecules/card/chatMessageCard";
+import ChatBox from "@modules/feature/chat/chatPage/chatBox";
 
 export default function ChatPage() {
   return (
     <SafeAreaView style={[styles.screenBackground]}>
+      <ChatHeader />
       <ScrollView stickyHeaderIndices={[0]}>
-        <View>
-          <ChatHeader />
-          <ChatDateCard text="Today" />
-        </View>
+        <ChatDateCard text="Today" />
         <View style={styles.chatContainer}>
           <ChatInfoCard text="You're matched with Telkomsel. You can only send one message. Please wait for a reply from Telkomsel before sending another message" />
           <ChatMessageCard
@@ -34,8 +33,33 @@ export default function ChatPage() {
             status="sent"
             time="2.05pm"
           />
+          <ChatMessageCard
+            isSender={true}
+            text="Hello and congrats for your achievement!"
+            status="sent"
+            time="2.05pm"
+          />
+          <ChatMessageCard
+            isSender={true}
+            text="Hello and congrats for your achievement!"
+            status="sent"
+            time="2.05pm"
+          />
+          <ChatMessageCard
+            isSender={true}
+            text="Hello and congrats for your achievement!"
+            status="sent"
+            time="2.05pm"
+          />
+          <ChatMessageCard
+            isSender={true}
+            text="Hello and congrats for your achievement!"
+            status="sent"
+            time="2.05pm"
+          />
         </View>
       </ScrollView>
+      <ChatBox />
     </SafeAreaView>
   );
 }
