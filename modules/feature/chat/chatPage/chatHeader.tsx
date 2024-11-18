@@ -5,7 +5,13 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Image, TouchableOpacity, View } from "react-native";
 import { router } from "expo-router";
 
-export default function ChatHeader() {
+interface ChatHeaderProps {
+  optionHandler: () => void;
+}
+
+export default function ChatHeader({
+  optionHandler,
+}: Readonly<ChatHeaderProps>) {
   return (
     <View style={styles.headerContainer}>
       <TouchableOpacity onPress={() => router.back()}>
@@ -26,7 +32,7 @@ export default function ChatHeader() {
         <TouchableOpacity>
           <Image source={Assets.icons.video} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={optionHandler}>
           <Image source={Assets.icons.dot_vertical} />
         </TouchableOpacity>
       </View>

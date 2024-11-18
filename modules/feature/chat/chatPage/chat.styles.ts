@@ -60,6 +60,35 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  modalView: {
+    width: "100%",
+    height: 200,
+    backgroundColor: "white",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+    alignItems: "center",
+    elevation: 5,
+  },
+  modalCloseButton: {
+    width: 60,
+    height: 4,
+    borderRadius: 12,
+    backgroundColor: Colors.secondary.s07,
+  },
+  modalElement: {
+    minWidth: "90%",
+    flexDirection: "row",
+    borderBottomWidth: 1,
+    alignItems: "center",
+    gap: 12,
+    padding: 12,
+  },
 });
 
 export default styles;
