@@ -31,7 +31,9 @@ export default function TabLayout() {
           tabBarActiveTintColor: Colors.primary.p04,
           tabBarIcon: ({ focused }) => (
             <Image
-              source={focused ? Assets.icons.message_fill : Assets.icons.message}
+              source={
+                focused ? Assets.icons.message_fill : Assets.icons.message
+              }
               style={{ width: 28, height: 28 }}
             ></Image>
           ),
@@ -42,9 +44,11 @@ export default function TabLayout() {
         options={{
           title: "My Activity",
           tabBarActiveTintColor: Colors.primary.p04,
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <Image
-              source={Assets.icons.activity}
+              source={
+                focused ? Assets.icons.activity_fill : Assets.icons.activity
+              }
               style={{ width: 28, height: 28 }}
             ></Image>
           ),
@@ -57,7 +61,9 @@ export default function TabLayout() {
           tabBarActiveTintColor: Colors.primary.p04,
           tabBarIcon: ({ focused }) => (
             <Image
-              source={focused ? Assets.icons.profile_fill : Assets.icons.profile}
+              source={
+                focused ? Assets.icons.profile_fill : Assets.icons.profile
+              }
               style={{ width: 28, height: 28 }}
             ></Image>
           ),

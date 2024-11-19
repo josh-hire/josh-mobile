@@ -25,8 +25,9 @@ export const Assets = {
     file02: require("@assets/icons/file-02.png"),
     video: require("@assets/icons/video_ic.png"),
     dot_vertical: require("@assets/icons/dot_vertical_ic.png"),
-
+    
     message_fill: require("@assets/icons/message_fill_ic.png"),
+    activity_fill: require("@assets/icons/activity_fill_ic.png"),
     home_fill: require("@assets/icons/home_fill_ic.png"),
     profile_fill: require("@assets/icons/profile_fill_ic.png"),
   },
