@@ -5,8 +5,12 @@ const styles = StyleSheet.create({
   screenBackground: {
     backgroundColor: Colors.secondary.s08,
   },
-  chatContainer: {
+  activityContainer: {
     gap: 18,
+  },
+  navbarContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
