@@ -5,9 +5,13 @@ const styles = (isLast: boolean) =>
     cardContainer: {
       paddingVertical: 12,
       flexDirection: "row",
-      gap: 12,
       borderBottomWidth: isLast ? 0 : 1,
       borderBottomColor: "white",
+      justifyContent: "space-between",
+    },
+    rowContainer: {
+      flexDirection: "row",
+      gap: 12,
     },
   });
 

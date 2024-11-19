@@ -1,5 +1,5 @@
 import { Stack } from "expo-router";
-import HomePage from "@/modules/feature/main/homePage";
+import ActivityLIstPage from "@modules/feature/activity/activityListPage";
 
 export default function ActivityScreen() {
   return (
@@ -9,7 +9,7 @@ export default function ActivityScreen() {
           headerShown: false
         }}
       />
-      <HomePage />
+      <ActivityLIstPage />
     </>
   );
 }
