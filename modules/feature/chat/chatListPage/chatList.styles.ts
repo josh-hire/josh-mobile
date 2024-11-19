@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary.s08,
   },
   chatContainer: {
-    gap: 18,
+    rowGap: 18,
   },
 });
 
