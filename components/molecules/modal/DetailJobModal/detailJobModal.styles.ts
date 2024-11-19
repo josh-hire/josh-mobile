@@ -21,11 +21,13 @@ const styles = StyleSheet.create({
   drawerHandle: {
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    paddingHorizontal: 12,
     zIndex: 100,
     backgroundColor: "white",
     height: 50,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+    flexDirection: "row",
   },
   drawerHandlerItem: {
     backgroundColor: Colors.neutral.n03,

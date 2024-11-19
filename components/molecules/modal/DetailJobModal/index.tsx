@@ -1,6 +1,5 @@
 import {
   Animated,
-  FlatList,
   GestureResponderHandlers,
   Image,
   ScrollView,
@@ -31,7 +30,11 @@ export default function DetailJobModal({
       ]}
     >
       <View style={styles.drawerHandle} {...panHandlers}>
-        <View style={styles.drawerHandlerItem} />
+        <Ionicons name="arrow-back" size={28} />
+        <HeadingText type="h4" fontWeight="bold">
+          Work Details
+        </HeadingText>
+        <View style={{ width: 20 }} />
       </View>
       <ScrollView
         style={styles.scrollView}
