@@ -8,6 +8,7 @@ const styles = (isLast: boolean) =>
       borderBottomWidth: isLast ? 0 : 1,
       borderBottomColor: "white",
       justifyContent: "space-between",
+      marginVertical: 4,
     },
     rowContainer: {
       flexDirection: "row",
