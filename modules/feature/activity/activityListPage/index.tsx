@@ -8,10 +8,12 @@ import styles from "@modules/feature/activity/activityListPage/activityList.styl
 import { Search } from "@components/atoms/input/Search";
 import { useState } from "react";
 import { Colors } from "@constants/Colors";
+import ActivityModal from "@modules/feature/activity/activityListPage/activityModal";
 
 export default function ActivityLIstPage() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<string>("left");
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
   const jobsData = [
     {
@@ -155,11 +157,17 @@ export default function ActivityLIstPage() {
               company={item.company}
               message={item.message}
               date={item.date}
-              handler={() => {}}
+              handler={() => {
+                setIsModalVisible(true);
+              }}
             />
           ))}
         </ScrollView>
       </View>
+      <ActivityModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
     </SafeAreaView>
   );
 }
