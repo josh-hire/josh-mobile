@@ -60,25 +60,27 @@ export default function ForgotPAsswordForm() {
   };
 
   return (
-    <View style={styles.loginForm}>
-      <TextArea
-        label="Password"
-        onChangeText={(value: string) => handleInputChange("password", value)}
-        placeholder="********"
-        type="password"
-        text={formData.password}
-        error={errors.password}
-      />
-      <TextArea
-        label="Confirm Password"
-        onChangeText={(value: string) =>
-          handleInputChange("confirmPassword", value)
-        }
-        placeholder="********"
-        type="password"
-        text={formData.confirmPassword}
-        error={errors.confirmPassword}
-      />
+    <View style={styles.resetPasswordForm}>
+      <View style={styles.fieldContainer}>
+        <TextArea
+          label="Password"
+          onChangeText={(value: string) => handleInputChange("password", value)}
+          placeholder="********"
+          type="password"
+          text={formData.password}
+          error={errors.password}
+        />
+        <TextArea
+          label="Confirm Password"
+          onChangeText={(value: string) =>
+            handleInputChange("confirmPassword", value)
+          }
+          placeholder="********"
+          type="password"
+          text={formData.confirmPassword}
+          error={errors.confirmPassword}
+        />
+      </View>
       <PrimaryButton title="Reset Password" handler={handleSubmit} />
     </View>
   );
