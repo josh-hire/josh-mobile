@@ -8,7 +8,6 @@ import { router } from "expo-router";
 export default function SelectLoginBody() {
   return (
     <View>
-      <View style={styles.rounded} />
       <View style={styles.bodyContainer}>
         <HeadingText type="h4" textAlign="center" fontWeight="bold">
           Take the first step to new opportunities! Choose your role
@@ -20,7 +19,12 @@ export default function SelectLoginBody() {
               router.push("/(auth)/recruiter/login");
             }}
           ></PrimaryButton>
-          <HeadingText type="h4" textAlign="center" fontWeight="bold">
+          <HeadingText
+            type="h4"
+            textAlign="center"
+            color="white"
+            fontWeight="bold"
+          >
             Or
           </HeadingText>
           <PrimaryButton

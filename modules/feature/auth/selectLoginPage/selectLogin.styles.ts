@@ -9,30 +9,25 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "space-between",
   },
+  background: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   titleContainer: {
     alignItems: "center",
     justifyContent: "center",
-  },
-  imageBackground: {
-    width: "100%",
-    backgroundColor: Colors.secondary.s08,
-    objectFit: "cover",
-  },
-  rounded: {
-    bottom: 25,
-    backgroundColor: "white",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    height: 30,
+    marginTop: "15%",
+    marginBottom: "25%",
   },
   bodyContainer: {
-    paddingHorizontal: 36,
+    paddingHorizontal: 24,
     justifyContent: "space-around",
     gap: 46,
   },
   buttonContainer: {
     marginTop: 36,
-    gap: 24
+    gap: 24,
   },
   haveAccountContainer: {
     flexDirection: "row",
