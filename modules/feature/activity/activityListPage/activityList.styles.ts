@@ -1,22 +1,16 @@
 import { Colors } from "@constants/Colors";
-import { Dimensions, StyleSheet } from "react-native";
-
-const SCREEN_WIDTH = Dimensions.get("window").width;
-const SCREEN_HEIGHT = Dimensions.get("window").height;
-
-const DRAWER_HEIGHT = SCREEN_HEIGHT;
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  drawer: {
-    height: DRAWER_HEIGHT - 10,
-    width: SCREEN_WIDTH,
-    backgroundColor: "white",
-    position: "absolute",
-    bottom: -DRAWER_HEIGHT,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    elevation: 6,
-    zIndex: 100,
+  screenBackground: {
+    backgroundColor: Colors.secondary.s08,
+  },
+  activityContainer: {
+    gap: 18,
+  },
+  navbarContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   drawerHandle: {
     borderTopLeftRadius: 30,
@@ -37,6 +31,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+    backgroundColor: "white",
   },
   scrollViewContent: {
     padding: 20,

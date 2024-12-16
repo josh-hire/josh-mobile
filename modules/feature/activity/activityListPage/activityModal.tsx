@@ -1,36 +1,31 @@
-import {
-  Animated,
-  GestureResponderHandlers,
-  Image,
-  ScrollView,
-  View,
-} from "react-native";
-import styles from "@components/molecules/modal/DetailJobModal/detailJobModal.styles";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { Image, Modal, ScrollView, TouchableOpacity, View } from "react-native";
+import styles from "@modules/feature/activity/activityListPage/activityList.styles";
+import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "@/constants/Colors";
-import { Assets } from "@/constants/Assets";
+import { Colors } from "@constants/Colors";
+import { Assets } from "@constants/Assets";
+import { Dispatch, SetStateAction } from "react";
 
-interface DetailJobModalProps {
-  drawerTranslateY: Animated.AnimatedInterpolation<string | number>;
-  panHandlers: GestureResponderHandlers;
+interface ActivityModalProps {
+  isModalVisible: boolean;
+  setIsModalVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function DetailJobModal({
-  drawerTranslateY,
-  panHandlers,
-}: Readonly<DetailJobModalProps>) {
+export default function ActivityModal({
+  isModalVisible,
+  setIsModalVisible,
+}: Readonly<ActivityModalProps>) {
   return (
-    <Animated.View
-      style={[
-        styles.drawer,
-        {
-          transform: [{ translateY: drawerTranslateY }],
-        },
-      ]}
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={isModalVisible}
+      onRequestClose={() => setIsModalVisible(true)}
     >
-      <View style={styles.drawerHandle} {...panHandlers}>
-        <Ionicons name="arrow-back" size={28} />
+      <View style={styles.drawerHandle}>
+        <TouchableOpacity onPress={() => setIsModalVisible(false)}>
+          <Ionicons name="arrow-back" size={28} />
+        </TouchableOpacity>
         <HeadingText type="h4" fontWeight="bold">
           Work Details
         </HeadingText>
@@ -154,6 +149,6 @@ export default function DetailJobModal({
           </HeadingText>
         </View>
       </ScrollView>
-    </Animated.View>
+    </Modal>
   );
 }
