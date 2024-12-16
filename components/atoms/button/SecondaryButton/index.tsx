@@ -13,7 +13,7 @@ export type SecondaryButtonProps = ButtonProps & {
 export default function SecondaryButton({
   title,
   handler,
-  color = "black",
+  color = "white",
   position = "left",
 }: SecondaryButtonProps) {
   return (
@@ -21,7 +21,7 @@ export default function SecondaryButton({
       {position === "left" ? (
         <Image
           source={
-            color === "black" ? Assets.icons.plus01 : Assets.icons.plus01White
+            color === "white" ? Assets.icons.plus01White : Assets.icons.plus01
           }
         ></Image>
       ) : (
@@ -33,7 +33,7 @@ export default function SecondaryButton({
       {position === "right" ? (
         <Image
           source={
-            color === "black" ? Assets.icons.plus01 : Assets.icons.plus01White
+            color === "white" ? Assets.icons.plus01White : Assets.icons.plus01
           }
         ></Image>
       ) : (

@@ -17,7 +17,7 @@ export default function CheckboxList({
   onSelectionChange,
   numColumns = 1,
   error,
-  color,
+  color = "white",
 }: Readonly<CheckboxListProps>) {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
