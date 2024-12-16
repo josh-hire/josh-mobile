@@ -13,7 +13,7 @@ export type PrimaryButtonProps = ButtonProps & {
 export function PrimaryButton({
   title,
   handler,
-  color = Colors.primary.p05,
+  color = Colors.secondary.s04,
   isDisabled = false,
 }: PrimaryButtonProps) {
   return (

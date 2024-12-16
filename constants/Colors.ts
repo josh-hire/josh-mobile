@@ -57,7 +57,7 @@ export const Colors = {
   general: {
     text: '#11181C',
     textPlaceholder: '#ADADAD',
-    background: '#fff',
+    background: '#101010',
     tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#687076',

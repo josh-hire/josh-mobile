@@ -14,7 +14,7 @@ export function HeadingText({
   lightColor,
   type = "h3",
   fontWeight = "regular",
-  color = "black",
+  color = "white",
   textAlign = "left",
   ...rest
 }: HeadingTextProps) {
