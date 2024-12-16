@@ -61,16 +61,14 @@ export default function ForgotPAsswordForm() {
     <View style={styles.loginForm}>
       <TextArea
         label="Email"
+        isRequired={true}
         onChangeText={(value: string) => handleInputChange("email", value)}
         placeholder="example@gmail.com"
         type="email"
         text={formData.email}
         error={errors.email}
       />
-      <PrimaryButton
-        title="Reset Password"
-        handler={handleSubmit}
-      />
+      <PrimaryButton title="Reset Password" handler={handleSubmit} />
     </View>
   );
 }
