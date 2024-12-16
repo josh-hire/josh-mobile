@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   textLabelContainer: {
     flexDirection: "row",
+    marginBottom: 6
   },
   textInputFocused: {
     borderWidth: 2,
