@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    gap: 32,
+    gap: 24,
   },
   checkboxLabel: {
     marginVertical: 12,

@@ -79,7 +79,7 @@ export default function ProfessionalInformationForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push('/(auth)/registration/work-preferences')
+      router.push('/(auth)/jobseeker/registration/work-preferences')
     }
   };
 
@@ -89,7 +89,7 @@ export default function ProfessionalInformationForm() {
         <View key={index}>
           <Dropdown
             data={options}
-            placeholder="Select Job Title"
+            placeholder="Select Job Category"
             selectedValue={dropdown.selectedOption}
             onValueChange={(value) => handleSelect(index, value)}
             error={errors.dropdown?.[index] && errors.dropdown[index]}
@@ -115,7 +115,7 @@ export default function ProfessionalInformationForm() {
           )}
         </View>
       ))}
-      <SecondaryButton title="Add Job Title" handler={addDropdown} />
+      <SecondaryButton title="Add Job Category" position="left" color="white" handler={addDropdown} />
       <PrimaryButton title="Submit" handler={handleSubmit}></PrimaryButton>
     </View>
   );

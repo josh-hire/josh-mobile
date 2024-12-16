@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         height: 5,
         borderRadius: 30,
         width: 60,
-        backgroundColor: Colors.secondary.s07
+        backgroundColor: Colors.neutral.n00
     },
     notActiveStep: {
         height: 5,
