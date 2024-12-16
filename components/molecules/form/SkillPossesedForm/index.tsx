@@ -60,7 +60,7 @@ export default function SkillPossesedForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/registration/last-work");
+      router.push("/(auth)/jobseeker/registration/last-work");
     }
   };
 

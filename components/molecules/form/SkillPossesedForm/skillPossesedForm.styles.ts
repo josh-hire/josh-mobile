@@ -1,3 +1,4 @@
+import { Colors } from "@constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   horizontalLine: {
-    borderBottomColor: "black",
+    borderBottomColor: Colors.neutral.n00,
     borderBottomWidth: 1,
   },
 });

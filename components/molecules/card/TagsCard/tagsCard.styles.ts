@@ -3,7 +3,8 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   TagsCard: {
-    backgroundColor: Colors.neutral.n01,
+    borderColor: Colors.neutral.n00,
+    borderWidth: 1,
     borderRadius: 8,
     flexDirection: "row",
     alignItems: "center",
