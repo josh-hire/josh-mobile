@@ -64,7 +64,7 @@ export default function WorkPreferencesForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/(auth)/registration/skill-possesed");
+      router.push("/(auth)/jobseeker/registration/skill-possesed");
     }
   };
 
