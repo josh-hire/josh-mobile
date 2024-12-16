@@ -3,6 +3,7 @@ import SuccessForgotPasswordHeader from "@modules/feature/auth/resetPasswords/su
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import { useRouter } from "expo-router";
 import styles from "@styles/global.styles";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SuccessForgotPasswordPage() {
   const router = useRouter();
@@ -12,11 +13,11 @@ export default function SuccessForgotPasswordPage() {
   };
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <View style={styles.stepContainer}>
         <SuccessForgotPasswordHeader />
         <PrimaryButton title="Sign In" handler={handleSubmit} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
