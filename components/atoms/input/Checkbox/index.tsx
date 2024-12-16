@@ -50,7 +50,6 @@ export default function CheckboxList({
                 : error != null
                 ? styles.checkboxError
                 : styles.checkbox,
-              { borderColor: color },
             ]}
           >
             {selectedItems.includes(item) && (

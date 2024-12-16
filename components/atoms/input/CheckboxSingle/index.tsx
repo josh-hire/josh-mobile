@@ -44,7 +44,6 @@ export default function CheckboxSingle({
                 : error != null
                 ? styles.checkboxError
                 : styles.checkbox,
-              { borderColor: color },
             ]}
           >
             {selectedItem === item && (
