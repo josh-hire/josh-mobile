@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import styles from "@components/atoms/input/OtpInputForm/otpInput.styles";
+import React from "react";
 
 interface OtpInputFormProps {
   otpCode: string;
