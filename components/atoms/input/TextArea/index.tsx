@@ -63,13 +63,13 @@ export function TextArea({
       <View style={[styles.container, { height: isMultiline ? 120 : 50 }]}>
         <View>
           <View style={styles.textLabelContainer}>
-            <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+            <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
               {label}
             </HeadingText>
             {isRequired === true ? (
               <HeadingText
                 type={labelSize ?? "h4"}
-                color={labelColor ?? "black"}
+                color={labelColor ?? "white"}
               >
                 *
               </HeadingText>
@@ -93,8 +93,8 @@ export function TextArea({
                 styles.textInput,
                 isFocused && styles.textInputFocused,
                 {
-                  borderColor: borderColor ?? "black",
-                  color: textColor ?? "black",
+                  borderColor: borderColor ?? "white",
+                  color: textColor ?? "white",
                   minHeight: isMultiline ? multilineHeight : 40,
                 },
                 error ? styles.textInputError : {},
