@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   screenBackground: {
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   chatContainer: {
     rowGap: 18,

@@ -23,8 +23,8 @@ export default function ChatListCard({
   handler,
 }: Readonly<ChatListCardProps>) {
   return (
-    <TouchableOpacity style={styles(isLast).cardContainer} onPress={handler}>
-      <View style={styles(isLast).rowContainer}>
+    <TouchableOpacity style={styles.cardContainer} onPress={handler}>
+      <View style={styles.rowContainer}>
         <ProfilePhoto size={64} url={imageUrl} />
         <View>
           <HeadingText type="h5" color="white" fontWeight="bold">
