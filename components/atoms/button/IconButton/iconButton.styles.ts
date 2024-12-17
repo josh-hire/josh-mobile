@@ -3,11 +3,14 @@ import { Animated, Dimensions, StyleSheet } from "react-native";
 const styles = (
   width: Animated.Value,
   height: Animated.Value,
-  color?: string
+  color?: string,
+  borderColor?: string,
 ) =>
   StyleSheet.create({
     iconButton: {
       backgroundColor: color,
+      borderColor: borderColor,
+      borderWidth: 1,
       borderRadius:
         Math.round(
           Dimensions.get("window").width + Dimensions.get("window").height
@@ -19,8 +22,8 @@ const styles = (
       alignItems: "center",
     },
     iconImage: {
-      width: Animated.subtract(width, 25),
-      height: Animated.subtract(height, 25),
+      width: Animated.subtract(width, 32),
+      height: Animated.subtract(height, 32),
     },
   });
 

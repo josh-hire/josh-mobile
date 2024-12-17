@@ -11,7 +11,9 @@ export const Assets = {
     x02: require("@assets/icons/x-02.png"),
     yes: require("@assets/icons/yes.png"),
     no: require("@assets/icons/no.png"),
-    fliter: require("@assets/icons/filter.png"),
+    filter: require("@assets/icons/filter.png"),
+    refresh: require("@assets/icons/refresh_ic.png"),
+    like: require("@assets/icons/like_ic.png"),
     swipeup: require("@assets/icons/swipeup.png"),
     arrowBack: require("@assets/icons/arrow_back.png"),
     arrowBackWhite: require("@assets/icons/arrow_back_white.png"),
@@ -33,6 +35,7 @@ export const Assets = {
   },
   logos: {
     logo: require("@assets/logo/logo.png"),
+    logo2: require("@assets/logo/logo-2.png"),
   },
   illustrations: {
     notFound: require("@assets/illustration/not-found.png"),

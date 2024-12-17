@@ -1,18 +1,21 @@
 import {
   Animated,
+  Image,
   ImageBackground,
   PanResponderInstance,
   View,
 } from "react-native";
 import styles from "@components/molecules/card/jobCard/jobCard.styles";
 import { HeadingText } from "@/components/atoms/text/HeadingText";
+import { Assets } from "@constants/Assets";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 interface CardData {
   id: string;
   imageUrl: string;
   companyName: string;
+  salary: string;
   location: string;
-  jobType: string;
 }
 
 interface JobCardProps {
@@ -37,17 +40,23 @@ export default function JobCard({
     >
       <ImageBackground
         source={{ uri: card.imageUrl }}
-        blurRadius={currentIndex === index ? 0 : 5}
         style={styles.backgroundImage}
       >
         <View style={styles.overlay}>
-          <View style={styles.headerContainer}>
-            <HeadingText style={styles.companyName}>
-              {card.companyName}
+          <Image
+            style={styles.photoProfile}
+            source={Assets.images.telkomselLogo}
+          />
+          <HeadingText style={styles.companyName}>
+            {card.companyName}
+          </HeadingText>
+          <HeadingText style={styles.location}>{card.salary}</HeadingText>
+          <View style={styles.locationContainer}>
+            <Ionicons name="location-outline" size={12} color="white" />
+            <HeadingText style={styles.jobType} fontWeight="bold">
+              {card.location}
             </HeadingText>
-            <HeadingText style={styles.location}>{card.location}</HeadingText>
           </View>
-          <HeadingText style={styles.jobType}>{card.jobType}</HeadingText>
         </View>
       </ImageBackground>
     </Animated.View>

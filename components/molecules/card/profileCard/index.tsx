@@ -1,24 +1,22 @@
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { Image, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 import styles from "./profileCard.styles";
-import { Assets } from "@/constants/Assets";
+import { Assets } from "@constants/Assets";
+import { Dispatch, SetStateAction } from "react";
 
 interface ProfileCardProps {
-  name: string;
+  setIsVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ProfileCard({ name }: Readonly<ProfileCardProps>) {
+export default function ProfileCard({
+  setIsVisible,
+}: Readonly<ProfileCardProps>) {
   return (
     <View style={styles.containerProfile}>
       <Image style={styles.photoProfile} source={Assets.images.job}></Image>
-      <View>
-        <HeadingText type="h6" fontWeight="bold" color="white">
-          Good Morning!
-        </HeadingText>
-        <HeadingText type="h6" fontWeight="bold" color="white">
-          {name}
-        </HeadingText>
-      </View>
+      <Image source={Assets.logos.logo2} />
+      <TouchableOpacity onPress={() => setIsVisible(true)}>
+        <Image source={Assets.icons.filter} style={styles.filterIcon} />
+      </TouchableOpacity>
     </View>
   );
 }
