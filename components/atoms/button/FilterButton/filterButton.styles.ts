@@ -1,3 +1,4 @@
+import { Colors } from "@constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -8,18 +9,17 @@ const styles = StyleSheet.create({
     margin: 4,
   },
   selectedButton: {
-    backgroundColor: "#003366",
+    backgroundColor: Colors.secondary.s03,
   },
   unselectedButton: {
-    backgroundColor: "#FFFFFF",
+    borderColor: Colors.neutral.n00,
     borderWidth: 1,
-    borderColor: "#CCCCCC",
   },
   selectedText: {
     color: "#FFFFFF",
   },
   unselectedText: {
-    color: "#003366",
+    color: "white",
   },
   buttonText: {
     fontSize: 16,

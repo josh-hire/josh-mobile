@@ -40,7 +40,7 @@ export default function FilterModal({
               style={styles.closeButton}
               onPress={() => setIsConfirmVisible(true)}
             >
-              <Image source={Assets.icons.arrowBack} style={styles.closeIcon} />
+              <Image source={Assets.icons.arrowBackWhite} style={styles.closeIcon} />
             </TouchableOpacity>
 
             <HeadingText type="h4" fontWeight="bold">

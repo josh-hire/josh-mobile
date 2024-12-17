@@ -17,7 +17,6 @@ import JobCard from "@components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
 import FilterModal from "@components/molecules/modal/FIlterModal";
 import DetailJobModal from "@components/molecules/modal/DetailJobModal";
-import MatchModal from "@components/molecules/modal/MatchModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -317,7 +316,7 @@ export default function HomePage() {
         drawerTranslateY={drawerTranslateY}
         panHandlers={SwipeUpResponder.panHandlers}
       />
-      <MatchModal
+      <FilterModal
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}
       />
