@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     alignItems: "center",
     justifyContent: "center",
+    marginTop: "15%",
   },
   containerFooter: {
     marginBottom: 36,

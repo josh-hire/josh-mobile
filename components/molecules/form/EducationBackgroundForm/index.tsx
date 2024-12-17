@@ -79,19 +79,22 @@ export default function EducationBackgroundForm() {
         errors.category) && (
         <ErrorBox error="Please input your education background" />
       )}
-      <HeadingText type="h4">Level Education</HeadingText>
       <Dropdown
         data={["SMA/SMK", "D3", "S1", "S2", "S3"]}
         placeholder="Ex: S1"
+        label="Level Education"
+        isRequired={true}
         selectedValue={formData.levelEducation}
         onValueChange={(value: string) =>
           handleInputChange("levelEducation", value)
         }
         error={errors.levelEducation}
       ></Dropdown>
-      <HeadingText type="h4">Institute Education</HeadingText>
       <TextAreaSuggestion
         type="text"
+        label="Institute Education"
+        isRequired={true}
+        color="white"
         text={formData.institute}
         placeholder="Ex: Institut Teknologi Bandung"
         onChangeText={(value) => handleInputChange("institute", value)}
@@ -102,9 +105,11 @@ export default function EducationBackgroundForm() {
         ]}
         error={errors.institute}
       />
-      <HeadingText type="h4">Category Education</HeadingText>
       <TextAreaSuggestion
         type="text"
+        label="Category Education"
+        color="white"
+        isRequired={true}
         text={formData.category}
         placeholder="Ex: Informatics"
         onChangeText={(value) => handleInputChange("category", value)}
@@ -116,13 +121,15 @@ export default function EducationBackgroundForm() {
         error={errors.category}
       />
       <ScrollableDatePicker
-        label="Study Start"
+        label="Study Start*"
+        color="white"
         onDateChange={(date) => handleInputChange("studyStart", date)}
         initialDate={new Date()}
       />
       {!formData.isStudy ? (
         <ScrollableDatePicker
           label="Study End"
+          color="white"
           onDateChange={(date) => handleInputChange("studyEnd", date)}
           initialDate={new Date()}
         />
