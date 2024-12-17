@@ -90,7 +90,7 @@ export function TextAreaSuggestion({
             styles.textInput,
             isFocused && styles.textInputFocused,
             error ? styles.textInputError : {},
-            { borderColor: color, color: color },
+            { color: color },
           ]}
           onChangeText={handleChangeText}
           value={text}
