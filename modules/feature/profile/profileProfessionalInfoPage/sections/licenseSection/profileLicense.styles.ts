@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   modalView: {
     height: "100%",
     width: "100%",
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   mainContainer: {
     height: "100%",
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginBottom: 15,
-    backgroundColor: "#002f4f",
+    backgroundColor: Colors.general.background,
     gap: 18,
   },
   mainLicenseContainer: {

@@ -14,6 +14,7 @@ import { Assets } from "@constants/Assets";
 import { useEffect, useState } from "react";
 import { router } from "expo-router";
 import { HeadingText } from "@components/atoms/text/HeadingText";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function ProfilePersonalInfoPage() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -63,13 +64,22 @@ export default function ProfilePersonalInfoPage() {
             ></Pressable>
             <View style={styles.optionContainer}>
               <TouchableOpacity style={styles.optionButton}>
-                <HeadingText type="h6">Take a picture</HeadingText>
+                <Ionicons name="camera-outline" size={24} />
+                <HeadingText type="h6" color="black">
+                  Take a picture
+                </HeadingText>
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionButton}>
-                <HeadingText type="h6">Choose from gallery</HeadingText>
+                <Ionicons name="image-outline" size={24} />
+                <HeadingText type="h6" color="black">
+                  Choose from gallery
+                </HeadingText>
               </TouchableOpacity>
               <TouchableOpacity style={styles.optionBottomButton}>
-                <HeadingText type="h6">Delete Photo</HeadingText>
+                <Ionicons name="trash-outline" size={24} />
+                <HeadingText type="h6" color="black">
+                  Delete Photo
+                </HeadingText>
               </TouchableOpacity>
             </View>
           </TouchableOpacity>

@@ -2,6 +2,7 @@ import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/licenseSection/profileLicense.styles";
 import LicenseCard from "@components/molecules/card/LicenseCard";
 import { Assets } from "@constants/Assets";
+import React from "react";
 
 interface License {
   id: string;

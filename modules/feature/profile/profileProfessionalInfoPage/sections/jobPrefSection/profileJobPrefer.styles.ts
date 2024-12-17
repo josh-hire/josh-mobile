@@ -10,13 +10,14 @@ const styles = StyleSheet.create({
   modalView: {
     height: "100%",
     width: "100%",
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   mainContainer: {
     height: "100%",
     paddingHorizontal: 24,
   },
   bodyContainer: {
+    marginTop: 36,
     justifyContent: "space-between",
     height: "90%",
   },

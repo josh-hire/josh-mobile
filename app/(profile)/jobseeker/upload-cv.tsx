@@ -4,6 +4,7 @@ import { HeaderBackButton } from "@react-navigation/elements";
 import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
 import UploadCvPage from "@modules/feature/profile/uploadCvPage";
+import React from "react";
 
 export default function UploadCVScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -25,7 +26,7 @@ export default function UploadCVScreen() {
             color: Colors.neutral.n00,
           },
           headerStyle: {
-            backgroundColor: Colors.secondary.s08,
+            backgroundColor: Colors.general.background,
           },
         }}
       />

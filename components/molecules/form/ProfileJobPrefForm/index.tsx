@@ -6,6 +6,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import { Colors } from "@constants/Colors";
 import styles from "@components/molecules/form/ProfileJobPrefForm/profileJobPrefForm.styles";
+import React from "react";
 
 interface ProfileJobPrefFormProps {
   type: string;

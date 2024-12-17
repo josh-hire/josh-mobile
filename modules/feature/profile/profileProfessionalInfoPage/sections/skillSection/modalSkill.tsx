@@ -31,7 +31,7 @@ export default function ModalSkill({
                 <Image source={Assets.icons.no} style={styles.closeButton} />
               </TouchableOpacity>
               <HeadingText type="h5" fontWeight="bold" color="white">
-                Skill & Awards
+                Skill
               </HeadingText>
             </View>
           </View>

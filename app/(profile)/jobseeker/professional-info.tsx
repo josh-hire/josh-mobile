@@ -4,6 +4,7 @@ import { HeaderBackButton } from "@react-navigation/elements";
 import ConfirmationModal from "@components/molecules/modal/ConfirmationModal";
 import { useState } from "react";
 import ProfileProfessionalInfoPage from "@modules/feature/profile/profileProfessionalInfoPage";
+import React from "react";
 
 export default function ProfileProfessionalInformationScreen() {
   const [isConfirmVisible, setIsConfirmVisible] = useState<boolean>(false);
@@ -25,7 +26,7 @@ export default function ProfileProfessionalInformationScreen() {
             color: Colors.neutral.n00,
           },
           headerStyle: {
-            backgroundColor: Colors.secondary.s08,
+            backgroundColor: Colors.general.background,
           },
         }}
       />

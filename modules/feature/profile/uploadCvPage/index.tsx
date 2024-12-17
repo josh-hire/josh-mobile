@@ -73,7 +73,7 @@ export default function UploadCvPage() {
       <TouchableOpacity
         style={[
           styles.uploadBox,
-          { backgroundColor: file ? Colors.secondary.s08 : Colors.neutral.n03 },
+          { backgroundColor: file ? Colors.general.background : Colors.neutral.n03 },
         ]}
         onPress={pickDocument}
       >

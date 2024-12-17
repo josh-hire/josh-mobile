@@ -1,8 +1,9 @@
+import { Colors } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    gap: 6
+    gap: 6,
   },
   companyBox: {
     borderColor: "#FFFFFF",

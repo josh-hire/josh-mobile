@@ -8,7 +8,7 @@ export default function ProfileProfessional() {
   return (
     <View style={styles.sectionContainer}>
       <HeadingText type="h5" color="white" fontWeight="bold">
-        Profile and Professional
+        Edit Profile
       </HeadingText>
       <View style={styles.optionContainer}>
         <TouchableOpacity
