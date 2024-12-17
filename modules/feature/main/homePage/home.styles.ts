@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   screenBackground: {
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   container: {
     marginTop: 8,

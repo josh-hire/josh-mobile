@@ -45,6 +45,7 @@ export const Assets = {
     job: require("@assets/images/job-bg.jpg"),
     telkomselLogo: require("@assets/images/telkomsel-logo.jpg"),
     bgMotif: require("@assets/images/bg-motif.png"),
+    bgMotif2: require("@assets/images/bg-motif-2.png"),
   },
   fonts: {
     telkomselBatik: require("@assets/fonts/TelkomselBatikSans-Regular.otf"),

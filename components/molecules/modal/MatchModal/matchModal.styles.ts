@@ -6,12 +6,25 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: "center",
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
+  },
+  background: {
+    flex: 1,
+    height: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    objectFit: "fill",
+  },
+  headerContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 10,
   },
   closedContainer: {
     alignItems: "flex-start",
     width: "100%",
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
   },
   closeButton: {
     elevation: 2,
@@ -24,7 +37,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     marginTop: 32,
-    height: "80%",
+    height: "90%",
     width: "100%",
     justifyContent: "space-between",
     alignItems: "center",
@@ -32,14 +45,15 @@ const styles = StyleSheet.create({
   },
   gotoButton: {
     width: "100%",
+    gap: 10,
   },
   photoContainer: {
     flexDirection: "row",
-    gap: -20,
+    gap: 20,
   },
   photoProfile: {
-    width: 128,
-    height: 128,
+    width: 164,
+    height: 164,
     borderWidth: 4,
     borderColor: Colors.neutral.n03,
     borderRadius:
@@ -47,10 +61,10 @@ const styles = StyleSheet.create({
         Dimensions.get("window").width + Dimensions.get("window").height
       ) / 2,
   },
-  chatContainer: {
+  infoContainer: {
     flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
     gap: 8,
     width: "100%",
   },

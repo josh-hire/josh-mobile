@@ -1,4 +1,4 @@
-import ProfileCard from "@/components/molecules/card/profileCard";
+import ProfileCard from "@components/molecules/card/profileCard";
 import React, { useState, useRef } from "react";
 import {
   View,
@@ -10,13 +10,14 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "@styles/global.styles";
-import { Colors } from "@/constants/Colors";
-import { IconButton } from "@/components/atoms/button/IconButton";
-import { Assets } from "@/constants/Assets";
-import JobCard from "@/components/molecules/card/jobCard";
+import { Colors } from "@constants/Colors";
+import { IconButton } from "@components/atoms/button/IconButton";
+import { Assets } from "@constants/Assets";
+import JobCard from "@components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
-import FilterModal from "@/components/molecules/modal/FIlterModal";
-import DetailJobModal from "@/components/molecules/modal/DetailJobModal";
+import FilterModal from "@components/molecules/modal/FIlterModal";
+import DetailJobModal from "@components/molecules/modal/DetailJobModal";
+import MatchModal from "@components/molecules/modal/MatchModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
@@ -316,7 +317,7 @@ export default function HomePage() {
         drawerTranslateY={drawerTranslateY}
         panHandlers={SwipeUpResponder.panHandlers}
       />
-      <FilterModal
+      <MatchModal
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}
       />
