@@ -1,5 +1,4 @@
 import { HeadingText } from "@components/atoms/text/HeadingText";
-import ChatListCard from "@components/molecules/card/chatListCard";
 import { Assets } from "@constants/Assets";
 import { ScrollView, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -9,6 +8,7 @@ import { Search } from "@components/atoms/input/Search";
 import { useState } from "react";
 import { Colors } from "@constants/Colors";
 import ActivityModal from "@modules/feature/activity/activityListPage/activityModal";
+import ActivityCard from "@components/molecules/card/activityCard";
 
 export default function ActivityLIstPage() {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -19,65 +19,57 @@ export default function ActivityLIstPage() {
     {
       id: 1,
       name: "Data Scientist",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "left",
     },
     {
       id: 2,
       name: "Data Scientist",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "left",
     },
     {
       id: 3,
       name: "Software Engineer",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "right",
     },
     {
       id: 4,
       name: "Data Scientist",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "left",
     },
     {
       id: 5,
       name: "Software Engineer",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "right",
     },
     {
       id: 6,
       name: "Software Engineer",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "right",
     },
     {
       id: 7,
       name: "UI/UX Designer",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "match",
     },
     {
       id: 8,
       name: "UI/UX Designer",
-      company: "Telkomsel",
-      message: "South Jakarta - Full Time - Hybrid",
-      date: "Nov 11",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
       category: "match",
     },
   ];
@@ -89,7 +81,12 @@ export default function ActivityLIstPage() {
   return (
     <SafeAreaView style={[globalStyles.screen, styles.screenBackground]}>
       <View style={styles.activityContainer}>
-        <HeadingText color="white" type="h5" fontWeight="bold">
+        <HeadingText
+          color="white"
+          type="h4"
+          textAlign="center"
+          fontWeight="bold"
+        >
           My Activity
         </HeadingText>
         <Search
@@ -105,6 +102,7 @@ export default function ActivityLIstPage() {
             onPress={() => {
               setSelectedCategory("left");
             }}
+            style={selectedCategory === "left" && styles.navbarItem}
           >
             <HeadingText
               type="h6"
@@ -118,6 +116,7 @@ export default function ActivityLIstPage() {
             onPress={() => {
               setSelectedCategory("match");
             }}
+            style={selectedCategory === "match" && styles.navbarItem}
           >
             <HeadingText
               type="h6"
@@ -133,6 +132,7 @@ export default function ActivityLIstPage() {
             onPress={() => {
               setSelectedCategory("right");
             }}
+            style={selectedCategory === "right" && styles.navbarItem}
           >
             <HeadingText
               type="h6"
@@ -145,18 +145,14 @@ export default function ActivityLIstPage() {
             </HeadingText>
           </TouchableOpacity>
         </View>
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.container}>
           {filterDataByCategory(selectedCategory).map((item, index) => (
-            <ChatListCard
+            <ActivityCard
               key={item.id}
-              isLast={
-                index === filterDataByCategory(selectedCategory).length - 1
-              }
-              imageUrl={Assets.images.telkomselLogo}
+              imageUrl={Assets.images.login}
               name={item.name}
-              company={item.company}
-              message={item.message}
-              date={item.date}
+              salary={item.salary}
+              location={item.location}
               handler={() => {
                 setIsModalVisible(true);
               }}
