@@ -9,8 +9,11 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        headerShadowVisible: false,
         tabBarStyle: {
           backgroundColor: Colors.general.background,
+          borderTopWidth: 0,
+          elevation: 0,
         },
       }}
     >

@@ -6,6 +6,7 @@ import {
   Animated,
   Dimensions,
   Text,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "@styles/global.styles";
@@ -15,11 +16,14 @@ import { Assets } from "@constants/Assets";
 import JobCard from "@components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
 import FilterModal from "@components/molecules/modal/FIlterModal";
+import DetailJobModal from "@components/molecules/modal/DetailJobModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
+const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SWIPE_THRESHOLD = 0.5 * SCREEN_WIDTH;
 const CARD_SCALE_DECREMENT = 0;
 const CARD_POSITION_MULTIPLIER = 0;
+const DRAWER_HEIGHT = SCREEN_HEIGHT * 0.95;
 
 interface CardData {
   id: string;
@@ -68,8 +72,33 @@ export default function HomePage() {
   const swipe = useRef(new Animated.ValueXY()).current;
   const cardScales = useRef(cards.map(() => new Animated.Value(1))).current;
   const cardPositions = useRef(cards.map(() => new Animated.Value(0))).current;
+  const pan = useRef(new Animated.Value(0)).current;
+  const [isOpen, setIsOpen] = useState(false);
 
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+
+  const SwipeUpResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderMove: (_, gesture) => {
+        const newValue = isOpen ? -DRAWER_HEIGHT + gesture.dy : gesture.dy;
+        pan.setValue(Math.min(0, Math.max(-DRAWER_HEIGHT, newValue)));
+      },
+      onPanResponderRelease: (_, gesture) => {
+        if (isOpen) {
+          if (gesture.dy > DRAWER_HEIGHT / 4 || gesture.vy > 0.5) {
+            closeDrawer();
+          } else {
+            openDrawer();
+          }
+        } else if (gesture.dy < -DRAWER_HEIGHT / 4 || gesture.vy < -0.5) {
+          openDrawer();
+        } else {
+          closeDrawer();
+        }
+      },
+    })
+  ).current;
 
   const panResponder = useRef(
     PanResponder.create({
@@ -87,6 +116,26 @@ export default function HomePage() {
       },
     })
   ).current;
+
+  const openDrawer = () => {
+    Animated.spring(pan, {
+      toValue: -DRAWER_HEIGHT,
+      useNativeDriver: false,
+    }).start(() => setIsOpen(true));
+  };
+
+  const closeDrawer = () => {
+    Animated.spring(pan, {
+      toValue: 0,
+      useNativeDriver: false,
+    }).start(() => setIsOpen(false));
+  };
+
+  const drawerTranslateY = pan.interpolate({
+    inputRange: [-DRAWER_HEIGHT, 0],
+    outputRange: [-DRAWER_HEIGHT, 0],
+    extrapolate: "clamp",
+  });
 
   const forceSwipe = (direction: "right" | "left") => {
     const x = direction === "right" ? SCREEN_WIDTH : -SCREEN_WIDTH;
@@ -197,6 +246,18 @@ export default function HomePage() {
           />
         </View>
         <View style={styles.centerButton}>
+          <Animated.View
+            style={[
+              styles.buttonContainer,
+              {
+                transform: [{ translateY: drawerTranslateY }],
+              },
+            ]}
+          >
+            <View style={styles.button} {...SwipeUpResponder.panHandlers}>
+              <Image source={Assets.icons.swipeup}></Image>
+            </View>
+          </Animated.View>
           <IconButton
             handler={() => {
               forceSwipe("right");
@@ -217,6 +278,10 @@ export default function HomePage() {
           />
         </View>
       </View>
+      <DetailJobModal
+        drawerTranslateY={drawerTranslateY}
+        panHandlers={SwipeUpResponder.panHandlers}
+      />
       <FilterModal
         isVisible={isModalVisible}
         setIsVisible={setIsModalVisible}

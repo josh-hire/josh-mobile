@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   drawer: {
     height: DRAWER_HEIGHT - 10,
     width: SCREEN_WIDTH,
-    backgroundColor: "white",
+    backgroundColor: Colors.general.background,
     position: "absolute",
     bottom: -DRAWER_HEIGHT,
     borderTopLeftRadius: 30,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     paddingHorizontal: 12,
     zIndex: 100,
-    backgroundColor: "white",
+    backgroundColor: Colors.general.background,
     height: 50,
     justifyContent: "space-between",
     alignItems: "center",
@@ -52,18 +52,25 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     gap: 8,
-    padding: 12,
-    borderWidth: 1,
-    borderColor: Colors.neutral.n03,
+    padding: 16,
     borderRadius: 10,
+    backgroundColor: Colors.neutral.n09,
   },
   rowContainer: {
     flexDirection: "row",
     gap: 6,
+    paddingHorizontal: 12,
   },
-  logoContainer: {
+  titleContainer: {
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "white",
+    maxWidth: "80%",
+    alignSelf: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 8,
+    borderRadius: 10,
+    marginBottom: 10,
   },
   logoImage: {
     height: 80,
@@ -73,7 +80,8 @@ const styles = StyleSheet.create({
   borderBox: {
     borderRadius: 5,
     padding: 5,
-    borderWidth: 1,
+    paddingHorizontal: 10,
+    borderRightWidth: 1,
     borderColor: Colors.neutral.n02,
     alignSelf: "flex-start",
   },

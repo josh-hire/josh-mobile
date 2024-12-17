@@ -6,7 +6,7 @@ const SCREEN_WIDTH = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   buttonContainer: {
     position: "absolute",
-    bottom: 10,
+    bottom: 24,
     left: 0,
     right: 0,
     zIndex: 100,
