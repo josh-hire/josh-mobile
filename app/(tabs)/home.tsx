@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
-import HomePage from "@/modules/feature/main/homePage";
-import { Colors } from "@/constants/Colors";
+import HomePage from "@modules/feature/main/homePage";
+import { Colors } from "@constants/Colors";
+import React from "react";
 
 export default function HomeScreen() {
   return (
@@ -8,7 +9,7 @@ export default function HomeScreen() {
       <Stack.Screen
         options={{
           headerShown: false,
-          contentStyle: { backgroundColor: Colors.secondary.s08 },
+          contentStyle: { backgroundColor: Colors.general.background },
         }}
       />
       <HomePage />

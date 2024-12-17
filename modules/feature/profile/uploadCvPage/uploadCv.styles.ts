@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   screenBackground: {
     flex: 1,
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
     alignItems: "center",
     justifyContent: "space-between",
     paddingVertical: 18,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     top: 30,
     right: 10,
     width: 120,
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.secondary.s06,
     borderRadius: 4,
     elevation: 8,
     shadowOpacity: 1,

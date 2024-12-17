@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
 import { Modal, View } from "react-native";
 import styles from "./confirmationModal.styles";
-import { HeadingText } from "@/components/atoms/text/HeadingText";
-import { PrimaryButton } from "@/components/atoms/button/PrimaryButton";
-import { Colors } from "@/constants/Colors";
+import { HeadingText } from "@components/atoms/text/HeadingText";
+import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
+import { Colors } from "@constants/Colors";
 
 interface ConfirmationModalProps {
   isConfirmVisible: boolean;
@@ -29,10 +29,10 @@ export default function ConfirmationModal({
     >
       <View style={styles.centeredView}>
         <View style={styles.confirmContainer}>
-          <HeadingText type="h4" fontWeight="bold" style={styles.confirmText}>
+          <HeadingText type="h4" fontWeight="bold" color="black" style={styles.confirmText}>
             {title}
           </HeadingText>
-          <HeadingText type="h6" textAlign="center" style={styles.confirmText}>
+          <HeadingText type="h6" textAlign="center" color="black" style={styles.confirmText}>
             {description}
           </HeadingText>
           <View style={styles.confirmButtons}>

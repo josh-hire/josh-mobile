@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   screenBackground: {
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
     height: "100%",
   },
   chatContainer: {
@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     gap: 18,
   },
   headerContainer: {
-    backgroundColor: Colors.secondary.s08,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

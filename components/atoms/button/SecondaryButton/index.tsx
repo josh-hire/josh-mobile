@@ -8,6 +8,7 @@ export type SecondaryButtonProps = ButtonProps & {
   handler: () => void;
   color?: string;
   position?: string;
+  showIcon?: boolean;
 };
 
 export default function SecondaryButton({
@@ -15,10 +16,11 @@ export default function SecondaryButton({
   handler,
   color = "white",
   position = "left",
+  showIcon = true,
 }: SecondaryButtonProps) {
   return (
     <TouchableOpacity style={styles(color).secondaryButton} onPress={handler}>
-      {position === "left" ? (
+      {showIcon && position === "left" ? (
         <Image
           source={
             color === "white" ? Assets.icons.plus01White : Assets.icons.plus01
@@ -30,7 +32,7 @@ export default function SecondaryButton({
       <HeadingText type="h5" color={color}>
         {title}
       </HeadingText>
-      {position === "right" ? (
+      {showIcon && position === "right" ? (
         <Image
           source={
             color === "white" ? Assets.icons.plus01White : Assets.icons.plus01

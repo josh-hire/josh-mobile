@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   screenBackground: {
     flex: 1,
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
     alignItems: "center",
     justifyContent: "flex-start",
     gap: 32,
@@ -46,12 +46,18 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   optionButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
     padding: 18,
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   optionBottomButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
     padding: 18,
-  }
+  },
 });
 
 export default styles;

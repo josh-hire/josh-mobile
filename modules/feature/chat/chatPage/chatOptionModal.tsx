@@ -43,7 +43,9 @@ export default function ChatOptionModal({
               }}
             >
               <Ionicons name="notifications-outline" size={28} />
-              <HeadingText type="h6">Mute</HeadingText>
+              <HeadingText type="h6" color={"black"}>
+                Mute
+              </HeadingText>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.modalElement}
@@ -53,7 +55,9 @@ export default function ChatOptionModal({
               }}
             >
               <Ionicons name="flag-outline" size={28} />
-              <HeadingText type="h6">Report/Block</HeadingText>
+              <HeadingText type="h6" color={"black"}>
+                Report/Block
+              </HeadingText>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.modalElement}
@@ -63,7 +67,9 @@ export default function ChatOptionModal({
               }}
             >
               <Ionicons name="trash-outline" size={28} />
-              <HeadingText type="h6">Delete Conversation</HeadingText>
+              <HeadingText type="h6" color={"black"}>
+                Delete Conversation
+              </HeadingText>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>

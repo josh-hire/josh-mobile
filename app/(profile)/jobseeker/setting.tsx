@@ -1,6 +1,7 @@
 import { Stack } from "expo-router";
 import { Colors } from "@constants/Colors";
 import SettingPage from "@modules/feature/profile/settingPage";
+import React from "react";
 
 export default function SettingScreen() {
   return (
@@ -14,7 +15,7 @@ export default function SettingScreen() {
             color: Colors.neutral.n00,
           },
           headerStyle: {
-            backgroundColor: Colors.secondary.s08,
+            backgroundColor: Colors.general.background,
           },
         }}
       />

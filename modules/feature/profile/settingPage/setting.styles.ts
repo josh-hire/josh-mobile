@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   screenBackground: {
     flex: 1,
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
     alignItems: "center",
     justifyContent: "flex-start",
     gap: 32,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   modalView: {
     height: "100%",
     width: "100%",
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   mainContainer: {
     height: "100%",

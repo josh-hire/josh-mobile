@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   screenBackground: {
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   activityContainer: {
     gap: 18,
@@ -11,13 +11,38 @@ const styles = StyleSheet.create({
   navbarContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: Colors.neutral.n09,
+    padding: 12,
+    borderRadius: 30,
+  },
+  navbarItem: {
+    backgroundColor: Colors.neutral.n07,
+    padding: 8,
+    borderRadius: 30,
+  },
+  container: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
+  titleContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    maxWidth: "80%",
+    alignSelf: "center",
+    paddingHorizontal: 18,
+    paddingVertical: 8,
+    borderRadius: 10,
+    marginBottom: 10,
   },
   drawerHandle: {
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     paddingHorizontal: 12,
     zIndex: 100,
-    backgroundColor: "white",
+    backgroundColor: Colors.general.background,
     height: 50,
     justifyContent: "space-between",
     alignItems: "center",
@@ -31,7 +56,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: Colors.general.background,
   },
   scrollViewContent: {
     padding: 20,
@@ -47,14 +72,14 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     gap: 8,
-    padding: 12,
-    borderWidth: 1,
-    borderColor: Colors.neutral.n03,
+    padding: 16,
     borderRadius: 10,
+    backgroundColor: Colors.neutral.n09,
   },
   rowContainer: {
     flexDirection: "row",
     gap: 6,
+    paddingHorizontal: 12,
   },
   logoContainer: {
     justifyContent: "center",
@@ -68,7 +93,8 @@ const styles = StyleSheet.create({
   borderBox: {
     borderRadius: 5,
     padding: 5,
-    borderWidth: 1,
+    paddingHorizontal: 10,
+    borderRightWidth: 1,
     borderColor: Colors.neutral.n02,
     alignSelf: "flex-start",
   },

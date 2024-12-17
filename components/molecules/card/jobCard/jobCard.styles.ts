@@ -11,30 +11,34 @@ const styles = StyleSheet.create({
   backgroundImage: {
     width: "100%",
     height: "100%",
-    justifyContent: "flex-start",
+    justifyContent: "flex-end",
   },
   overlay: {
-    backgroundColor: "rgba(0,0,0,0.5)",
     padding: 15,
-    borderRadius: 30,
     margin: 10,
-  },
-  headerContainer: {
-    marginBottom: 5,
   },
   companyName: {
     fontSize: 22,
     fontWeight: "bold",
     color: "white",
   },
+  photoProfile: {
+    width: 40,
+    height: 40,
+    objectFit: "cover",
+    borderRadius: 200,
+  },
   location: {
     fontSize: 16,
-    color: "rgba(255,255,255,0.8)",
   },
   jobType: {
     fontSize: 14,
-    color: "rgba(255,255,255,0.7)",
     marginTop: 5,
+  },
+  locationContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4
   },
 });
 

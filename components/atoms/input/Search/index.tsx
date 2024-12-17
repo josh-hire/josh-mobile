@@ -47,7 +47,7 @@ export function Search({
           <Ionicons
             style={styles.icon}
             name="search"
-            color={Colors.neutral.n02}
+            color={"white"}
             size={20}
           />
           <TextInput

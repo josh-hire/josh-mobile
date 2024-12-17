@@ -1,4 +1,11 @@
-import { Alert, Image, Modal, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  ImageBackground,
+  Modal,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import styles from "@components/molecules/modal/MatchModal/matchModal.styles";
 import { Dispatch, SetStateAction } from "react";
 import { Assets } from "@constants/Assets";
@@ -6,6 +13,8 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { PrimaryButton } from "@components/atoms/button/PrimaryButton";
 import BubbleChat from "@components/atoms/chat/bubble";
 import ProfilePhoto from "@components/atoms/chat/profile";
+import SecondaryButton from "@components/atoms/button/SecondaryButton";
+import { Colors } from "@constants/Colors";
 
 interface MatchModalProps {
   isVisible: boolean;
@@ -27,40 +36,56 @@ export default function MatchModal({
       }}
     >
       <View style={styles.centeredView}>
-        <View style={styles.closedContainer}>
-          <TouchableOpacity
-            style={styles.closeButton}
-            onPress={() => setIsVisible(!isVisible)}
-          >
-            <Image source={Assets.icons.no} style={styles.closeIcon}></Image>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.mainContainer}>
-          <HeadingText color="white" type="h1" fontWeight="bold">
-            You Matched!
-          </HeadingText>
-          <View style={styles.photoContainer}>
-            <Image
-              source={Assets.images.telkomselLogo}
-              style={styles.photoProfile}
-            />
-            <Image
-              source={Assets.images.telkomselLogo}
-              style={styles.photoProfile}
-            />
-          </View>
-          <View style={styles.chatContainer}>
-            <ProfilePhoto url={Assets.logos.logo} size={48}/>
-            <View style={styles.bubbleContainer}>
-              <BubbleChat message="Congratulations!" />
-              <BubbleChat message="You meet the criteria and have been connected with Telkomsel!" />
-              <BubbleChat message="For further information, please contact Telkomsel!" />
+        <ImageBackground source={Assets.images.bgMotif2} style={styles.background}>
+          <View style={styles.mainContainer}>
+            <View style={styles.headerContainer}>
+              <HeadingText color="white" type="h1" fontWeight="bold">
+                It's a match!
+              </HeadingText>
+              <View style={styles.infoContainer}>
+                <HeadingText
+                  color={Colors.secondary.s03}
+                  type="h5"
+                  fontWeight="bold"
+                >
+                  Personal Trainer
+                </HeadingText>
+                <HeadingText
+                  color={Colors.neutral.n00}
+                  type="h5"
+                  fontWeight="bold"
+                >
+                  and
+                </HeadingText>
+                <HeadingText
+                  color={Colors.secondary.s03}
+                  type="h5"
+                  fontWeight="bold"
+                >
+                  Clarissa Putri
+                </HeadingText>
+              </View>
+            </View>
+            <View style={styles.photoContainer}>
+              <Image
+                source={Assets.images.telkomselLogo}
+                style={styles.photoProfile}
+              />
+              <Image
+                source={Assets.images.telkomselLogo}
+                style={styles.photoProfile}
+              />
+            </View>
+            <View style={styles.gotoButton}>
+              <PrimaryButton handler={() => {}} title="Send Message" />
+              <SecondaryButton
+                handler={() => setIsVisible(!isVisible)}
+                showIcon={false}
+                title="Keep Swiping"
+              />
             </View>
           </View>
-          <View style={styles.gotoButton}>
-            <PrimaryButton handler={() => {}} title="Go to Chat" />
-          </View>
-        </View>
+        </ImageBackground>
       </View>
     </Modal>
   );

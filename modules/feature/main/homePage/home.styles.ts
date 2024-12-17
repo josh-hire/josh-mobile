@@ -6,10 +6,14 @@ const SCREEN_WIDTH = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   buttonContainer: {
     position: "absolute",
-    bottom: 10,
+    bottom: 24,
     left: 0,
     right: 0,
     zIndex: 100,
+  },
+  bottomContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   button: {
     height: 50,
@@ -24,18 +28,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   screenBackground: {
-    backgroundColor: Colors.secondary.s08,
+    backgroundColor: Colors.general.background,
   },
   container: {
-    marginTop: 8,
     flex: 1,
-    justifyContent: "center",
+    marginTop: "2%",
+    marginBottom: "5%",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   card: {
-    width: SCREEN_WIDTH * 0.9,
+    width: SCREEN_WIDTH,
     height: SCREEN_WIDTH * 1.5,
-    borderRadius: 30,
+    borderRadius: 13,
     overflow: "hidden",
   },
   noMoreCards: {
@@ -44,17 +49,17 @@ const styles = StyleSheet.create({
   },
   centerButton: {
     position: "absolute",
-    bottom: "9%",
+    bottom: 10,
   },
-  leftButton: {
+  noButton: {
     position: "absolute",
-    left: 0,
-    bottom: "9%",
+    right: "15%",
+    bottom: 10,
   },
-  rigthButton: {
+  refreshButton: {
     position: "absolute",
-    right: 0,
-    bottom: "9%",
+    left: "15%",
+    bottom: 10,
   },
 });
 

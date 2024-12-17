@@ -5,6 +5,7 @@ export type IconButtonProps = {
   handler: () => void;
   icon: ImageSourcePropType;
   color: string;
+  borderColor?: string;
   width: Animated.Value;
   height: Animated.Value;
 };
@@ -15,10 +16,13 @@ export function IconButton({
   color,
   width,
   height,
+  borderColor = color,
 }: Readonly<IconButtonProps>) {
   return (
     <TouchableOpacity onPress={handler} style={{ zIndex: 100 }}>
-      <Animated.View style={styles(width, height, color).iconButton}>
+      <Animated.View
+        style={styles(width, height, color, borderColor).iconButton}
+      >
         <Animated.Image source={icon} style={styles(width, height).iconImage} />
       </Animated.View>
     </TouchableOpacity>

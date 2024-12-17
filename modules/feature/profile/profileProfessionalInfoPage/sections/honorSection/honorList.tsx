@@ -2,6 +2,7 @@ import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/honorSection/profileHonor.styles";
 import HonorCard from "@components/molecules/card/honorCard";
 import { Assets } from "@constants/Assets";
+import React from "react";
 
 interface Honor {
   id: string;

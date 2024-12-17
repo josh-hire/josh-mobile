@@ -3,6 +3,7 @@ import styles from "@modules/feature/profile/profileProfessionalInfoPage/section
 import ProfilePhoto from "@components/atoms/chat/profile";
 import { Assets } from "@constants/Assets";
 import EducationCard from "@components/molecules/card/EducationCard";
+import React from "react";
 
 interface Education {
   id: string;

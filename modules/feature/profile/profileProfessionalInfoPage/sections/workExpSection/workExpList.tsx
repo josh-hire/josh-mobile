@@ -3,6 +3,7 @@ import { Image, View } from "react-native";
 import styles from "@modules/feature/profile/profileProfessionalInfoPage/sections/workExpSection/workExpSection.styles";
 import ProfilePhoto from "@components/atoms/chat/profile";
 import { Assets } from "@constants/Assets";
+import React from "react";
 
 interface WorkExpData {
   id: string;

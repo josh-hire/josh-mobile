@@ -4,9 +4,13 @@ import { StyleSheet } from "react-native";
 const styles = (isSender: boolean) =>
   StyleSheet.create({
     chatContainer: {
-      backgroundColor: isSender ? Colors.secondary.s02 : Colors.secondary.s07,
+      backgroundColor: isSender
+        ? Colors.general.background
+        : Colors.neutral.n09,
       borderTopLeftRadius: 8,
       borderTopRightRadius: 8,
+      borderWidth: isSender ? 2 : 0,
+      borderColor: Colors.neutral.n09,
       borderBottomLeftRadius: isSender ? 8 : 0,
       borderBottomRightRadius: isSender ? 0 : 8,
       padding: 12,

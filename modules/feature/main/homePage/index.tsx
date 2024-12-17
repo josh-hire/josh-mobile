@@ -1,4 +1,4 @@
-import ProfileCard from "@/components/molecules/card/profileCard";
+import ProfileCard from "@components/molecules/card/profileCard";
 import React, { useState, useRef } from "react";
 import {
   View,
@@ -10,27 +10,27 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "@styles/global.styles";
-import { Colors } from "@/constants/Colors";
-import { IconButton } from "@/components/atoms/button/IconButton";
-import { Assets } from "@/constants/Assets";
-import JobCard from "@/components/molecules/card/jobCard";
+import { Colors } from "@constants/Colors";
+import { IconButton } from "@components/atoms/button/IconButton";
+import { Assets } from "@constants/Assets";
+import JobCard from "@components/molecules/card/jobCard";
 import styles from "@modules/feature/main/homePage/home.styles";
-import FilterModal from "@/components/molecules/modal/FIlterModal";
-import DetailJobModal from "@/components/molecules/modal/DetailJobModal";
+import FilterModal from "@components/molecules/modal/FIlterModal";
+import DetailJobModal from "@components/molecules/modal/DetailJobModal";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SWIPE_THRESHOLD = 0.5 * SCREEN_WIDTH;
-const CARD_SCALE_DECREMENT = 0.08;
-const CARD_POSITION_MULTIPLIER = -40;
+const CARD_SCALE_DECREMENT = 0;
+const CARD_POSITION_MULTIPLIER = 0;
 const DRAWER_HEIGHT = SCREEN_HEIGHT * 0.95;
 
 interface CardData {
   id: string;
   imageUrl: string;
   companyName: string;
+  salary: string;
   location: string;
-  jobType: string;
 }
 
 export default function HomePage() {
@@ -39,36 +39,36 @@ export default function HomePage() {
       id: "1",
       imageUrl: "https://picsum.photos/seed/1/400/600",
       companyName: "Telkomsel",
+      salary: "IDR 8.000.000 - 10.000.000",
       location: "South Jakarta",
-      jobType: "Full Time",
     },
     {
       id: "2",
       imageUrl: "https://picsum.photos/seed/2/400/600",
       companyName: "Company B",
-      location: "San Francisco",
-      jobType: "Part-time",
+      salary: "IDR 12.000.000 - 13.000.000",
+      location: "South Jakarta",
     },
     {
       id: "3",
       imageUrl: "https://picsum.photos/seed/3/400/600",
       companyName: "Company C",
-      location: "London",
-      jobType: "Contract",
+      salary: "IDR 6.000.000 - 7.000.000",
+      location: "South Jakarta",
     },
     {
       id: "4",
       imageUrl: "https://picsum.photos/seed/4/400/600",
       companyName: "Company D",
-      location: "London",
-      jobType: "Contract",
+      salary: "IDR 8.000.000",
+      location: "South Jakarta",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [leftBtnSize] = useState(new Animated.Value(50));
-  const [rightBtnSize] = useState(new Animated.Value(50));
-  const [centerButtonSize] = useState(new Animated.Value(60));
+  const [rightBtnSize] = useState(new Animated.Value(60));
+  const [centerButtonSize] = useState(new Animated.Value(80));
   const swipe = useRef(new Animated.ValueXY()).current;
   const cardScales = useRef(cards.map(() => new Animated.Value(1))).current;
   const cardPositions = useRef(cards.map(() => new Animated.Value(0))).current;
@@ -105,10 +105,8 @@ export default function HomePage() {
       onStartShouldSetPanResponder: () => true,
       onPanResponderMove: (_, gesture) => {
         swipe.setValue({ x: gesture.dx, y: 0 });
-        setButtonSize(gesture.dx);
       },
       onPanResponderRelease: (_, gesture) => {
-        resetButtonSize();
         if (Math.abs(gesture.dx) > SWIPE_THRESHOLD) {
           const direction = gesture.dx > 0 ? "right" : "left";
           forceSwipe(direction);
@@ -159,35 +157,6 @@ export default function HomePage() {
         (index - currentIndex - 1) * CARD_POSITION_MULTIPLIER
       );
     });
-  };
-
-  const setButtonSize = (position: number) => {
-    if (position < 0) {
-      Animated.timing(leftBtnSize, {
-        toValue: 50 + Math.abs(position) * 0.1,
-        duration: 0,
-        useNativeDriver: false,
-      }).start();
-    } else if (position > 0) {
-      Animated.timing(rightBtnSize, {
-        toValue: 50 + Math.abs(position) * 0.1,
-        duration: 0,
-        useNativeDriver: false,
-      }).start();
-    }
-  };
-
-  const resetButtonSize = () => {
-    Animated.timing(leftBtnSize, {
-      toValue: 50,
-      duration: 200,
-      useNativeDriver: false,
-    }).start();
-    Animated.timing(rightBtnSize, {
-      toValue: 50,
-      duration: 200,
-      useNativeDriver: false,
-    }).start();
   };
 
   const resetPosition = () => {
@@ -261,19 +230,19 @@ export default function HomePage() {
 
   return (
     <SafeAreaView style={[globalStyles.screen, styles.screenBackground]}>
-      <ProfileCard name="Afgan"></ProfileCard>
-      <View style={styles.container}>
-        {renderCards()}
-        <View style={styles.leftButton}>
+      <ProfileCard setIsVisible={setIsModalVisible}></ProfileCard>
+      <View style={styles.container}>{renderCards()}</View>
+      <View style={styles.bottomContainer}>
+        <View style={styles.noButton}>
           <IconButton
             handler={() => {
               forceSwipe("left");
             }}
             icon={Assets.icons.no}
-            color={Colors.primary.p02}
+            borderColor="white"
+            color={Colors.general.background}
             width={leftBtnSize}
             height={leftBtnSize}
-            {...panResponder.panHandlers}
           />
         </View>
         <View style={styles.centerButton}>
@@ -291,24 +260,21 @@ export default function HomePage() {
           </Animated.View>
           <IconButton
             handler={() => {
-              setIsModalVisible(true);
+              forceSwipe("right");
             }}
-            icon={Assets.icons.fliter}
-            color={Colors.secondary.s08}
+            icon={Assets.icons.like}
+            color={Colors.secondary.s06}
             width={centerButtonSize}
             height={centerButtonSize}
           />
         </View>
-        <View style={styles.rigthButton}>
+        <View style={styles.refreshButton}>
           <IconButton
-            handler={() => {
-              forceSwipe("right");
-            }}
-            icon={Assets.icons.yes}
-            color={Colors.secondary.s02}
+            handler={() => {}}
+            icon={Assets.icons.refresh}
+            color={Colors.neutral.n08}
             width={rightBtnSize}
             height={rightBtnSize}
-            {...panResponder.panHandlers}
           />
         </View>
       </View>

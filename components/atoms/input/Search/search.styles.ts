@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   textInput: {
     marginTop: 4,
     minHeight: 40,
-    borderWidth: 1,
+    backgroundColor: Colors.neutral.n09,
     paddingLeft: 36,
     padding: 10,
     borderRadius: 8,
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 10,
     top: 14,
+    zIndex: 20,
   },
 });
 

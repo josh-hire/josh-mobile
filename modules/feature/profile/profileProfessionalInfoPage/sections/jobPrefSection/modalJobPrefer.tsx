@@ -33,7 +33,7 @@ export default function ModalJobPref({
                 <Image source={Assets.icons.no} style={styles.closeButton} />
               </TouchableOpacity>
               <HeadingText type="h5" fontWeight="bold" color="white">
-                Prefered Job
+                {type === "job" ? "Preferred Job" : type === "city" ? "City Preferences" : type === "workplace" ? "Workplace Model": "Work Type"}
               </HeadingText>
             </View>
           </View>

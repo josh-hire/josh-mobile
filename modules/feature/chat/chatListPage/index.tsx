@@ -2,7 +2,7 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "@styles/global.styles";
 import styles from "@modules/feature/chat/chatListPage/chatList.styles";
-import ChatListCard from "@/components/molecules/card/chatListCard";
+import ChatListCard from "@components/molecules/card/chatListCard";
 import { ScrollView, View } from "react-native";
 import { Assets } from "@constants/Assets";
 import { router } from "expo-router";
@@ -16,7 +16,7 @@ export default function ChatListPage() {
   return (
     <SafeAreaView style={[globalStyles.screen, styles.screenBackground]}>
       <View style={styles.chatContainer}>
-        <HeadingText color="white" type="h5" fontWeight="bold">
+        <HeadingText color="white" type="h3" textAlign="center" fontWeight="bold">
           Chats
         </HeadingText>
         <Search
