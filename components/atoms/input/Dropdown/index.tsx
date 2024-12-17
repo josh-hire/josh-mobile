@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   onValueChange,
   placeholder = "Select...",
   error,
-  color = "black",
+  color = "white",
   label,
   labelSize,
   labelColor,
@@ -56,18 +56,20 @@ const Dropdown: React.FC<DropdownProps> = ({
 
   return (
     <View style={styles(color).container}>
-      <View style={styles(color).textLabelContainer}>
-        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
-          {label}
-        </HeadingText>
-        {isRequired === true ? (
-          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
-            *
+      {label && (
+        <View style={styles(color).textLabelContainer}>
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
+            {label}
           </HeadingText>
-        ) : (
-          <View />
-        )}
-      </View>
+          {isRequired === true ? (
+            <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
+              *
+            </HeadingText>
+          ) : (
+            <View />
+          )}
+        </View>
+      )}
       <TouchableOpacity
         ref={dropdownRef}
         onPress={openDropdown}

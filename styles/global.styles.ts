@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
   screen: {
     paddingHorizontal: 36,
     height: "100%",
-    backgroundColor: "white",
     justifyContent: "space-between",
   },
   stepContainer: {

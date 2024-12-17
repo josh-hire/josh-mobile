@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderWidth: 2,
-    borderColor: Colors.neutral.n09,
+    borderColor: Colors.neutral.n00,
     marginRight: 10,
   },
   checkboxError: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   checkboxChecked: {
     width: 18,
     height: 18,
-    borderColor: Colors.neutral.n09,
+    borderColor: Colors.neutral.n00,
     marginRight: 10,
   },
   checked: {

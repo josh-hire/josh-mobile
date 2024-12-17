@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   splitBoxes: {
-    borderColor: Colors.neutral.n09,
+    borderColor: Colors.neutral.n00,
     borderWidth: 1,
     borderRadius: 8,
     padding: 5,
@@ -35,15 +35,16 @@ const styles = StyleSheet.create({
     minWidth: 42,
   },
   splitBoxesFilled: {
-    borderColor: Colors.secondary.s07,
+    borderColor: Colors.neutral.n00,
     backgroundColor: Colors.secondary.s07,
-    borderWidth: 3,
+    borderWidth: 2,
     borderRadius: 8,
     padding: 5,
     minWidth: 42,
   },
   splitBoxesError: {
     borderColor: Colors.primary.p04,
+    color: "white",
     borderWidth: 3,
     borderRadius: 8,
     padding: 5,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
   splitBoxesTextError: {
     fontSize: 20,
     textAlign: "center",
-    color: Colors.neutral.n09,
+    color: Colors.neutral.n00,
   },
 });
 

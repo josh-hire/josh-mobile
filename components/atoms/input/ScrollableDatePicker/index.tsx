@@ -113,7 +113,7 @@ const ScrollableDatePicker = ({
     >
       {data.map((item, index) => (
         <View key={index} style={styles.item}>
-          <HeadingText type="h6" style={styles.itemText}>
+          <HeadingText type="h6" color="black" style={styles.itemText}>
             {item}
           </HeadingText>
         </View>
@@ -143,11 +143,11 @@ const ScrollableDatePicker = ({
   return (
     <View style={styles.container}>
       <View style={styles.textLabelContainer}>
-        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
           {label}
         </HeadingText>
         {isRequired === true ? (
-          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
             *
           </HeadingText>
         ) : (
@@ -177,13 +177,13 @@ const ScrollableDatePicker = ({
           >
             <View style={styles.pickerContainer}>
               <View style={styles.singleContainer}>
-                <HeadingText type="h5" fontWeight="bold">
+                <HeadingText type="h5" color="black" fontWeight="bold">
                   Month
                 </HeadingText>
                 {renderScrollColumn(months, monthRef, "month")}
               </View>
               <View style={styles.singleContainer}>
-                <HeadingText type="h5" fontWeight="bold">
+                <HeadingText type="h5" color="black" fontWeight="bold">
                   Years
                 </HeadingText>
                 {renderScrollColumn(years, yearRef, "year")}

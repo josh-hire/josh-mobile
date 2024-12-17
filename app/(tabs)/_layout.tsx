@@ -9,13 +9,16 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: Colors.general.background,
+        },
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           title: "Home",
-          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarActiveTintColor: Colors.neutral.n00,
           tabBarIcon: ({ focused }) => (
             <Image
               source={focused ? Assets.icons.home_fill : Assets.icons.home}
@@ -28,7 +31,7 @@ export default function TabLayout() {
         name="chat"
         options={{
           title: "Chat",
-          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarActiveTintColor: Colors.neutral.n00,
           tabBarIcon: ({ focused }) => (
             <Image
               source={
@@ -43,7 +46,7 @@ export default function TabLayout() {
         name="activity"
         options={{
           title: "My Activity",
-          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarActiveTintColor: Colors.neutral.n00,
           tabBarIcon: ({ focused }) => (
             <Image
               source={
@@ -58,7 +61,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: "Profile",
-          tabBarActiveTintColor: Colors.primary.p04,
+          tabBarActiveTintColor: Colors.neutral.n00,
           tabBarIcon: ({ focused }) => (
             <Image
               source={

@@ -64,18 +64,20 @@ export function TextAreaSuggestion({
 
   return (
     <View>
-      <View style={styles.textLabelContainer}>
-        <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
-          {label}
-        </HeadingText>
-        {isRequired === true ? (
-          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "black"}>
-            *
+      {label && (
+        <View style={styles.textLabelContainer}>
+          <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
+            {label}
           </HeadingText>
-        ) : (
-          <View />
-        )}
-      </View>
+          {isRequired === true ? (
+            <HeadingText type={labelSize ?? "h4"} color={labelColor ?? "white"}>
+              *
+            </HeadingText>
+          ) : (
+            <View />
+          )}
+        </View>
+      )}
       <View
         style={[
           styles.container,
@@ -88,7 +90,7 @@ export function TextAreaSuggestion({
             styles.textInput,
             isFocused && styles.textInputFocused,
             error ? styles.textInputError : {},
-            { borderColor: color, color: color },
+            { color: color },
           ]}
           onChangeText={handleChangeText}
           value={text}

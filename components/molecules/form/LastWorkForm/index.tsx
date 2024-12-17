@@ -65,7 +65,7 @@ export default function LastWorkForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/registration/education-background");
+      router.push("/(auth)/jobseeker/registration/education-background");
     }
   };
 
@@ -74,10 +74,12 @@ export default function LastWorkForm() {
       {(errors.jobPosition != undefined || errors.company != undefined) && (
         <ErrorBox error="Please input your recent work" />
       )}
-      <HeadingText type="h4">Job Position</HeadingText>
       <TextAreaSuggestion
         type="text"
         text={formData.jobPosition}
+        label="Job Position"
+        isRequired={true}
+        color="white"
         placeholder="Ex: Data Science"
         onChangeText={(value) => handleInputChange("jobPosition", value)}
         suggestions={["Data Entry", "Data Analyst", "Data Science"]}
@@ -86,19 +88,22 @@ export default function LastWorkForm() {
       <TextArea
         label="Company"
         type="text"
+        isRequired={true}
         text={formData.company}
         placeholder="Ex: Telkom Indonesia"
         onChangeText={(value) => handleInputChange("company", value)}
         error={errors.company}
       ></TextArea>
       <ScrollableDatePicker
-        label="Start Job"
+        label="Start Job*"
+        color="white"
         onDateChange={(date) => handleInputChange("startJob", date)}
         initialDate={new Date()}
       />
       {!formData.isWork ? (
         <ScrollableDatePicker
           label="End Job"
+          color="white"
           onDateChange={(date) => handleInputChange("endJob", date)}
           initialDate={new Date()}
         />

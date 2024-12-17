@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
+    borderColor: "white",
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
   },
   textLabelContainer: {
     flexDirection: "row",
+    marginBottom: 6,
   },
   textInputFocused: {
     borderWidth: 2,

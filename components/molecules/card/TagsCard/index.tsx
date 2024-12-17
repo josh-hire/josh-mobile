@@ -12,7 +12,7 @@ export default function TagsCard({ title, onTap }: TagsCard) {
   return (
     <TouchableOpacity onPress={onTap}>
       <View style={styles.TagsCard}>
-        <HeadingText type="h6" color={Colors.neutral.n09}>
+        <HeadingText type="h6" color={Colors.neutral.n00}>
           {title}
         </HeadingText>
       </View>

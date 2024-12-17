@@ -7,7 +7,9 @@ interface AppLogoInterface {
   color?: string;
 }
 
-export default function AppLogo({ color }: Readonly<AppLogoInterface>) {
+export default function AppLogo({
+  color = "white",
+}: Readonly<AppLogoInterface>) {
   return (
     <View style={styles.logoContainer}>
       <Image source={Assets.logos.logo}></Image>

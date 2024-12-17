@@ -3,6 +3,7 @@ import { HeadingText } from "@components/atoms/text/HeadingText";
 import { Assets } from "@constants/Assets";
 import { Colors } from "@constants/Colors";
 import { Stack, useRouter } from "expo-router";
+import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 
 export default function NotFoundScreen() {
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
   screen: {
     paddingHorizontal: 36,
     height: "100%",
-    backgroundColor: "white",
     justifyContent: "center",
     gap: 48,
   },

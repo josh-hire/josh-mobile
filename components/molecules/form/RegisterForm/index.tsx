@@ -39,7 +39,7 @@ export default function RegisterForm() {
   const mutation = useMutation({
     mutationFn: () => register(formData.email, "12345678"),
     onSuccess: () => {
-      router.push("/(auth)/login");
+      router.push("/(auth)/jobseeker/login");
     },
     onError: (error) => {
       setError(error.message);
@@ -96,7 +96,7 @@ export default function RegisterForm() {
   };
 
   const handleSubmit = () => {
-    router.push("/registration/professional-information");
+    router.push("/(auth)/jobseeker/registration/professional-information");
   };
 
   return (

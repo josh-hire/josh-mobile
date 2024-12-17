@@ -60,7 +60,7 @@ export default function SkillPossesedForm() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      router.push("/registration/last-work");
+      router.push("/(auth)/jobseeker/registration/last-work");
     }
   };
 
@@ -70,6 +70,7 @@ export default function SkillPossesedForm() {
       <View>
         <TextArea
           label="Skills"
+          isRequired={true}
           onChangeText={setSkill}
           onSubmit={() => handleInputChange(skill)}
           placeholder="Enter your skill"

@@ -28,7 +28,7 @@ const styles = (color: string) =>
     },
     modalContainer: {
       position: "absolute",
-      backgroundColor: color === "white" ? Colors.secondary.s08 : "",
+      backgroundColor: color === "white" ? Colors.general.background : "",
       maxHeight: 300,
       borderColor: Colors.neutral.n02,
     },

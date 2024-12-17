@@ -17,7 +17,7 @@ export default function CheckboxList({
   onSelectionChange,
   numColumns = 1,
   error,
-  color,
+  color = "white",
 }: Readonly<CheckboxListProps>) {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
@@ -50,7 +50,6 @@ export default function CheckboxList({
                 : error != null
                 ? styles.checkboxError
                 : styles.checkbox,
-              { borderColor: color },
             ]}
           >
             {selectedItems.includes(item) && (

@@ -1,8 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  loginForm: {
-    gap: 12,
+  resetPasswordForm: {
+    gap: 48,
+    marginTop: 24
+  },
+  fieldContainer: {
+    gap: 18,
   },
   forgotPasswordContainer: {
     alignItems: "flex-end",

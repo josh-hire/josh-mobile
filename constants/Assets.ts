@@ -25,7 +25,7 @@ export const Assets = {
     file02: require("@assets/icons/file-02.png"),
     video: require("@assets/icons/video_ic.png"),
     dot_vertical: require("@assets/icons/dot_vertical_ic.png"),
-    
+
     message_fill: require("@assets/icons/message_fill_ic.png"),
     activity_fill: require("@assets/icons/activity_fill_ic.png"),
     home_fill: require("@assets/icons/home_fill_ic.png"),
@@ -44,6 +44,7 @@ export const Assets = {
     register: require("@assets/images/register.png"),
     job: require("@assets/images/job-bg.jpg"),
     telkomselLogo: require("@assets/images/telkomsel-logo.jpg"),
+    bgMotif: require("@assets/images/bg-motif.png"),
   },
   fonts: {
     telkomselBatik: require("@assets/fonts/TelkomselBatikSans-Regular.otf"),
