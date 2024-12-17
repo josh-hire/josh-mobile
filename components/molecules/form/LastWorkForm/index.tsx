@@ -78,6 +78,7 @@ export default function LastWorkForm() {
         type="text"
         text={formData.jobPosition}
         label="Job Position"
+        isRequired={true}
         color="white"
         placeholder="Ex: Data Science"
         onChangeText={(value) => handleInputChange("jobPosition", value)}
@@ -87,13 +88,14 @@ export default function LastWorkForm() {
       <TextArea
         label="Company"
         type="text"
+        isRequired={true}
         text={formData.company}
         placeholder="Ex: Telkom Indonesia"
         onChangeText={(value) => handleInputChange("company", value)}
         error={errors.company}
       ></TextArea>
       <ScrollableDatePicker
-        label="Start Job"
+        label="Start Job*"
         color="white"
         onDateChange={(date) => handleInputChange("startJob", date)}
         initialDate={new Date()}

@@ -75,7 +75,7 @@ export default function WorkPreferencesForm() {
           <ErrorBox error="Please select your work preferences" />
         )}
         <HeadingText type="h4" fontWeight="bold" style={styles.label}>
-          City preference
+          City preference*
         </HeadingText>
         <Dropdown
           data={options}

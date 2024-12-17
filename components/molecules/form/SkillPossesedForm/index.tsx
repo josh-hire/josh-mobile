@@ -70,6 +70,7 @@ export default function SkillPossesedForm() {
       <View>
         <TextArea
           label="Skills"
+          isRequired={true}
           onChangeText={setSkill}
           onSubmit={() => handleInputChange(skill)}
           placeholder="Enter your skill"
